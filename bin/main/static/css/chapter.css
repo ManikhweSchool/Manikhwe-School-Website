@@ -1,0 +1,52 @@
+@charset "ISO-8859-1";
+body{
+	background-color : hsl(50, 70%, 90% );
+	color : hsl(250, 30%, 30% ); 
+}	
+h2{
+	padding-left : 90px;
+}
+video{
+	min-height : 50vh;
+}
+
+#Header_Items{
+	list-style-type : none;
+	margin : 0px;
+	padding : 20px 0px;
+	background : hsl(250, 30%, 30% );
+	overflow : hidden;
+}
+.Header_Item{
+	display : inline;
+	font-size : 20px;
+	margin : 0px;
+		
+}
+.Header_Link{
+	text-decoration : none;
+	text-align : center;
+	
+	margin : 0px;
+	padding : 5px 3%;
+	color : white;
+}
+.Header_Link:hover:not(#SignIn_Page_Link){
+	color : blue;
+	text-decoration : none;
+}
+#SignIn_Page_Link{
+	float : right;
+	background-color : blue;
+	text-decoration : none;
+}
+#SignIn_Page_Link:hover{
+	color : hsl(250, 30%, 30% );
+	
+}
+.message-paragraph{
+    color : #00aced;
+}
+.message-div{
+    width: 64%;
+}

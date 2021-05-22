@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+	    <link th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}" rel = "stylesheet"></link>
+	    <link rel = "stylesheet" th:href="@{/css/introtojava.css}"></link>
+        <title>Introduction To Java Programming</title>
+    </head>
+    <body>
+	<div class = "container-fluid">
+            <div class = "row">
+                <div class = "col-md-12 mb-3">
+                    <ul id = "Header_Items">					
+						<li class = "Header_Item"><a href = "#" th:href = "@{/home}" class = "Header_Link" style = "color : white;">Home</a></li>
+                        <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
+                        <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
+                        <li class = "Header_Item"><a href="IntroToPython.html" th:href = "@{/python}" class = "Header_Link">Python</a></li>
+			            <li class = "Header_Item"><a href="SessionRequest.html" th:href = "@{/sessionbooking}" class = "Header_Link">Consultation</a></li>
+                        <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
+                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" id="SignIn_Page_Link" class = "Header_Link" 
+		                  target = "_blank">Login/SignIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+                    <h2 class = "Heading">Part I: Fundamentals of Programming</h2>	
+                    <ul class = "Chapter" id = "Part_One">
+						<li id = "Chapter_One"><a th:href="@{/part/one/{1}}"> Chapter 1 : Introduction to Computers, Programs, and Java </a></li>
+						<li id = "Chapter_Two"><a th:href="@{/part/one/{2}}"> Chapter 2 : Elementary Programming</a></li>
+						<li id = "Chapter_Three"><a th:href="@{/part/one/{3}}"> Chapter 3 : Selections</a></li>
+						<li id = "Chapter_Four"><a th:href="@{/part/one/{4}}"> Chapter 4 : Mathematical Functions, Characters,and Strings </a></li>
+						<li id = "Chapter_Five"><a th:href="@{/part/one/{5}}"> Chapter 5 : Loops</a></li>
+						<li id = "Chapter_Six"><a th:href="@{/part/one/{6}}"> Chapter 6 : Methods</a></li>
+						<li id = "Chapter_Seven"><a th:href="@{/part/one/{7}}"> Chapter 7 : Single-Dimensional Arrays </a></li>
+						<li id = "Chapter_Eight"><a th:href="@{/part/one/{8}}"> Chapter 8 : Multidimensional Arrays</a></li>
+	                </ul> 
+				</div>
+			</div>
+        	<div class = "row">
+				<div class = "col-md-12 Part">
+		            <h2 class = "Heading">Part II: Object-Oriented Programming</h2>
+			       	<ul class = "Chapter" id = "Part_Two">
+			          	<li id = "Chapter_Nine"><a th:href="@{/part/two/{9}}">Chapter 9 : Objects and Classes</a></li>
+						<li id = "Chapter_Ten"><a th:href="@{/part/two/{10}}">Chapter 10 : Thinking in Objects</a></li>
+						<li id = "Chapter_Eleven"><a th:href="@{/part/two/{11}}"> Chapter 11 : Inheritance and Polymorphism</a></li>
+						<li id = "Chapter_Twelve"><a th:href="@{/part/two/{12}}"> Chapter 12 : Exception Handling and Text I/O</a></li>
+						<li id = "Chapter_Thirteen"><a  th:href="@{/part/two/{13}}"> Chapter 13 : Abstract Classes and Interfaces</a></li>
+						<li id = "Chapter_Seventeen"><a th:href="@{/part/two/{17}}"> Chapter 17 : Binary I/O</a></li>
+					</ul>
+				</div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+                    <h2 class = "Heading">Part III: GUI Programming</h2>
+	                <ul class = "Chapter" id = "Part_Three">			
+						<li id = "Chapter_Fourteen"><a th:href="@{/part/three/{14}}">Chapter 14 : JavaFX Basics</a></li>
+						<li id = "Chapter_Fifteen"><a th:href="@{/part/three/{15}}">Chapter 15 : Event-Driven Programming and Animations</a></li>
+						<li id = "Chapter_Sixteen"><a th:href="@{/part/three/{16}}">Chapter 16 :JavaFX Controls and Multimedia</a></li>		
+				    </ul>
+				</div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+                    <h2 class = "Heading">Part IV: Data Structures And Algorithms</h2>	
+	                <ul class = "Chapter" id = "Part_Four">
+                            <li id = "Chapter_Eighteen"><a th:href="@{/part/four/{18}}"> Chapter 18 : Recursion</a></li>
+                            <li id = "Chapter_Nineteen"><a th:href="@{/part/four/{19}}"> Chapter 19 : Generics</a></li>
+                            <li id = "Chapter_Twenty"><a th:href="@{/part/four/{20}}"> Chapter 20 : Lists, Stacks, Queues and Priority Queues</a></li>
+                            <li id = "Chapter_Twenty_One"><a th:href="@{/part/four/{21}}"> Chapter 21 : Sets and Maps</a></li>
+                            <li id = "Chapter_Twenty_Two"><a th:href="@{/part/four/{22}}"> Chapter 22 : Developing Efficient Algorithms</a></li>
+                            <li id = "Chapter_Twenty_Three"><a th:href="@{/part/four/{23}}"> Chapter 23 : Sorting</a></li>
+                            <li id = "Chapter_Twenty_Four"><a th:href="@{/part/four/{24}}"> Chapter 24 : Implementing Lists,Stacks, Queues, and Priority Queues</a></li>
+                            <li id = "Chapter_Twenty_Five"><a th:href="@{/part/four/{25}}"> Chapter 25 : Binary Search Trees</a></li>
+                            <li id = "Chapter_Twenty_Six"><a th:href="@{/part/four/{26}}"> Chapter 26 : AVL Trees</a></li>
+                            <li id = "Chapter_Twenty_Seven"><a th:href="@{/part/four/{27}}">Chapter 27 : Hashing</a></li>
+                            <li id = "Chapter_Twenty_Eight"><a th:href="@{/part/four/{28}}">Chapter 28 : Graphs and Applications</a></li>
+                            <li id = "Chapter_Twenty_Nine"><a th:href="@{/part/four/{29}}">Chapter 29 : Weighted Graphs and Applications</a></li>
+	                </ul>
+                </div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+                    <h2 class = "Heading">Part V: Advanced Java Programming</h2>
+	                <ul class = "Chapter" id = "Part_Five">
+	                	<li id = "Chapter_Thirty"><a th:href="@{/part/five/{30}}">Chapter 30 : Multithreading and Parallel Programming</a></li>
+	                    <li id = "Chapter_Thirty_One"><a th:href="@{/part/five/{31}}">Chapter 31 : Networking</a></li>
+	                    <li id = "Chapter_Thirty_Two"><a th:href="@{/part/five/{32}}">Chapter 32 : Java Database Programming</a></li>
+						<li id = "Chapter_Thirty_Three"><a th:href="@{/part/five/{33}}">Chapter 33 : JavaServer Faces</a></li>
+	                </ul>
+				</div>
+            </div>
+		</div>
+    </body>  
+</html>

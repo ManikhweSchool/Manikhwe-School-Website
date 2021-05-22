@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+#Header_Items{
+	list-style-type : none;
+	margin : 0px;
+	padding : 20px 0px;
+	background : hsl(250, 30%, 30% );
+	overflow : hidden;
+}
+.Header_Item{
+	display : inline;
+	font-size : 20px;
+	margin : 0px;
+		
+}
+.Header_Link{
+	text-decoration : none;
+	text-align : center;
+	
+	margin : 0px;
+	padding : 5px 3%;
+	color : white;
+}
+.Header_Link:hover:not(#Active_Page_Link):not(#SignIn_Page_Link){
+	color : blue;
+}
+#Active_Page_Link{
+	color : white;
+}
+.Header_Link:hover{
+	text-decoration : none;
+}
+#SignIn_Page_Link{
+	float : right;
+	background-color : blue;
+}
+#SignIn_Page_Link:hover{
+	color : hsl(250, 30%, 30% );
+}

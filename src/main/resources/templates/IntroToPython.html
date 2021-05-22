@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+	    <link th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}" rel = "stylesheet"></link>
+	    <link rel = "stylesheet" th:href="@{/css/introtojava.css}"></link>
+        <title>A Practical Introduction To Python Programming</title>
+    </head>
+    <body>
+	<div class = "container-fluid">
+            <div class = "row">
+                <div class = "col-md-12 mb-3">
+                    <ul id = "Header_Items">					
+						<li class = "Header_Item"><a href = "#" th:href = "@{/home}" class = "Header_Link" style = "color : white;">Home</a></li>
+                        <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
+                        <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
+                        <li class = "Header_Item"><a href="IntroToJava.html" th:href = "@{/java}" class = "Header_Link">Java</a></li>
+			            <li class = "Header_Item"><a href="SessionRequest.html" th:href = "@{/sessionbooking}" class = "Header_Link">Consultation</a></li>
+                        <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
+                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" id="SignIn_Page_Link" class = "Header_Link" 
+		                  target = "_blank">Login/SignIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+                    <h2 class = "Heading">Part I: Basics</h2>	
+                    <ul class = "Chapter" id = "Part_One">
+						<li id = "Chapter_One"><a th:href="@{/python/part/one/{1}}"> Chapter 1 : Getting Started </a></li>
+						<li id = "Chapter_Two"><a th:href="@{/python/part/one/{2}}"> Chapter 2 : For Loops</a></li>
+						<li id = "Chapter_Three"><a th:href="@{/python/part/one/{3}}"> Chapter 3 : Numbers</a></li>
+						<li id = "Chapter_Four"><a th:href="@{/python/part/one/{4}}"> Chapter 4 : If Statements</a></li>
+						<li id = "Chapter_Five"><a th:href="@{/python/part/one/{5}}"> Chapter 5 : Miscellaneous Topics I</a></li>
+						<li id = "Chapter_Six"><a th:href="@{/python/part/one/{6}}"> Chapter 6 : Strings</a></li>
+						<li id = "Chapter_Seven"><a th:href="@{/python/part/one/{7}}"> Chapter 7 : Lists </a></li>
+						<li id = "Chapter_Eight"><a th:href="@{/python/part/one/{8}}"> Chapter 8 : More With Lists</a></li>
+						<li id = "Chapter_Nine"><a th:href="@{/python/part/one/{9}}"> Chapter 9 : While Loops</a></li>
+						<li id = "Chapter_Ten"><a th:href="@{/python/part/one/{10}}"> Chapter 10 : Miscellaneous Topics II</a></li>
+						<li id = "Chapter_Eleven"><a th:href="@{/python/part/one/{11}}"> Chapter 11 : Dictionaries</a></li>
+						<li id = "Chapter_Twelve"><a th:href="@{/python/part/one/{12}}"> Chapter 12 : Text Files</a></li>
+						<li id = "Chapter_Thirteen"><a th:href="@{/python/part/one/{13}}"> Chapter 13 : Functions</a></li>
+						<li id = "Chapter_Fourteen"><a th:href="@{/python/part/one/{14}}"> Chapter 14 : Object-Oriented Programming</a></li>
+	                </ul> 
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-12 Part">
+			    	<h2 class = "Heading">Part II: Graphics</h2>
+				    <ul class = "Chapter" id = "Part_Two">
+				     	<li id = "Chapter_Fifteen"><a th:href="@{/part/two/{15}}">Chapter 15 : GUI Programming with Tkinter</a></li>
+						<li id = "Chapter_Sixteen"><a th:href="@{/part/two/{16}}">Chapter 16 : GUI Programming II</a></li>
+						<li id = "Chapter_Seventeen"><a th:href="@{/part/two/{17}}"> Chapter 17 : GUI Programming III</a></li>
+						<li id = "Chapter_Eighteen"><a th:href="@{/part/two/{18}}"> Chapter 18 : Further Graphical Programming</a></li>
+					</ul>
+				</div>
+            </div>
+            <div class = "row">
+				<div class = "col-md-12 Part">
+	            	<h2 class = "Heading">Part III: GUI Programming</h2>
+		            <ul class = "Chapter" id = "Part_Three">			
+						<li id = "Chapter_Nineteen"><a  th:href="@{/python/part/three/{19}}"> Chapter 19 : Miscellaneous topics III</a></li>
+						<li id = "Chapter_Twenty"><a th:href="@{/python/part/three/{20}}"> Chapter 20 : Useful modules</a></li>
+						<li id = "Chapter_Twenty_One"><a th:href="@{/python/part/three/{21}}">Chapter 21 :Regular expressions</a></li>
+						<li id = "Chapter_Twenty_Two"><a th:href="@{/python/part/three/{22}}">Chapter 22 :Math</a></li>		
+						<li id = "Chapter_Twenty_Three"><a th:href="@{/python/part/three/{23}}">Chapter 23 :Working With Functions</a></li>	
+						<li id = "Chapter_Twenty_Four"><a th:href="@{/python/part/three/{24}}">Chapter 24 :The itertools and collections modules</a></li>		
+						<li id = "Chapter_Twenty_Five"><a th:href="@{/python/part/three/{25}}">Chapter 25 :Exceptions</a></li>				
+					</ul>
+				</div>
+	        </div>
+		</div>
+	</body>
+</html>
