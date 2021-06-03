@@ -42,7 +42,7 @@ public class SeveralAlbumsExtractionTask extends ExtractionTask{
 	private ArtistController artistController;
 	
 	// Current Album
-	private Album album;
+	private Album album; 
 	
 	// Current Album's artists.
 	private ArrayList<Artist> artists;
@@ -55,6 +55,9 @@ public class SeveralAlbumsExtractionTask extends ExtractionTask{
 	
 	// Artists that are already saved in the database.
 	private ArrayList<Artist> storedArtists;
+	
+	// Id's for artists used to splits trackArtists array.
+	private int seperatorId = 0;
  	
 	public SeveralAlbumsExtractionTask() {
 		
@@ -101,122 +104,54 @@ public class SeveralAlbumsExtractionTask extends ExtractionTask{
 			try {
 				scanner = new Scanner(file);
 				while(scanner.hasNext()) {
-				album = new Album();
-				artists = new ArrayList<>();
-				
-				trackArtists = new ArrayList<>();
-				albumTracks = new ArrayList<>();
-				
-				dealWithArtists();
-				dealWithAlbum();
-				dealWithManyTracks();
-				dealWithAlbumLastInfo();
-							
-				albumController.saveAlbum(album);
-				
-				for(Track track : albumTracks) {
-					track.setAlbum(album);
-					trackController.saveMusic(track);
+					album = new Album();
+					artists = new ArrayList<>();
 					
-				}
-				album.setTracks(albumTracks);
-				
-				if(storedArtists==null) {
-					for(Artist artist : artists) 
-						artist.getAlbums().add(album);
-					artistController.saveAllArtist(artists);
-					album.setArtists(artists);
-				}
-				/* Artists that are already on the database 
-				 * cannot be mapped to their corresponding 
-				 * album.*/
-				else {
+					trackArtists = new ArrayList<>();
+					albumTracks = new ArrayList<>();
 					
-					for(Artist artist : artists) {
-						Optional<Artist> optionalArtist = 
-						artistController.findArtist(
-						artist.getArtistId());
+					dealWithArtists();
+					dealWithAlbum();
+					dealWithManyTracks();
+					dealWithAlbumLastInfo();
+								
+					albumController.saveAlbum(album);
+					
+					if(storedArtists==null) {
+						for(Artist artist : artists) 
+							artist.getAlbums().add(album);
+						artistController.saveAllArtist(artists);
+						album.setArtists(artists);
+					}
+					/* Artists that are already on the database 
+					 * cannot be mapped to their corresponding 
+					 * album.*/
+					else {
 						
-						if(optionalArtist.isPresent()) {
-							Artist artistFromDB = optionalArtist.get();
-							for(Artist a : storedArtists) {
-								if(artistFromDB.equals(a)) {
-									a.addAlbum(album);
-									album.getArtists().add(a);
-									System.out.println(a.getArtistId() 
-									+ " already in the db.");
-									break;
-								}
-									
-							}
-							
-						}
-						else {
-							System.out.println(artist.getArtistId() 
-							+ " isn't on the db.");
+						for(Artist artist : artists) {
 							artist.addAlbum(album);
 							artistController.saveArtist(artist);
 							album.getArtists().add(artist);
-						}
-					}
-				}
-				int i = 0;
-				
-				for(Track track : (ArrayList<Track>) album.getTracks()) {
-					
-					while(i<trackArtists.size() && trackArtists.get(i) != null) {
-						
-						if(storedArtists==null) {
-							Artist artist = trackArtists.get(i++);
-							artist.getAlbums().add(album);
-							track.setAlbum(album);
-							trackController.saveMusic(track);
-							artist.getTracks().add(track);
-							artistController.saveArtist(artist);
-							track.addArtist(artist);
-						}
-
-						/* Artists that are already on the database 
-						 * cannot be mapped to their corresponding 
-						 * album.*/
-						else {
-							Artist artist = trackArtists.get(i++);
-							Optional<Artist> optionalArtist = 
-							artistController.findArtist(artist.getArtistId());
-							if(optionalArtist.isPresent()) {
-								
-								Artist artistFromDB = optionalArtist.get();
-								for(Artist a : storedArtists) {
-									if(artistFromDB.equals(a)) {
-										a.addAlbum(album);
-										album.getArtists().add(a);
-										System.out.println(a.getArtistId() 
-										+ " already in the db.");
-										track.setAlbum(album);
-										trackController.saveMusic(track);
-										a.getTracks().add(track);
-										track.addArtist(a);
-										break;
-									}
-										
-								}
-								
-							}
-							else {
 							
-								artist.getAlbums().add(album);
-								track.setAlbum(album);
-								trackController.saveMusic(track);
-								artist.getTracks().add(track);
-								artistController.saveArtist(artist);
-								track.addArtist(artist);
-							}
 						}
-						
-						
 					}
-					i++;
-				}
+					
+					int i = 0;
+					
+					for(Track track : albumTracks/*(ArrayList<Track>) album.getTracks()*/) {
+		
+						while(i<trackArtists.size() && 
+						!trackArtists.get(i).getArtistId().startsWith("sep")) {
+							Artist artist = trackArtists.get(i++);
+							
+							artist.getAlbums().add(album);
+							artist.getTracks().add(track);
+							track.setAlbum(album);
+							track.addArtist(artist);
+							trackController.saveMusic(track);
+						}
+						i++;
+					}
 				}
 				scanner.close();
 			} catch (FileNotFoundException e) {
@@ -561,7 +496,12 @@ public class SeveralAlbumsExtractionTask extends ExtractionTask{
 				albumTracks.add(track);
 				
 				hasDeltWithTrackMarkets = false;
-				trackArtists.add(null);
+				
+				Artist seperator = new Artist();
+				seperator.setArtistId("seperator" + ++seperatorId);
+				trackArtists.add(seperator);
+				
+				
 				track = new Track();
 			}
 		}

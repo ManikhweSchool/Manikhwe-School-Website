@@ -14,30 +14,21 @@ body{
 
 .color-two{
 	background-color : hsl(250, 30%, 30% );
+	
 }
 
 .color-one{
 	background-color : blue;
 }
 
-.slide-container{
-	width : 275px;
-	height : 183px;
+.ball1{
+	font: 1em sans-serif;;
 }
 
-.image-container{
-	width : 825px;
-	height : 183px;
-	position : relative;
-	transition : left 2s;
-	-webkit-transition : left 2s;
-	-moz-transition : left 2s;
-	-o-transition : left 2s;
-}
 
 .area{
-	background-color : silver;
-	text-align : center;
+	background-color : #b8daff;
+	text-align : left;
 	font-size : large;
 	min-height : 90vh;
 }
@@ -50,14 +41,19 @@ body{
     animation-duration : 136s;
 }
 
+.Heading{
+	border : 5px solid hsl(250, 30%, 30% );
+	text-align : center;
+	margin-left : 10px;
+}
+
 #Header_Items{
 	list-style-type : none;
 	margin : 0px;
 	padding : 20px 0px;
 	background : hsl(250, 30%, 30% );
-	overflow : hidden;
+	
 }
-
 .Header_Item{
 	display : inline;
 	font-size : 20px;
@@ -74,19 +70,29 @@ body{
 }
 .Header_Link:hover:not(#Active_Page_Link):not(#SignIn_Page_Link){
 	color : blue;
+	
+}
+.Header_Link:hover{
 	text-decoration : none;
 }
-
+#Active_Page_Link{
+	color : white;
+}
 #SignIn_Page_Link{
 	float : right;
 	background-color : blue;
+	color : white;
 }
 #SignIn_Page_Link:hover{
-	color : hsl(250, 30%, 30% );
+	color : hsl(250, 30%, 30% );	
+	
 }
-
-<!--I donot know how to replace this with an inline style-->
-#Active_Page_Link:hover{
-	color : white;
-	text-decoration : none;
+.advert-space{
+	min-height : 40vh;
+        width : 100%;
+	border : 2px solid blue;
+	margin-left : 20px;
+        margin-right : 20px;
+	margin-top : 10px;
+        margin-bottom : 10px;
 }

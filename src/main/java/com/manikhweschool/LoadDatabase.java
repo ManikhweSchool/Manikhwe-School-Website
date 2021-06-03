@@ -49,7 +49,7 @@ class LoadDatabase {
          * Store Albums' Ids In The File For 
          * Each Artist.
          * */
-        fetchManyArtistAlbums();
+        //fetchManyArtistAlbums();
         
         /*Step 3 - Fetch Several Albums Based
          * On The Given Artists.*/

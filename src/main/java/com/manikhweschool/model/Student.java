@@ -59,7 +59,7 @@ public class Student implements Comparable<Student>,Serializable{
     private Collection<String> courses = new HashSet<>();;
 	
     @OneToMany
-    private Set<Session> sessions;
+    private Set<MySession> sessions;
     
     @OneToMany(mappedBy="student")
     private List<Rhythm> rhythms;
@@ -158,15 +158,15 @@ public class Student implements Comparable<Student>,Serializable{
 		this.courses = courses;
 	}
 	
-	public void addSession(Session session) {
+	public void addSession(MySession session) {
 		sessions.add(session);
 	}
 
-	public Set<Session> getSessions() {
+	public Set<MySession> getSessions() {
 		return sessions;
 	}
 
-	public void setSessions(Set<Session> sessions) {
+	public void setSessions(Set<MySession> sessions) {
 		this.sessions = sessions;
 	}
 	

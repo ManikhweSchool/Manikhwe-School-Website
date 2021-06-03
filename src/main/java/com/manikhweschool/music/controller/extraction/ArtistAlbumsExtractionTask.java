@@ -16,6 +16,7 @@ import java.util.TreeSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.manikhweschool.music.controller.AlbumController;
 import com.manikhweschool.music.controller.ArtistController;
 import com.manikhweschool.music.model.Album;
 import com.manikhweschool.music.model.Artist;
@@ -33,6 +34,7 @@ public class ArtistAlbumsExtractionTask extends ExtractionTask{
 	
 	@Autowired
 	private ArtistController artistController;
+	
 	
 	private boolean limitRiched = false;
 	
@@ -74,9 +76,11 @@ public class ArtistAlbumsExtractionTask extends ExtractionTask{
 					
 					PrintWriter writer = new PrintWriter("Albums_Needed.txt");
 					
-					for(Album album : albums)
+					for(Album album : albums) {
 						writer.println(album.getAlbumId());
-					
+						System.out.print(album.getAlbumId() + "\t");
+					}
+					System.out.println();
 					writer.close();
 
 				}catch(IOException exception) {
