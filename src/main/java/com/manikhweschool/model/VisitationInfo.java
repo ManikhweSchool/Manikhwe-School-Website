@@ -1,5 +1,6 @@
 package com.manikhweschool.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -11,6 +12,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.stereotype.Component;
@@ -19,7 +22,11 @@ import org.springframework.stereotype.Component;
 @Table(name = "VISITATION_INFO")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Component
-public class VisitationInfo {
+public class VisitationInfo implements HttpSessionBindingListener,
+Serializable{
+
+	
+	private static final long serialVersionUID = -1992466193675255606L;
 
 	@Id	
 	@Column(name = "Date", nullable = false, updatable = false)
@@ -128,6 +135,14 @@ public class VisitationInfo {
 		chapterTwentyFourDayVisitors = 0;
 		chapterTwentyFiveDayVisitors = 0;
 
+	}
+	
+	public void valueBound(HttpSessionBindingEvent event) {
+		// Code to run now that I'm in a session.
+	}
+	
+	public void valueUnbound(HttpSessionBindingEvent event) {
+		// Code to run now that I'm no longer in a session.
 	}
 	
 	public void increaseChapterOneDayVisitors() {

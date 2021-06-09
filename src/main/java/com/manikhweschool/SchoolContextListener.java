@@ -58,6 +58,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 			String instructorEmail = sc.getInitParameter("instructorEmail");
 			sc.setAttribute("instructorEmail", instructorEmail);
 		}
+		
+		System.out.println("Portion Reached...");
 	}
 	
 	@Override

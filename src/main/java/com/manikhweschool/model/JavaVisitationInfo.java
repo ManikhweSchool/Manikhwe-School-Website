@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Table(name = "JAVA_VISITATION_INFO")
 @Component
 public class JavaVisitationInfo extends VisitationInfo 
-implements Serializable{
+{
 
 	private static final long serialVersionUID = -3694201522247437996L;
 	
