@@ -8,6 +8,64 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ChapterController {
 
+	@RequestMapping(value="/python/part/one/{chapter}", method = RequestMethod.GET)
+	public String visitPythonPartOne(@PathVariable("chapter") String chapter){
+		
+		String page = "Python/Part_One_Pages/Chapter";
+		switch(chapter) {
+		case "{1}" : page += "One"; break;
+		case "{2}" : page += "Two"; break;
+		case "{3}" : page += "Three"; break;
+		case "{4}" : page += "Four"; break;
+		case "{5}" : page += "Five"; break;
+		case "{6}" : page += "Six"; break;
+		case "{7}" : page += "Seven"; break;
+		case "{8}" : page += "Eight"; break;
+		case "{9}" : page += "Nine"; break;
+		case "{10}" : page += "Ten"; break;
+		case "{11}" : page += "Eleven"; break;
+		case "{12}" : page += "Twelve"; break;
+		case "{13}" : page += "Thirteen"; break;
+		default : page += "Forteen"; break;
+		
+		}
+		
+		return page;
+	}
+	
+	@RequestMapping(value="/python/part/two/{chapter}", method = RequestMethod.GET)
+	public String visitPythonPartTwo(@PathVariable("chapter") String chapter){
+		
+		String page = "Python/Part_Two_Pages/Chapter";
+		
+		switch(chapter) {
+		case "{15}" : page += "Fiftheen"; break;
+		case "{16}" : page += "Sixteen"; break;
+		case "{17}" : page += "Seventeen"; break;
+		default : page += "Eighteen";
+		}
+		
+		return page;
+	}
+	
+	@RequestMapping(value="/python/part/three/{chapter}", method = RequestMethod.GET)
+	public String visitPythonPartThree(@PathVariable("chapter") String chapter){
+		
+		String page = "Python/Part_Three_Pages/Chapter";
+		
+		switch(chapter) {
+		case "{19}" : page += "Nineteen"; break;
+		case "{20}" : page += "Twenty"; break;
+		case "{21}" : page += "TwentyOne"; break;
+		case "{22}" : page += "TwentyTwo"; break;
+		case "{23}" : page += "TwentyThree"; break;
+		case "{24}" : page += "TwentyFour"; break;
+		default : page += "TwentyFive";
+		}
+		
+		return page;
+	}
+	
 	@RequestMapping(value="/part/one/{chapter}", method = RequestMethod.GET)
 	public String visitPartOne(@PathVariable("chapter") String chapter){
 		
