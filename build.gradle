@@ -34,10 +34,15 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// compile 'com.google.api-client:google-api-client:1.30.10'
+	
 	// https://mvnrepository.com/artifact/org.springframework.session/spring-session-core
 	implementation group: 'org.springframework.session', name: 'spring-session-core', version: '2.4.0'
 	// https://mvnrepository.com/artifact/org.springframework.session/spring-session-jdbc
 	implementation group: 'org.springframework.session', name: 'spring-session-jdbc', version: '2.4.0'
+	
+	// https://mvnrepository.com/artifact/se.michaelthelin.spotify/spotify-web-api-java
+	implementation group: 'se.michaelthelin.spotify', name: 'spotify-web-api-java', version: '6.5.4'
+	
 	
 }
 

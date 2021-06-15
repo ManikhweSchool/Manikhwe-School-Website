@@ -1,15 +1,19 @@
 package com.manikhweschool;
 
 import java.io.FileNotFoundException;
+import java.util.GregorianCalendar;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.manikhweschool.controller.TodayVisitationController;
 import com.manikhweschool.model.JavaVisitationInfo;
+import com.manikhweschool.model.PythonVisitationInfo;
+import com.manikhweschool.model.TodayVisitation;
 
 // I need to know where do I specify initial parameters and listeners.
 /* The class plays two roles, one as a tool for specifying 
@@ -19,47 +23,45 @@ import com.manikhweschool.model.JavaVisitationInfo;
 @Component
 public class SchoolContextListener implements ServletContextListener, Runnable {
 
-	private JavaVisitationInfo javaVisitationInfo;
+	private TodayVisitation todayVisitation;
 	
 	private byte hour;
+	private byte day;
 	
 	private boolean dayHasPassed;
+	private boolean weekHasPassed;
 	
+	@Autowired
 	private ServletContext sc;
+	
+	@Autowired
+	private TodayVisitationController controller;
 	
 	
 	public SchoolContextListener() throws FileNotFoundException {
 
-		
-		javaVisitationInfo = new JavaVisitationInfo();
 		hour = 0;
-		dayHasPassed = true;
+		day = 0;
+		dayHasPassed = false;
+		weekHasPassed = false;
+		todayVisitation = new TodayVisitation(
+		new GregorianCalendar(),
+		new JavaVisitationInfo(),
+		new PythonVisitationInfo());
 	}
 	
 	// Make my credentials available to all of my pages.
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		
-		if(sc==null)
-			sc = event.getServletContext();
-		else
-			System.out.println("Context Initialized");
-		
 		synchronized(sc) {
 			
-			sc.setAttribute("javaVisitationInfo", javaVisitationInfo);
-			
-			String instructorName = sc.getInitParameter("instructorName");
-			sc.setAttribute("instructorName", instructorName);
-			
-			String instructorSurname = sc.getInitParameter("instructorSurname");
-			sc.setAttribute("instructorSurname", instructorSurname);
-			
-			String instructorEmail = sc.getInitParameter("instructorEmail");
-			sc.setAttribute("instructorEmail", instructorEmail);
+			sc.setAttribute("todayVisitation", todayVisitation);
+			new Thread(this).start();
 		}
 		
-		System.out.println("Portion Reached...");
+		
+	   	
 	}
 	
 	@Override
@@ -72,23 +74,31 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 		
 		try {
 		while(true) {
-			Thread.sleep(1000*60*60);
+			Thread.sleep(1000*60*60*24);
 			//Thread.sleep(1000);
-			hour++;
-			if(hour==24) {
-				hour = 0;
-				dayHasPassed = true;
-			}
-			else if(dayHasPassed && 
-			hour==1 && sc != null) {
+			//hour++;
+			day++;
+			if(/*hour==24*/day==7) {
+				/*hour = 0;
+				dayHasPassed = true;*/
 				
-				javaVisitationInfo = new JavaVisitationInfo();
-				//sc.removeAttribute("javaVisitationInfo");
-				sc.setAttribute("javaVisitationInfo", javaVisitationInfo);
+				weekHasPassed = true;
+				day = 0;
+				
 				
 			}
-			System.out.println(hour);
-			
+			else if(/*dayHasPassed && 
+			hour==1*/ weekHasPassed && day==1) {
+				
+				controller.save((TodayVisitation)sc.getAttribute("todayVisitation"));
+				sc.setAttribute("todayVisitation", 
+					new TodayVisitation(
+						new GregorianCalendar(),
+						new JavaVisitationInfo(),
+						new PythonVisitationInfo()
+					)
+				);
+			}		
 		}
 		}catch(InterruptedException ex) {
 			

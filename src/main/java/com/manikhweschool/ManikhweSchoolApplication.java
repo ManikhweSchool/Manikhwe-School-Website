@@ -26,9 +26,6 @@ public class ManikhweSchoolApplication extends SpringBootServletInitializer{
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-
-        	/*Thread thread = new Thread(new SchoolContextListener());
-   	   	 	thread.start();*/
 	   
         }; 
         
