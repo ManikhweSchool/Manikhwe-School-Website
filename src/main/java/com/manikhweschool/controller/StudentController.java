@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.manikhweschool.model.Student;
+import com.manikhweschool.model.TodayVisitation;
 import com.manikhweschool.service.StudentService;
 
 @Controller
@@ -29,14 +32,34 @@ public class StudentController {
 	private Student student;
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
-	public String signIn(Model model) {
+	public String signIn(Model model, HttpSession session) {
+		
+		if(session.getAttribute("firstTimeVisit")==null) {
+			session.setAttribute("canAccessJava", false);
+			session.setAttribute("canAccessPython", false);
+			session.setAttribute("firstTimeVisit", true);
+			
+		}
+		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
+			session.setAttribute("firstTimeVisit", false);
+		}
 		
 		model.addAttribute("student", student);
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			System.out.println("Session Created...");
+		}
+		
 		return "SignIn";
 	}
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
-	public String signIn(@ModelAttribute(name="student")Student student, Model model) {
+	public String signIn(
+	@ModelAttribute(name="student")
+	Student student, Model model) {
 		
 		String status;
 		String page;
@@ -61,9 +84,27 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model) {
+	public String login(Model model, HttpSession session) {
+		
+		if(session.getAttribute("firstTimeVisit")==null) {
+			session.setAttribute("canAccessJava", false);
+			session.setAttribute("canAccessPython", false);
+			session.setAttribute("firstTimeVisit", true);
+			
+		}
+		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
+			session.setAttribute("firstTimeVisit", false);
+		}
 		
 		model.addAttribute("student", student);
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			System.out.println("Session Created...");
+		}
+		
 		return "Login";
 	}
 	
@@ -115,8 +156,25 @@ public class StudentController {
 	
 	@RequestMapping(value = "/games", 
 	method = RequestMethod.GET)
-	public String visitGames() {
-						
+	public String visitGames(HttpSession session) {
+					
+		if(session.getAttribute("firstTimeVisit")==null) {
+			session.setAttribute("canAccessJava", false);
+			session.setAttribute("canAccessPython", false);
+			session.setAttribute("firstTimeVisit", true);
+			
+		}
+		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
+			session.setAttribute("firstTimeVisit", false);
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			System.out.println("Session Created...");
+		}
+		
 		return "Games";
 	}
 	

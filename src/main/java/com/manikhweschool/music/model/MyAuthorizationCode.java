@@ -1,7 +1,6 @@
 package com.manikhweschool.music.model;
 
 import com.wrapper.spotify.SpotifyApi;
-import com.wrapper.spotify.SpotifyHttpManager;
 import com.wrapper.spotify.exceptions.SpotifyWebApiException;
 import com.wrapper.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 import com.wrapper.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
@@ -13,34 +12,60 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 
+// Create an instance of this class secondly.
 public class MyAuthorizationCode {
-  private static final String clientId = "bac757d75af0458e9eda632244424997";
-  private static final String clientSecret = "";
-  private static final URI redirectUri = SpotifyHttpManager.makeUri("https://manikhwe-programming-school.herokuapp.com/");
-  private static final String code = "";
+  private static String clientId;
+  private static String clientSecret;
+  private static URI redirectUri;
+  private static String code;
 
-  private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-    .setClientId(clientId)
-    .setClientSecret(clientSecret)
-    .setRedirectUri(redirectUri)
-    .build();
-  private static final AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(code)
-    .build();
+  private static SpotifyApi spotifyApi;
+  private static AuthorizationCodeRequest authorizationCodeRequest;
 
-  public MyAuthorizationCode() {
-	  authorizationCode_Sync();
-	  authorizationCode_Async();
+  public static void createMyAuthorizationCode(String clientId, 
+  String clientSecret, URI redirectUri, String code) {
+	  MyAuthorizationCode.clientId = clientId;
+	  MyAuthorizationCode.clientSecret = clientSecret;
+	  MyAuthorizationCode.redirectUri = redirectUri;
+	  MyAuthorizationCode.code = code;
+	  
+	  spotifyApi = new SpotifyApi.Builder()
+	  .setClientId(MyAuthorizationCode.clientId)
+      .setClientSecret(MyAuthorizationCode.clientSecret)
+	  .setRedirectUri(MyAuthorizationCode.redirectUri)
+	  .build();
+	  
+	  authorizationCodeRequest = 
+	  spotifyApi.authorizationCode(MyAuthorizationCode.code)
+	  .build();
+  }
+  
+  public static void goToThirdStep(String refreshToken) {
+	  
+	  MyAuthorizationCodeRefresh.createMyAuthorizationCodeRefresh(
+	  clientId, clientSecret, refreshToken);
+      MyAuthorizationCodeRefresh.authorizationCodeRefresh_Sync();
   }
   
   public static void authorizationCode_Sync() {
     try {
+    	
       final AuthorizationCodeCredentials authorizationCodeCredentials = authorizationCodeRequest.execute();
-
+      
+      System.out.println("Access Token - " + authorizationCodeCredentials.getAccessToken());
+      System.out.println("Refresh Token - " + authorizationCodeCredentials.getRefreshToken());
+      
       // Set access and refresh token for further "spotifyApi" object usage
       spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
       spotifyApi.setRefreshToken(authorizationCodeCredentials.getRefreshToken());
 
+      System.out.println("Specified Scopes : " + authorizationCodeCredentials.getScope());
+      
       System.out.println("Expires in: " + authorizationCodeCredentials.getExpiresIn());
+      System.out.println("==================End Of Step Two===============================");
+      goToThirdStep(authorizationCodeCredentials.getRefreshToken());
+      
+    
     } catch (IOException | SpotifyWebApiException | ParseException e) {
       System.out.println("Error: " + e.getMessage());
     }

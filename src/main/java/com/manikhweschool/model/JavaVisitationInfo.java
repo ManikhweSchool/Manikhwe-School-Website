@@ -101,11 +101,12 @@ Serializable{
 	
 	public void valueBound(HttpSessionBindingEvent event) {
 		// Code to run now that I'm in a session.
-		System.out.println();
+		System.out.println("now that I'm in a session");
 	}
 	
 	public void valueUnbound(HttpSessionBindingEvent event) {
 		// Code to run now that I'm no longer in a session.
+		System.out.println("now that I'm no longer in a session");
 	}
 	
 	

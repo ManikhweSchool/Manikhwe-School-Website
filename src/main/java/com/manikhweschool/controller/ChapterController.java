@@ -119,6 +119,13 @@ public class ChapterController {
 		
 		}
 		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
+		}
+		
 		return page;
 	}
 	
@@ -157,6 +164,13 @@ public class ChapterController {
 			.getAttribute("todayVisitation"))
 			.getPythonVisitationInfo()
 			.increaseChapterEighteenDayVisitors();
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
 		}
 		
 		return page;
@@ -218,6 +232,13 @@ public class ChapterController {
 			.getAttribute("todayVisitation"))
 			.getPythonVisitationInfo()
 			.increaseChapterTwentyFiveDayVisitors();
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
 		}
 		
 		return page;
@@ -287,6 +308,13 @@ public class ChapterController {
 			.increaseChapterEightDayVisitors();
 		}
 		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
+		}
+		
 		return page;
 	}
 	
@@ -341,6 +369,13 @@ public class ChapterController {
 			.increaseChapterSeventeenDayVisitors();
 		}
 		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
+		}
+		
 		return page;
 	}
 	
@@ -373,6 +408,13 @@ public class ChapterController {
 			.getAttribute("todayVisitation"))
 			.getJavaVisitationInfo()
 			.increaseChapterSixteenDayVisitors();
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
 		}
 		
 		return page;
@@ -471,6 +513,13 @@ public class ChapterController {
 			.increaseChapterTwentyNineDayVisitors();
 		}
 		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
+		}
+		
 		return page;
 	}
 	
@@ -509,6 +558,13 @@ public class ChapterController {
 			.getAttribute("todayVisitation"))
 			.getJavaVisitationInfo()
 			.increaseChapterThirtyThreeDayVisitors();
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
 		}
 		
 		return page;

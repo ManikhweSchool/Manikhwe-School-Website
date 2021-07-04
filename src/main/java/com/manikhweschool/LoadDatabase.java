@@ -15,7 +15,8 @@ import com.manikhweschool.music.controller.extraction.SeveralAlbumsExtractionTas
 import com.manikhweschool.music.controller.extraction.SeveralArtistsExtractionTask;
 import com.manikhweschool.music.controller.extraction.TrackExtractionTask;
 import com.manikhweschool.music.model.Artist;
-import com.manikhweschool.music.model.MyCredentials;
+import com.manikhweschool.music.model.MyAuthorizationCode;
+import com.manikhweschool.music.model.MyAuthorizationCodeUri;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,7 +36,7 @@ class LoadDatabase {
 	@Bean
 	CommandLineRunner initDatabase() {
 	  return args -> {
-		  //MyCredentials mc = new MyCredentials();
+		  
           populateDatabase();
 		 
 	  };

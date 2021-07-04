@@ -3,6 +3,8 @@ package com.manikhweschool.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.manikhweschool.model.MySession;
 import com.manikhweschool.model.Student;
+import com.manikhweschool.model.TodayVisitation;
 import com.manikhweschool.service.MySessionService;
 
 @Controller
@@ -30,9 +33,24 @@ public class MySessionController{
     
     @RequestMapping(value = "/sessionbooking", 
     method = RequestMethod.GET)
-    public String bookSession(Model model) {
-    						
+    public String bookSession(Model model, HttpSession httpSession) {
+    	if(httpSession.getAttribute("firstTimeVisit")==null) {
+    		httpSession.setAttribute("canAccessJava", false);
+    		httpSession.setAttribute("canAccessPython", false);
+    		httpSession.setAttribute("firstTimeVisit", true);
+			
+		}
+		else if((Boolean)(httpSession.getAttribute("firstTimeVisit"))==true){
+			httpSession.setAttribute("firstTimeVisit", false);
+		}
     	model.addAttribute("session", session);
+    	
+    	if(httpSession.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)httpSession.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			System.out.println("Session Created...");
+		}
     	return "SessionRequest";
     }
 

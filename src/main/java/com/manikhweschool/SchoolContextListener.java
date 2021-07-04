@@ -15,7 +15,6 @@ import com.manikhweschool.model.JavaVisitationInfo;
 import com.manikhweschool.model.PythonVisitationInfo;
 import com.manikhweschool.model.TodayVisitation;
 
-// I need to know where do I specify initial parameters and listeners.
 /* The class plays two roles, one as a tool for specifying 
  * what needs to be done before my web application begins 
  * and two as a tool for tracking user visitations and their 
@@ -25,11 +24,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 
 	private TodayVisitation todayVisitation;
 	
-	private byte hour;
 	private byte day;
-	
-	private boolean dayHasPassed;
-	private boolean weekHasPassed;
+	private boolean monthHasPassed;
 	
 	@Autowired
 	private ServletContext sc;
@@ -40,10 +36,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 	
 	public SchoolContextListener() throws FileNotFoundException {
 
-		hour = 0;
 		day = 0;
-		dayHasPassed = false;
-		weekHasPassed = false;
+		monthHasPassed = false;
 		todayVisitation = new TodayVisitation(
 		new GregorianCalendar(),
 		new JavaVisitationInfo(),
@@ -74,21 +68,18 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 		
 		try {
 		while(true) {
+			
 			Thread.sleep(1000*60*60*24);
-			//Thread.sleep(1000);
-			//hour++;
+			
 			day++;
-			if(/*hour==24*/day==7) {
-				/*hour = 0;
-				dayHasPassed = true;*/
-				
-				weekHasPassed = true;
+
+			if(day==30) {
+
+				monthHasPassed = true;
 				day = 0;
 				
-				
 			}
-			else if(/*dayHasPassed && 
-			hour==1*/ weekHasPassed && day==1) {
+			else if(monthHasPassed && day==1) {
 				
 				controller.save((TodayVisitation)sc.getAttribute("todayVisitation"));
 				sc.setAttribute("todayVisitation", 
@@ -98,7 +89,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 						new PythonVisitationInfo()
 					)
 				);
-			}		
+			}
+			
 		}
 		}catch(InterruptedException ex) {
 			

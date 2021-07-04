@@ -2,14 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="ISO-8859-1">
-         
+         <!--
 	    <link rel="stylesheet" 
 	    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
 	    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
-	    crossorigin="anonymous"> 
-	    <!--
+	    crossorigin="anonymous"> -->
+	    
 	    <link rel = "stylesheet" th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}"></link>
-	    -->
+	    
 	    <link rel = "stylesheet" th:href="@{/css/index.css}"></link>
         
         <title>Home</title>
@@ -32,8 +32,12 @@
 		              <li class = "Header_Item"><a href = "#" th:href = "@{/home}" class = "Header_Link"  style = "color : white;">Home</a></li>
 		              <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" target = "_blank">Background</a></li>
 		              <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" target = "_blank">Contacts</a></li>
-		              <li class = "Header_Item"><a href="IntroToJava.html" th:href = "@{/java}" class = "Header_Link">Java</a></li>
-		              <li class = "Header_Item"><a href="IntroToPython.html" th:href = "@{/python}" class = "Header_Link">Python</a></li>
+		              <li class = "Header_Item"><a href="IntroToJava.html" th:href =  "@{'/' + ${session.canAccessJava==true? 'java' : 'index'}}" 
+		              th:onClick="alert('To Proceed Give Manikhwe School Access To ' + 'Your Spotify Account By Clicking The Spotify Image If You Have Not Yet.');" 
+		              class = "Header_Link">Java</a></li>
+		              <li class = "Header_Item"><a href="IntroToPython.html" th:href = "@{'/' + ${session.canAccessPython==true? 'python' : 'index'}}" 
+		              th:onClick="alert('To Proceed Give Manikhwe School Access To ' + 'Your Spotify Account By Clicking The Spotify Image If You Have Not Yet.');" 
+		              class = "Header_Link">Python</a></li>
 		              <li class = "Header_Item"><a href="SessionRequest.html" th:href = "@{/sessionbooking}" class = "Header_Link">Consultation</a></li>
 		              <li class = "Header_Item"><a href="Games.html" th:href = "@{/games}" class = "Header_Link">Games</a></li>
 		              <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" id="SignIn_Page_Link" class = "Header_Link" 
@@ -51,7 +55,20 @@
         		</label>
         		</h4>
         	</div>
-        	<div class = "offset-md-2 col-md-5 col-sm-12">
+        	<div class = "col-md-2 col-sm-12">
+        		<a th:href="@{/authorize}">
+        		<!--href="https://accounts.spotify.com:443/authorize?client_id=
+        		bac757d75af0458e9eda632244424997&redirect_uri=http%3A%2F%2
+        		Flocalhost%3A8080%2Findex&response_type=code&scope=user-read-
+        		recently-played%2Cuser-top-read%2Cplaylist-read-private%2Cuser
+        		-library-read%2Cplaylist-read-collaborative%2Cuser-read-email"-->
+        		
+        			<img th:src="@{/images/spotify/spotify-1.png}"
+        			width = "50%"/>
+        			
+        		</a>
+        	</div>
+        	<div class = " col-md-5 col-sm-12">
         		<h4>
         		<label>Search Album : 
 	        		<input type="text" name = "albumsearch" width ="100"
@@ -237,7 +254,15 @@
     <script> 
 			
 		$("document").ready(function(){
-            
+			
+			function warnStudent(/*canAccess*/){
+				
+				if(true)
+					alert("In Order To Proceed, Give Manikhwe School Access To " +
+					"Your Spotify Account By Clicking The Spotify Image.");
+				console.log("**********");
+			}
+			
             var timeline1 = gsap.timeline({defaults: {ease:"power2. out"}});
             timeline1.from('#Header_Items',{duration: 1.5, y:-80});
 
@@ -684,6 +709,8 @@
 					else if(color=="color-one")
 						$(forthQuadrantBalls[index]).addClass("color-one");
 			}
+			
+			
 			
 			/*
 				var aud = document.getElementById("myAudio");
