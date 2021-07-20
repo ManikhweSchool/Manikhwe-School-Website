@@ -85,6 +85,10 @@ public class Rhythm implements Serializable,Cloneable{
 	public void setTimes(ArrayList<Long> times) {
 		this.times = times;
 	}
+	
+	public void addTime(long time) {
+		times.add(time);
+	}
 
 	public void setCanAct(ArrayList<Boolean> canAct) {
 		this.canAct = canAct;
@@ -249,6 +253,13 @@ public class Rhythm implements Serializable,Cloneable{
 		this.canAct = canAct;
 	}
     
-    
+    @Override
+    public String toString() {
+    	String representation = "Rhythm Times : ";
+    	
+    	for(long time : times)
+    		representation += time + " ";
+    	return representation + "\n";
+    }
 }
 

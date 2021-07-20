@@ -8,11 +8,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.manikhweschool.games.GameServer;
 import com.manikhweschool.model.TodayVisitation;
 import com.manikhweschool.music.model.MyAuthorizationCodeUri;
+import com.manikhweschool.music.model.Page;
 
 @Controller
 public class MainController {
+	
+	private GameServer gameServer = new GameServer();
+	
+	private Page playlistsPage = new Page();
+	private Page albumsPage = new Page();
+	
+	@RequestMapping(value = "/initgameserver", 
+	method = RequestMethod.POST)
+	public String initGameSever(
+	@RequestParam(name="numberOfPlayers") String numberOfPlayers,
+	@RequestParam(name="gameUniqueId") String gameUniqueId,
+	@RequestParam(name="doesRhythmFit") boolean doesRhythmFit,
+	Model model) {
+		
+		gameServer.setNumberOfPlayers(Short.parseShort(numberOfPlayers));
+		gameServer.setGameUniqueId(gameUniqueId);
+		gameServer.setDoesRhythmFit(doesRhythmFit);
+		
+		gameServer = new GameServer();
+		model.addAttribute("gameServer", gameServer);
+		
+		model.addAttribute("playlistsPage",playlistsPage);
+		model.addAttribute("albumsPage",albumsPage);
+		
+		return "index";
+	}
 
 	@RequestMapping(value = "/authorize", 
 	method = RequestMethod.GET)
@@ -39,9 +67,37 @@ public class MainController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/nextonalbums", 
+	method = RequestMethod.GET)
+	public String nextPage(Model model, HttpSession session) {
+		albumsPage.visitNextPage();
+		return visitHome(model,session);
+	}
+	
+	@RequestMapping(value = "/prevonalbums", 
+	method = RequestMethod.GET)
+	public String prevPage(Model model, HttpSession session) {
+		albumsPage.visitPrevPage();
+		return visitHome(model,session);
+	}
+	
+	@RequestMapping(value = "/nextonplaylists", 
+	method = RequestMethod.GET)
+	public String nextPageOnPlaylists(Model model, HttpSession session) {
+		playlistsPage.visitNextPage();
+		return visitHome(model,session);
+	}
+			
+	@RequestMapping(value = "/prevonplaylists", 
+	method = RequestMethod.GET)
+	public String prevPageOnPlaylists(Model model, HttpSession session) {
+		playlistsPage.visitPrevPage();
+		return visitHome(model,session);
+	}
+	
 	@RequestMapping(value = "/index", 
 	method = RequestMethod.GET)
-	public String visitHome(HttpSession session) {
+	public String visitHome(Model model, HttpSession session) {
 		
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);
@@ -52,13 +108,19 @@ public class MainController {
 		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
 			session.setAttribute("firstTimeVisit", false);
 		}
+			
 		
 		if(session.isNew()) {
 			
 			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
 			todayVisitation.increaseDayVisitorNumber();
-			
 		}
+		
+		
+		model.addAttribute("gameServer", gameServer);
+		
+		model.addAttribute("playlistsPage",playlistsPage);
+		model.addAttribute("albumsPage",albumsPage);
 		
 		return "index";
 			

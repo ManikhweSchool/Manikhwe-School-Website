@@ -54,6 +54,10 @@ public class MyAuthorizationCodeRefresh {
       GetCurrentUsersSavedAlbumsRequest.Builder userSavedAlbums = spotifyApi.getCurrentUsersSavedAlbums();
       GetPlaylistCoverImageRequest.Builder playlistImage = spotifyApi.getPlaylistCoverImage("playlistId");
       
+      
+      
+      
+      
       // Set access and refresh token for further "spotifyApi" object usage
       spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
 

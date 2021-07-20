@@ -24,7 +24,7 @@ public class MyAuthorizationCodeUri {
 	  
 	  MyAuthorizationCodeUri.clientId = clientId;
 	  MyAuthorizationCodeUri.clientSecret = clientSecret;
-	  redirectUri = SpotifyHttpManager.makeUri("https://manikhwe-programming-school.herokuapp.com/spotifyredirect");
+	  redirectUri = SpotifyHttpManager.makeUri("https://manikhweschool.com/spotifyredirect");
 	  //redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/index");
 	    
 	  spotifyApi = new SpotifyApi.Builder()
