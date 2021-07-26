@@ -44,7 +44,7 @@ public class MainController {
 
 	@RequestMapping(value = "/authorize", 
 	method = RequestMethod.GET)
-	public String askForSpotifyAccess() {
+	public String askForSpotifyAccess(Model model) {
 		
 		
 		MyAuthorizationCodeUri.createMyAuthorizationCodeUri(
@@ -52,6 +52,10 @@ public class MainController {
 		"44314cbe9771476a85ec2a0c736c995b");
 		MyAuthorizationCodeUri.authorizationCodeUri_Sync();
 		
+		model.addAttribute("gameServer", gameServer);
+		
+		model.addAttribute("playlistsPage",playlistsPage);
+		model.addAttribute("albumsPage",albumsPage);
 		
 		return "index";
 	}
@@ -59,10 +63,15 @@ public class MainController {
 	@RequestMapping(value = "/spotifyredirect", 
 	method = RequestMethod.GET)
 	public String recieveSpotifyCode(
-	@RequestParam(name="code") String code) {
+	@RequestParam(name="code") String code, Model model) {
 				
 		if(code != null)
 			MyAuthorizationCodeUri.secondStep(code);
+		
+		model.addAttribute("gameServer", gameServer);
+		
+		model.addAttribute("playlistsPage",playlistsPage);
+		model.addAttribute("albumsPage",albumsPage);
 		
 		return "index";
 	}
