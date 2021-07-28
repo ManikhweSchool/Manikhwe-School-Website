@@ -147,7 +147,7 @@ public class GameServer implements Serializable{
 
 
 	public void recruitPlayers(){
-    
+		/*
        try{
             // Create a server socket.
             ServerSocket serverSocket = new ServerSocket(8098);
@@ -168,7 +168,7 @@ public class GameServer implements Serializable{
                 HandlePlayer handlePlayer = new HandlePlayer(socket, playerNumber);
                 
                 // Start a new thread
-                new Thread(handlePlayer).start();
+                //new Thread(handlePlayer).start();
                 System.out.println("Player " + playerNumber + " is connected.");
                 playerNumber++;
             }
@@ -178,7 +178,7 @@ public class GameServer implements Serializable{
             
         }catch(IOException ex){
             ex.printStackTrace();
-        }
+        }*/
     }
     
 
@@ -196,7 +196,7 @@ public class GameServer implements Serializable{
         
         @Override
         public void run() {
-            
+            /*
             try{
             
                 DataInputStream inputFromPlayer = new DataInputStream(socket.getInputStream());
@@ -227,6 +227,7 @@ public class GameServer implements Serializable{
             
                 ex.printStackTrace();
             }
+            */
         }
     
         
