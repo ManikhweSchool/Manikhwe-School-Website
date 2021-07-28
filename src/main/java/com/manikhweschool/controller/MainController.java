@@ -21,6 +21,16 @@ public class MainController {
 	private Page playlistsPage = new Page();
 	private Page albumsPage = new Page();
 	
+	public MainController() {
+		
+		
+		MyAuthorizationCodeUri.createMyAuthorizationCodeUri(
+		"bac757d75af0458e9eda632244424997", 
+		"efeb93358151445ab1c6c6a077a8f86e");
+		MyAuthorizationCodeUri.authorizationCodeUri_Sync();
+		
+	}
+	
 	@RequestMapping(value = "/initgameserver", 
 	method = RequestMethod.POST)
 	public String initGameSever(
@@ -41,29 +51,11 @@ public class MainController {
 		
 		return "index";
 	}
-
-	@RequestMapping(value = "/authorize", 
-	method = RequestMethod.GET)
-	public String askForSpotifyAccess(Model model) {
-		
-		
-		MyAuthorizationCodeUri.createMyAuthorizationCodeUri(
-		"bac757d75af0458e9eda632244424997", 
-		"44314cbe9771476a85ec2a0c736c995b");
-		MyAuthorizationCodeUri.authorizationCodeUri_Sync();
-		
-		model.addAttribute("gameServer", gameServer);
-		
-		model.addAttribute("playlistsPage",playlistsPage);
-		model.addAttribute("albumsPage",albumsPage);
-		
-		return "index";
-	}
 	
 	@RequestMapping(value = "/spotifyredirect", 
 	method = RequestMethod.GET)
 	public String recieveSpotifyCode(
-	@RequestParam(name="code") String code, Model model) {
+	@RequestParam(name="code") String code, Model model, HttpSession session) {
 				
 		if(code != null)
 			MyAuthorizationCodeUri.secondStep(code);
@@ -73,7 +65,7 @@ public class MainController {
 		model.addAttribute("playlistsPage",playlistsPage);
 		model.addAttribute("albumsPage",albumsPage);
 		
-		return "index";
+		return visitBackgroundPage(session);
 	}
 	
 	@RequestMapping(value = "/nextonalbums", 
