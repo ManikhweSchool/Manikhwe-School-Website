@@ -37,7 +37,8 @@ class LoadDatabase {
 	CommandLineRunner initDatabase() {
 	  return args -> {
 		  
-          populateDatabase();
+		  // Works properly on the local machine.
+          //populateDatabase();
 		 
 	  };
 	}

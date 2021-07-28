@@ -55,7 +55,8 @@ public class GameServer implements Serializable{
         generatePatterns();
         correctDirectionIndex = 0;
         playersIPAddresses = new LinkedHashSet<>();
-        recruitPlayers();
+        // Works well on the local machine.
+        //recruitPlayers();
         rhythm = new Rhythm();
        
     }
