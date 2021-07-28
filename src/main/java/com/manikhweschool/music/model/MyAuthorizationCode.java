@@ -22,7 +22,7 @@ public class MyAuthorizationCode {
   private static SpotifyApi spotifyApi;
   private static AuthorizationCodeRequest authorizationCodeRequest;
 
-  public static void createMyAuthorizationCode(String clientId, 
+  public static boolean createMyAuthorizationCode(String clientId, 
   String clientSecret, URI redirectUri, String code) {
 	  MyAuthorizationCode.clientId = clientId;
 	  MyAuthorizationCode.clientSecret = clientSecret;
@@ -38,6 +38,8 @@ public class MyAuthorizationCode {
 	  authorizationCodeRequest = 
 	  spotifyApi.authorizationCode(MyAuthorizationCode.code)
 	  .build();
+	  
+	  return true;
   }
   
   public static void goToThirdStep(String refreshToken) {

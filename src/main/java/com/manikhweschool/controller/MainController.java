@@ -57,15 +57,16 @@ public class MainController {
 	public String recieveSpotifyCode(
 	@RequestParam(name="code") String code, Model model, HttpSession session) {
 				
-		if(code != null)
-			MyAuthorizationCodeUri.secondStep(code);
-		
+		if(code != null && MyAuthorizationCodeUri.secondStep(code)) {
+			session.setAttribute("canAccessJava", true);
+			session.setAttribute("canAccessPython", true);
+		}
 		model.addAttribute("gameServer", gameServer);
 		
 		model.addAttribute("playlistsPage",playlistsPage);
 		model.addAttribute("albumsPage",albumsPage);
 		
-		return visitBackgroundPage(session);
+		return "index";
 	}
 	
 	@RequestMapping(value = "/nextonalbums", 

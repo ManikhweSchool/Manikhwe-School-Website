@@ -56,11 +56,13 @@ public class MyAuthorizationCodeUri {
     System.out.println("==================End Of Step One===============================");
   }
   
-  public static void secondStep(String code) {
-	  MyAuthorizationCode.createMyAuthorizationCode(clientId, 
+  public static boolean secondStep(String code) {
+	  boolean returnValue = MyAuthorizationCode.createMyAuthorizationCode(clientId, 
 	  clientSecret, redirectUri,code);
 			    
 	  MyAuthorizationCode.authorizationCode_Sync();
+	  
+	  return returnValue;
   }
 
   public static void authorizationCodeUri_Async() {
