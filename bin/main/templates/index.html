@@ -146,7 +146,7 @@
         		class = "controllable btn btn-outline-primary m-0">
         		Shift Rhythm Left</button>
         		<button id="createRhythmButton"
-        		th:onsubmit="*{clearRhythm()}"
+        		th:onsubmit="${gameServer.clearRhythm()}"
         		class = "controllable btn btn-outline-primary m-0">
         		Create Rhythm</button>
         		<button id="rhythmTesterButton"
@@ -171,7 +171,7 @@
         		<h6>
         		<label>Game Unique Code : 
 	        		<input type="text" name = "Game Id" width ="100"
-	        		th:field="*{gameUniqueId}" placeholder="Choose any 10 digits"/>
+	        		th:field="${gameServer.gameUniqueId}" placeholder="Choose any 10 digits"/>
         		</label>
         		</h6>
         	</div>
