@@ -182,7 +182,7 @@
 						<div style="position:absolute;" th:object="${playlistsPage}">
 						<a th:href="@{/prevonplaylists}"style="padding-left:10.8%;padding-right:10.8%;" >Prev Page</a>
 						<a th:href="@{/nextonplaylists}" style="padding-left:10.8%;padding-right:10.8%;right:0">Next Page</a>
-						<button th:each="track : ${playlistsPage.pageTracks}"
+						<button th:each="track : *{pageTracks}"
 						th:text="${track}" style="width:100%;text-align:left;"
 						class = "controllable btn btn-outline-primary m-0">
 							Track Information
