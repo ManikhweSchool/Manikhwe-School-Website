@@ -20,7 +20,7 @@
             <div class = "row">
                 <div class = "col-md-12">
                     <ul id = "Header_Items">		
-                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/home}" class = "Header_Link">Home</a></li>
+                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
                         <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
                         <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
                         <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
@@ -33,6 +33,11 @@
             <div class = "row">
                 <div class = "col-md-12 ">
                     <h2 class = "text-center">Selections</h2>
+                    <form action="https://www.paypal.com/donate" method="post" target="_top" style="position:fixed; right:0; top:50%;">
+						<input type="hidden" name="hosted_button_id" value="ZJDYVDYGZPVSA" />
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+						<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
+					</form>
                 </div>
             </div>
             <div class = "row">

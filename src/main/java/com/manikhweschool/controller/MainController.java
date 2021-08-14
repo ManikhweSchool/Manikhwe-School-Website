@@ -21,6 +21,9 @@ public class MainController {
 	private Page playlistsPage = new Page();
 	private Page albumsPage = new Page();
 	
+	private boolean codeRecieved;
+	private String code;
+	
 	public MainController() {
 		
 		
@@ -57,9 +60,11 @@ public class MainController {
 	public String recieveSpotifyCode(
 	@RequestParam(name="code") String code, Model model, HttpSession session) {
 				
-		if(code != null && MyAuthorizationCodeUri.secondStep(code)) {
+		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
 			session.setAttribute("canAccessJava", true);
 			session.setAttribute("canAccessPython", true);
+			codeRecieved = true;
+			this.code = code;
 		}
 		model.addAttribute("gameServer", gameServer);
 		
@@ -73,33 +78,42 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String nextPage(Model model, HttpSession session) {
 		albumsPage.visitNextPage();
-		return visitHome(model,session);
+		return visitHome(code,model,session);
 	}
 	
 	@RequestMapping(value = "/prevonalbums", 
 	method = RequestMethod.GET)
 	public String prevPage(Model model, HttpSession session) {
 		albumsPage.visitPrevPage();
-		return visitHome(model,session);
+		return visitHome(code,model,session);
 	}
 	
 	@RequestMapping(value = "/nextonplaylists", 
 	method = RequestMethod.GET)
 	public String nextPageOnPlaylists(Model model, HttpSession session) {
 		playlistsPage.visitNextPage();
-		return visitHome(model,session);
+		return visitHome(code,model,session);
 	}
 			
 	@RequestMapping(value = "/prevonplaylists", 
 	method = RequestMethod.GET)
 	public String prevPageOnPlaylists(Model model, HttpSession session) {
 		playlistsPage.visitPrevPage();
-		return visitHome(model,session);
+		return visitHome(code,model,session);
 	}
 	
 	@RequestMapping(value = "/index", 
 	method = RequestMethod.GET)
-	public String visitHome(Model model, HttpSession session) {
+	public String visitHome(
+	@RequestParam(name="code", required=false) String code,		
+	Model model, HttpSession session) {
+		
+		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
+			session.setAttribute("canAccessJava", true);
+			session.setAttribute("canAccessPython", true);
+			codeRecieved = true;
+			this.code = code;
+		}
 		
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);

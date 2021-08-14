@@ -10,6 +10,12 @@ video{
 	min-height : 50vh;
 }
 
+form{
+	position : fixed;
+	right : 0;
+	top : 50%;
+}
+
 #Header_Items{
 	list-style-type : none;
 	margin : 0px;
