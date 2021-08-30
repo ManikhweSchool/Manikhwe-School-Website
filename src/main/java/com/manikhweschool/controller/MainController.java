@@ -68,7 +68,7 @@ public class MainController {
 		}
 		model.addAttribute("gameServer", gameServer);
 		
-		model.addAttribute("playlistsPage",playlistsPage);
+		//model.addAttribute("playlistsPage",playlistsPage);
 		model.addAttribute("albumsPage",albumsPage);
 		
 		return "index";
@@ -135,7 +135,7 @@ public class MainController {
 		
 		model.addAttribute("gameServer", gameServer);
 		
-		model.addAttribute("playlistsPage",playlistsPage);
+		//model.addAttribute("playlistsPage",playlistsPage);
 		model.addAttribute("albumsPage",albumsPage);
 		
 		return "index";
