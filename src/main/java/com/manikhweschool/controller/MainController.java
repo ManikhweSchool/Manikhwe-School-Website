@@ -107,7 +107,7 @@ public class MainController {
 	public String visitHome(
 	@RequestParam(name="code", required=false) String code,		
 	Model model, HttpSession session) {
-		
+		/*
 		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
 			session.setAttribute("canAccessJava", true);
 			session.setAttribute("canAccessPython", true);
@@ -131,7 +131,7 @@ public class MainController {
 			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
 			todayVisitation.increaseDayVisitorNumber();
 		}
-		
+		*/
 		
 		model.addAttribute("gameServer", gameServer);
 		
