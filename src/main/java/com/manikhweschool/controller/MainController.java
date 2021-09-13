@@ -60,6 +60,12 @@ public class MainController {
 	public String recieveSpotifyCode(
 	@RequestParam(name="code") String code, Model model, HttpSession session) {
 				
+		// Should be removed
+		if(code != null) {
+			session.setAttribute("canAccessJava", true);
+			session.setAttribute("canAccessPython", true);
+		}
+		
 		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
 			session.setAttribute("canAccessJava", true);
 			session.setAttribute("canAccessPython", true);
