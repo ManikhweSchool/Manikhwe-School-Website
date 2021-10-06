@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+body{
+	
+	background-color : hsl(50, 70%, 90% );
+	color : hsl(250, 30%, 30% );
+	margin : 0px;
+}
+
+.Heading{
+	border : 5px solid hsl(250, 30%, 30% );
+	text-align : center;
+	margin-left : 10px;
+}
+
+#Header_Items{
+	list-style-type : none;
+	margin : 0px;
+	padding : 20px 0px;
+	background : hsl(250, 30%, 30% );
+	
+}
+.Header_Item{
+	display : inline;
+	font-size : 20px;
+	margin : 0px;
+		
+}
+.Header_Link{
+	text-decoration : none;
+	text-align : center;
+	
+	margin : 0px;
+	padding : 5px 3%;
+	color : white;
+}
+.Header_Link:hover:not(#Active_Page_Link):not(#SignIn_Page_Link){
+	color : blue;
+	
+}
+.Header_Link:hover{
+	text-decoration : none;
+}
+#Active_Page_Link{
+	color : white;
+}
+#SignIn_Page_Link{
+	float : right;
+	background-color : blue;
+	color : white;
+}
+#SignIn_Page_Link:hover{
+	color : hsl(250, 30%, 30% );	
+	
+}

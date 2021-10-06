@@ -61,12 +61,15 @@ public class MainController {
 	@RequestParam(name="code") String code, Model model, HttpSession session) {
 				
 		// Should be removed
-		if(code != null) {
+		boolean accessGranted = MyAuthorizationCodeUri.secondStep(code);	
+		if(accessGranted) {
 			session.setAttribute("canAccessJava", true);
 			session.setAttribute("canAccessPython", true);
-		}
+			codeRecieved = true;
+			this.code = code;
+		} // Should be removed
 		
-		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
+		if(!codeRecieved && code != null && accessGranted) {
 			session.setAttribute("canAccessJava", true);
 			session.setAttribute("canAccessPython", true);
 			codeRecieved = true;

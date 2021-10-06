@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+	    <!--
+	    <link rel="stylesheet" 
+	    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+	    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+	    crossorigin="anonymous"> -->
+	    <link rel = "stylesheet" th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}"></link>
+	    <link rel = "stylesheet" th:href="@{/css/clock.css}"></link>
+        <title>Music Pattern Recognition Games</title>
+    </head>
+    <body>
+    	<div class = "container-fluid">
+    		<div class = "row">
+				<div class = "col-md-12">
+		           <ul id = "Header_Items">		
+		              <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link" target = "_blank">Home</a></li>
+		              <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" target = "_blank">Background</a></li>
+		              <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" target = "_blank">Contacts</a></li>
+		              <li class = "Header_Item"><a href="#" th:href = "@{/games}" class = "Header_Link" style = "color : white;">Games</a></li>
+		              <li class = "Header_Item"><a href="SessionRequest.html" th:href = "@{/sessionbooking}" class = "Header_Link" target = "_blank">Book Math/Java Tutor</a></li>
+		              
+		              <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" id="SignIn_Page_Link" class = "Header_Link" 
+		                  target = "_blank">Login/SignIn</a></li>
+		              
+		          </ul>         
+				</div>
+            </div>
+    		<div class = "row">
+    			<div class = "offset-md-2 col-md-10">
+    				<h3>Hi There Rhythm Tracker, Welcome To Pattern Recognition Version I.</h3>
+				</div>
+    		</div>
+            <div class = "row">
+				<canvas class = "offset-md-1 col-md-10"
+				style="background-color: hsl(250, 30%, 30% );
+				border:solid red 3px;height:500px;"></canvas>
+				
+			</div>
+		</div>
+    </body>
+    <script th:src = "@{/js/index.js}" type = "text/javascript"></script>
+    <script th:src = "@{/js/jquery/jquery-3.4.1.js}" type = "text/javascript"></script>
+	<script th:src = "@{/js/gsap-public/gsap-public/minified/gsap.min.js}" type = "text/javascript"></script>
+	<script th:src="@{/js/clock.js}"></script> 
+</html>

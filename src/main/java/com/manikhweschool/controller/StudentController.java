@@ -175,7 +175,7 @@ public class StudentController {
 			System.out.println("Session Created...");
 		}
 		
-		return "Games";
+		return "clock";
 	}
 	
 	@RequestMapping(value = "/students", method = RequestMethod.GET)
