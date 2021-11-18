@@ -23,35 +23,35 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-@Entity
+/*@Entity
 @Table(name = "RHYTHM")
-@Component
+@Component*/
 public class Rhythm implements Serializable,Cloneable{
 
 	private static final long serialVersionUID = -755311351165608588L;
 
-	@Id
+	/*@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "Rhythm_Id", nullable = false)
+	@Column(name = "Rhythm_Id", nullable = false)*/
 	private long rhythmId;
 	
-	@ElementCollection
+	//@ElementCollection
 	private Collection<Long> times;
 	
-	@ElementCollection
+	//@ElementCollection
     private Collection<Boolean> canAct;
     
-    @Column(name = "Next_Time_Index", nullable = false)
+    //@Column(name = "Next_Time_Index", nullable = false)
 	private int nextTimeIndex;
     
    
-    @ManyToMany(mappedBy = "rhythms")
+    //@ManyToMany(mappedBy = "rhythms")
     private Set<Track> tracks;
     
-    @ManyToOne(
+    /*@ManyToOne(
         targetEntity = Student.class,
         cascade = CascadeType.ALL
-    )
+    )*/
     private Student student;
 	
 	public Rhythm() {

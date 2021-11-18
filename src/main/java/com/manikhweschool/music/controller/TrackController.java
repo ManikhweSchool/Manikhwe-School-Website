@@ -12,10 +12,10 @@ import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.Track;
 import com.manikhweschool.music.service.TrackService;
 
-@Controller
+//@Controller
 public class TrackController {
 	
-	@Autowired
+	//@Autowired
 	private TrackService service;
 	
 	/*@RequestMapping(value = "http://api.musicpatternrecognition.com"

@@ -13,13 +13,13 @@ import com.manikhweschool.music.controller.ImageController;
 import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.Image;
 
-@Component
+//@Component
 public class ArtistExtractionTask extends ExtractionTask{
 
-	@Autowired
+	//@Autowired
 	private ImageController imageController;
 	
-	@Autowired
+	//@Autowired
 	private ArtistController artistController;
 	
 	private Artist artist;

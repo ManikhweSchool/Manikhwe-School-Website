@@ -11,16 +11,16 @@ import com.manikhweschool.music.model.Album;
 import com.manikhweschool.music.model.Track;
 import com.manikhweschool.music.repository.AlbumRepository;
 
-@Service
+//@Service
 public class AlbumService {
 
-	@Autowired
+	//@Autowired
 	private AlbumRepository repository;
 	
-	@Autowired
+	//@Autowired
 	private ArtistService artistService;
 	
-	@Autowired
+	//@Autowired
 	private TrackService trackService;
 	
 	public void saveAlbum(Album album) {
@@ -36,21 +36,21 @@ public class AlbumService {
 		
 		trackService.saveAll(allTracks);
 		
-		repository.save(album);
+		//repository.save(album);
 	}
 	
 	public void saveAllAlbums(List<Album> albums) {
-		repository.saveAll(albums);
+		//repository.saveAll(albums);
 	}
 	
 	public List<Album> findAllAlbums(){
-		
-		return repository.findAll();
+		return null;
+		//return repository.findAll();
 	}
 	
 	public Optional<Album> findAlbum(String id){
-		
-		return repository.findById(id);
+		return null;
+		//return repository.findById(id);
 	}
 	
 	public Optional<Album> findAlbumByName(String albumName){

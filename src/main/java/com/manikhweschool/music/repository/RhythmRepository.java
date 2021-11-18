@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.manikhweschool.music.model.Rhythm;
 
 @Repository
-public interface RhythmRepository extends JpaRepository<Rhythm,Long>{
+public interface RhythmRepository /*extends JpaRepository<Rhythm,Long>*/{
 
 }

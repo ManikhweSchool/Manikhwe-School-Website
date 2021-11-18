@@ -21,15 +21,15 @@ import com.manikhweschool.music.model.Image;
  * -H "Authorization: Bearer {your access token}"
  * */
 // Maximum: 50 IDs
-@Component
+//@Component
 public class SeveralArtistsExtractionTask extends ExtractionTask{
 
 	private ArrayList<Artist> artists = new ArrayList<>();
 	
-	@Autowired
+	//@Autowired
 	private ArtistController artistController;
 	
-	@Autowired
+	//@Autowired
 	private ImageController imageController;
 	
 	public SeveralArtistsExtractionTask() {

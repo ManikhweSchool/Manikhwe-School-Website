@@ -63,15 +63,15 @@ public class MainController {
 		// Should be removed
 		boolean accessGranted = MyAuthorizationCodeUri.secondStep(code);	
 		if(accessGranted) {
-			session.setAttribute("canAccessJava", true);
-			session.setAttribute("canAccessPython", true);
+			//session.setAttribute("canAccessJava", true);
+			//session.setAttribute("canAccessPython", true);
 			codeRecieved = true;
 			this.code = code;
 		} // Should be removed
 		
 		if(!codeRecieved && code != null && accessGranted) {
-			session.setAttribute("canAccessJava", true);
-			session.setAttribute("canAccessPython", true);
+			//session.setAttribute("canAccessJava", true);
+			//session.setAttribute("canAccessPython", true);
 			codeRecieved = true;
 			this.code = code;
 		}
@@ -118,15 +118,15 @@ public class MainController {
 	Model model, HttpSession session) {
 		
 		if(!codeRecieved && code != null && MyAuthorizationCodeUri.secondStep(code)) {
-			session.setAttribute("canAccessJava", true);
-			session.setAttribute("canAccessPython", true);
+			//session.setAttribute("canAccessJava", true);
+			//session.setAttribute("canAccessPython", true);
 			codeRecieved = true;
 			this.code = code;
 		}
 		
 		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
+			//session.setAttribute("canAccessJava", false);
+			//session.setAttribute("canAccessPython", false);
 			session.setAttribute("firstTimeVisit", true);
 			
 		}
@@ -156,8 +156,8 @@ public class MainController {
 	public String learnJava(HttpSession session) {
 		
 		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
+			//session.setAttribute("canAccessJava", false);
+			//session.setAttribute("canAccessPython", false);
 			session.setAttribute("firstTimeVisit", true);
 			
 		}
@@ -180,8 +180,8 @@ public class MainController {
 	public String learnPython(HttpSession session) {
 							
 		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
+			//session.setAttribute("canAccessJava", false);
+			//session.setAttribute("canAccessPython", false);
 			session.setAttribute("firstTimeVisit", true);
 			
 		}
@@ -205,8 +205,8 @@ public class MainController {
 	public String visitBackgroundPage(HttpSession session) {
 			
 		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
+			//session.setAttribute("canAccessJava", false);
+			//session.setAttribute("canAccessPython", false);
 			session.setAttribute("firstTimeVisit", true);
 			
 		}
@@ -231,8 +231,8 @@ public class MainController {
 	public String visitContactsPage(HttpSession session) {
 			
 		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
+			//session.setAttribute("canAccessJava", false);
+			//session.setAttribute("canAccessPython", false);
 			session.setAttribute("firstTimeVisit", true);
 			
 		}

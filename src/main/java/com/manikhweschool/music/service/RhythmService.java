@@ -9,26 +9,29 @@ import org.springframework.stereotype.Service;
 import com.manikhweschool.music.model.Rhythm;
 import com.manikhweschool.music.repository.RhythmRepository;
 
-@Service
+//@Service
 public class RhythmService {
 
-	@Autowired
+	//@Autowired
 	private RhythmRepository repository;
 
 	public Rhythm saveRhythm(Rhythm rhythm){
-		return repository.save(rhythm);
+		//return repository.save(rhythm);
+		return null;
 	}
 	
 	public Optional<Rhythm> findRhythm(long rhythmIndex){
-		return repository.findById(rhythmIndex);
+		//return repository.findById(rhythmIndex);
+		return null;
 	}
 	
 	public void deleteRhythm(long rhythmIndex) {
-		repository.deleteById(rhythmIndex);
+		//repository.deleteById(rhythmIndex);
 	}
 	
 	public List<Rhythm> findAllRhythms(){
-		return repository.findAll();
+		//return repository.findAll();
+		return null;
 	}
 }
 

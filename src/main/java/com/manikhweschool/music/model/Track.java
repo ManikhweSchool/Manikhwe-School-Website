@@ -18,65 +18,65 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+/*@Entity
 @Table(name = "TRACK")
-@Component
+@Component*/
 public class Track implements Serializable,Cloneable,Comparable<Track>{
 
 	private static final long serialVersionUID = -5646821396794741818L;
 	
 	/*	A link to the Web API endpoint 
 	 * providing full details of the track.*/
-	@Column(name = "Track_URL", nullable = false)
+	//@Column(name = "Track_URL", nullable = false)
 	private String trackURL;
 	
-	@Column(name = "Track_Name", nullable = false)
+	//@Column(name = "Track_Name", nullable = false)
 	private String trackName = "";
 
-	@Column(name = "Track_Type", nullable = false)
+	//@Column(name = "Track_Type", nullable = false)
 	private String trackType;
 	
-	@ManyToMany
+	/*@ManyToMany
 	@JoinTable(
 		name = "Track_Rhythm_Bridge",
 		joinColumns = @JoinColumn(name = "Track_FK"),
-		inverseJoinColumns = @JoinColumn(name = "Rhythm_FK"))
+		inverseJoinColumns = @JoinColumn(name = "Rhythm_FK"))*/
     private Collection<Rhythm> rhythms;
 	
 	// The album to which this track belongs.
-	@ManyToOne
-	@JoinColumn(name="owning_album_id")
+	/*@ManyToOne
+	@JoinColumn(name="owning_album_id")*/
 	private Album album;
 	
 	// Artists involved on this track.
-	@ManyToMany(mappedBy = "tracks",
-	cascade = CascadeType.ALL)
+	/*@ManyToMany(mappedBy = "tracks",
+	cascade = CascadeType.ALL)*/
 	private Collection<Artist> artists;
 	
 	/*A list of the countries in which the 
 	 * track can be played, identified by 
 	 * their ISO 3166-1 alpha-2 code.*/
-	@ElementCollection
+	//@ElementCollection
 	private Collection<String> availableMarkets;
 	
 	/*The disc number (usually 1 unless the 
 	 * album consists of more than one disc)*/
-	@Column(name = "Disc_Number", nullable = false)
+	//@Column(name = "Disc_Number", nullable = false)
 	private int discNumber;
 	
 	/*The track length in milliseconds.*/
-	@Column(name = "Duration_MS", nullable = false)
+	//@Column(name = "Duration_MS", nullable = false)
 	private long duration_ms;
 	
 	/*The Spotify ID for the track.*/
-	@Id
-	@Column(name = "Spotify_Id", nullable = false)
+	//@Id
+	//@Column(name = "Spotify_Id", nullable = false)
 	private String trackId;
 	
 	/*Part of the response when Track Relinking 
 	 * is applied. If true , the track is playable 
 	 * in the given market. Otherwise false.*/
-	@Column(name = "Is_Playable", nullable = false)
+	//@Column(name = "Is_Playable", nullable = false)
 	private boolean isPlayable;
     
 	/*Generally speaking, songs that are being played 
@@ -88,14 +88,14 @@ public class Track implements Serializable,Cloneable,Comparable<Track>{
 	 * from track popularity. Note that the popularity value 
 	 * may lag actual popularity by a few days: the value is 
 	 * not updated in real time.*/
-	@Column(name = "Popularity", nullable = false)
+	//@Column(name = "Popularity", nullable = false)
 	private int popularity;
 	
 	/*The Spotify URI for the track.*/
-	@Column(name = "Track_URI", nullable = false)
+	//@Column(name = "Track_URI", nullable = false)
 	private String trackURI;
 	
-	@Column(name = "Track_Number", nullable = false)
+	//@Column(name = "Track_Number", nullable = false)
 	private int trackNumber;
 	
     public Track() {

@@ -18,16 +18,16 @@ import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.Image;
 import com.manikhweschool.music.model.Track;
 
-@Component
+//@Component
 public class AlbumExtractionTask extends ExtractionTask{
 
-	@Autowired
+	//@Autowired
 	private AlbumController albumController;
 	
-	@Autowired
+	//@Autowired
 	private TrackController trackController;
 	
-	@Autowired
+	//@Autowired
 	private ArtistController artistController;
 	
 	private Album album;

@@ -16,90 +16,90 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+/*@Entity
 @Table(name = "ALBUM")
-@Component
+@Component*/
 public class Album implements Serializable,Cloneable,Comparable<Album>{
 
 	private static final long serialVersionUID = 1L;
 
 	// Spotify Id
-	@Id
-	@Column(name = "Album_Id", nullable = false)
+	//@Id
+	//@Column(name = "Album_Id", nullable = false)
 	private String albumId;
 	
 	/*	The name of the album. 
 	 * In case of an album takedown, 
 	 * the value may be an empty string.*/
-	@Column(name = "Album_Name", nullable = false)
+	//@Column(name = "Album_Name", nullable = false)
 	private String albumName;
 	
 	/*The type of the album: one of "album" , 
 	 * "single" , or "compilation"*/
-	@Column(name = "Album_Type", nullable = false)
+	//@Column(name = "Album_Type", nullable = false)
 	private String albumType;
 	
 	/*The date the album was first released, 
 	 * for example "1981-12-15". Depending on 
 	 * the precision, it might be shown as 
 	 * "1981" or "1981-12"*/
-	@Column(name = "Release_Date", nullable = false)
+	//@Column(name = "Release_Date", nullable = false)
 	private String releaseDate;
 	
 	/*The precision with which release_date 
 	 * value is known: "year" , "month" , or 
 	 * "day".*/
-	@Column(name = "Release_Date_Precision", nullable = false)
+	//@Column(name = "Release_Date_Precision", nullable = false)
 	private String releaseDatePrecision;
 	
-	@OneToMany(
+	/*@OneToMany(
 		mappedBy = "album",
 		cascade = CascadeType.ALL,
 		orphanRemoval = true
-	)
+	)*/
 	private Collection<Track> tracks;
 	
-	@OneToMany(
+	/*@OneToMany(
 		mappedBy = "album",
 		cascade = CascadeType.ALL,
 		orphanRemoval = true
-	)
+	)*/
 	private Collection<Image> images;
 	
 	/*The Spotify URI for the album.*/
-	@Column(name = "Album_URI", nullable = false)
+	//@Column(name = "Album_URI", nullable = false)
 	private String albumURI;
 	
 	/*The Spotify URL for the album.*/
-	@Column(name = "Album_URL", nullable = false)
+	//@Column(name = "Album_URL", nullable = false)
 	private String albumURL;
 	
-	@ManyToMany(mappedBy="albums")
+	//@ManyToMany(mappedBy="albums")
 	private Collection<Artist> artists;
 	
-	@ElementCollection
+	//@ElementCollection
 	private Collection<String> availableMarkets;
 	
-	@ElementCollection
+	//@ElementCollection
 	private Collection<String> genres;
 	
 	// The label for the album.
-	@Column(name = "Album_Label", nullable = false)
+	//@Column(name = "Album_Label", nullable = false)
 	private String label;
 	
-	@Column(name = "Album_Limit", nullable = false)
+	//@Column(name = "Album_Limit", nullable = false)
 	private byte limit;
 	
-	@Column(name = "Album_Total", nullable = false)
+	//@Column(name = "Album_Total", nullable = false)
 	private byte total;
 	
-	@Column(name = "Album_Offset", nullable = false)
+	//@Column(name = "Album_Offset", nullable = false)
 	private byte offset;
 	
-	@Column(name = "Album_Popularity", nullable = false)
+	//@Column(name = "Album_Popularity", nullable = false)
 	private int popularity;
 	
-	@Column(name = "Useful_Info", nullable = false)
+	//@Column(name = "Useful_Info", nullable = false)
 	private String crucialInfo;
 	
 	

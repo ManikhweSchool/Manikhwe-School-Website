@@ -19,20 +19,20 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+/*@Entity
 @Table(name = "ARTIST")
-@Component
+@Component*/
 public class Artist implements Serializable,Cloneable, Comparable<Artist>{
 
 	private static final long serialVersionUID = 2265046550690982257L;
 
 	// Spotify Id
-	@Id
-	@Column(name = "Artist_Id", nullable = false)
+	//@Id
+	//@Column(name = "Artist_Id", nullable = false)
 	private String artistId;
 	
 	/*The name of the artist.*/
-	@Column(name = "Artist_Name", nullable = false)
+	//@Column(name = "Artist_Name", nullable = false)
 	private String artistName;
 	
 	/*The popularity of the artist. 
@@ -42,11 +42,11 @@ public class Artist implements Serializable,Cloneable, Comparable<Artist>{
 	 * popularity is calculated from 
 	 * the popularity of all the artist’s 
 	 * tracks.*/
-	@Column(name = "Popularity", nullable = false)
+	//@Column(name = "Popularity", nullable = false)
 	private int popularity;
 	
 	// The Spotify URI for the artist.
-	@Column(name = "Spotify_URI", nullable = false)
+	//@Column(name = "Spotify_URI", nullable = false)
 	private String artistURI;
 	
 	@Column(name = "Artist_Type", nullable = false)
@@ -55,41 +55,41 @@ public class Artist implements Serializable,Cloneable, Comparable<Artist>{
 	/*A link to the Web API endpoint 
 	 * providing full details of the 
 	 * artist.*/
-	@Column(name = "Artist_URL", nullable = false)
+	//@Column(name = "Artist_URL", nullable = false)
 	private String artistURL;
 	
-	@ElementCollection
+	//@ElementCollection
 	private Collection<String> genres;
 	
 	private int numberOfFollowers;
 	
-	@ManyToMany
+	/*@ManyToMany
 	@JoinTable(
 		name = "Artist_Track_Bridge",
 		joinColumns = @JoinColumn(name="artist_fk"),
 		inverseJoinColumns = @JoinColumn(name="track_fk")
-	)
+	)*/
 	private Collection<Track> tracks;
 	
-	@ManyToMany
+	/*@ManyToMany
 	@JoinTable(
 		name = "Artist_Album_Bridge",
 		joinColumns = @JoinColumn(name="artist_fk"),
 		inverseJoinColumns = @JoinColumn(name="album_fk")
-	)
+	)*/
 	private Collection<Album> albums;
 	
-	@OneToMany(
+	/*@OneToMany(
 		mappedBy = "artist",
 		cascade = CascadeType.ALL,
 		orphanRemoval = true
-	)
+	)*/
 	private Collection<Image> artistImages;
 	
-	@ManyToMany
+	//@ManyToMany
 	private Collection<ArtistsAlbums> artistsAlbums;
 	
-	@Column(name = "Useful_URL", nullable = false)
+	//@Column(name = "Useful_URL", nullable = false)
 	private String crucialInfo;
 
 	public Artist() {

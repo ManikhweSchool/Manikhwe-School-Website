@@ -29,16 +29,16 @@ import com.manikhweschool.music.model.Track;
  * -H "Authorization: Bearer {your access token}"
  * */
 // Maximum: 20 IDs Separated By A Commas
-@Component
+//@Component
 public class SeveralAlbumsExtractionTask extends ExtractionTask{
 
-	@Autowired
+	//@Autowired
 	private AlbumController albumController;
 	
-	@Autowired
+	//@Autowired
 	private TrackController trackController;
 	
-	@Autowired
+	//@Autowired
 	private ArtistController artistController;
 	
 	// Current Album

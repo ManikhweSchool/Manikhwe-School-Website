@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.manikhweschool.music.model.ArtistsAlbums;
 
 @Repository
-public interface ArtistAlbumsRepository extends JpaRepository<ArtistsAlbums,Long>{
+public interface ArtistAlbumsRepository /*extends JpaRepository<ArtistsAlbums,Long>*/{
 
 }

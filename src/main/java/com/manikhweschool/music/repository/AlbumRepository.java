@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.manikhweschool.music.model.Album;
 
-@Repository
-public interface AlbumRepository extends JpaRepository<Album,String>{
+//@Repository
+public interface AlbumRepository /*extends JpaRepository<Album,String>*/{
 
 }

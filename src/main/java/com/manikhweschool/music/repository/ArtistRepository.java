@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.manikhweschool.music.model.Artist;
 
 @Repository
-public interface ArtistRepository extends JpaRepository<Artist, String>{
+public interface ArtistRepository /*extends JpaRepository<Artist, String>*/{
 
 }

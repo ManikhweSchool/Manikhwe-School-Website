@@ -15,14 +15,14 @@ import com.manikhweschool.music.model.Album;
 import com.manikhweschool.music.model.Track;
 import com.manikhweschool.music.service.AlbumService;
 
-@Controller
+//@Controller
 public class AlbumController {
 
-	@Autowired
+	//@Autowired
 	private AlbumService service;
 	
-	@RequestMapping(value ="/album?name=albumName", 
-	method = RequestMethod.GET)
+	/*@RequestMapping(value ="/album?name=albumName", 
+	method = RequestMethod.GET)*/
 	public List<Track> findAlbumTracks(
 	Model model, 
 	@RequestParam("albumName") String albumName){

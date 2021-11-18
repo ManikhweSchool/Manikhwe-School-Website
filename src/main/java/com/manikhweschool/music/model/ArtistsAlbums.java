@@ -16,37 +16,37 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+/*@Entity
 @Table(name = "ARTIST_ALBUMS")
-@Component
+@Component*/
 public class ArtistsAlbums implements Serializable,Cloneable, Comparable<ArtistsAlbums>{
 
 	private static final long serialVersionUID = 4240312753588530203L;
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	/*@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)*/
 	private long artistAlbumsId;
 	
-	@Column(name = "Number_Of_Albums", nullable = false)
+	//@Column(name = "Number_Of_Albums", nullable = false)
 	private short numberOfAlbums;
 	
-	@Column(name = "Albums_Limit", nullable = false)
+	//@Column(name = "Albums_Limit", nullable = false)
 	private byte albumsLimit;
 	
-	@Column(name = "Albums_Offset", nullable = false)
+	//@Column(name = "Albums_Offset", nullable = false)
 	private byte albumsOffset;
 	
-	@Column(name = "Next_Album_Info", nullable = false)
+	//@Column(name = "Next_Album_Info", nullable = false)
 	private String nextAlbumInfo;
 	
-	@Column(name = "Previous_Album_Info", nullable = false)
+	//@Column(name = "Previous_Album_Info", nullable = false)
 	private String previousAlbumInfo;
 	
 	
-	@ManyToMany
+	//@ManyToMany
 	private Collection<Artist> artists;
 	
-	@OneToMany
+	//@OneToMany
 	private Set<Album> albums;
 	
 	public ArtistsAlbums() {

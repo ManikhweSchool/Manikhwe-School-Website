@@ -12,26 +12,29 @@ import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.Track;
 import com.manikhweschool.music.repository.TrackRepository;
 
-@Service
+//@Service
 public class TrackService {
 
-	@Autowired
+	//@Autowired
 	private TrackRepository repository;
 	
 	public Track saveTrack(Track track) { 
-		return repository.save(track);
+		//return repository.save(track);
+		return null;
 	}
 	
 	public void saveAll(Collection<Track> tracks) {
-		repository.saveAll(tracks);
+		//repository.saveAll(tracks);
 	}
 	
 	public Optional<Track> findTrack(String trackId){
-		return repository.findById(trackId);
+		//return repository.findById(trackId);
+		return null;
 	}
 	
 	public List<Track> findAllTracks(){
-		return repository.findAll();
+		//return repository.findAll();
+		return null;
 	}
 	
 	public String findTrackId(Set<Artist> artists, 

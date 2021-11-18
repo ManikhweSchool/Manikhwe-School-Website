@@ -15,14 +15,14 @@ import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.Track;
 import com.manikhweschool.music.service.ArtistService;
 
-@Controller
+//@Controller
 public class ArtistController {
 
-	@Autowired
+	//@Autowired
 	private ArtistService service;
 	
-	@RequestMapping(value ="/artist?name=artistName", 
-	method = RequestMethod.GET)
+	/*@RequestMapping(value ="/artist?name=artistName", 
+	method = RequestMethod.GET)*/
 	public List<Track> findArtistTracks(
 	Model model, 
 	@RequestParam("artistName") String artistName){

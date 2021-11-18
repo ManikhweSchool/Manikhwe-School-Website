@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 import com.manikhweschool.music.model.ArtistsAlbums;
 import com.manikhweschool.music.service.ArtistAlbumsService;
 
-@Controller
+//@Controller
 public class ArtistAlbumsController {
 
-	@Autowired
+	//@Autowired
 	private ArtistAlbumsService service;
 	
 	public HttpStatus saveArtistAlbums(ArtistsAlbums artistAlbums) {

@@ -11,29 +11,29 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Entity
+/*@Entity
 @Table(name = "IMAGE")
-@Component
+@Component*/
 public class Image implements Serializable,Cloneable{
 
 	private static final long serialVersionUID = -8986839815197264420L;
 
-	@Id
-	@Column(name = "Image_Location", nullable = false)
+	/*@Id
+	@Column(name = "Image_Location", nullable = false)*/
 	private String imageURL;
 	
-	@Column(name = "Image_Width", nullable = false)
+	//@Column(name = "Image_Width", nullable = false)
 	private short width;
 	
-	@Column(name = "Image_Height", nullable = false)
+	//@Column(name = "Image_Height", nullable = false)
 	private short height;
 	
-	@ManyToOne
-	@JoinColumn(name="owning_artist_id")
+	/*@ManyToOne
+	@JoinColumn(name="owning_artist_id")*/
 	private Artist artist;
 	
-	@ManyToOne
-	@JoinColumn(name="owning_album_id")
+	/*@ManyToOne
+	@JoinColumn(name="owning_album_id")*/
 	private Album album;
 	
 	public Image() {

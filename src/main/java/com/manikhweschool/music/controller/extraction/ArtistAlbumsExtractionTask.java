@@ -22,7 +22,7 @@ import com.manikhweschool.music.model.Album;
 import com.manikhweschool.music.model.Artist;
 import com.manikhweschool.music.model.ArtistsAlbums;
 
-@Component
+//@Component
 public class ArtistAlbumsExtractionTask extends ExtractionTask{
 
 	private Set<Album> albums;
@@ -32,7 +32,7 @@ public class ArtistAlbumsExtractionTask extends ExtractionTask{
 	
 	private ArrayList<Artist> storedArtists;
 	
-	@Autowired
+	//@Autowired
 	private ArtistController artistController;
 	
 	

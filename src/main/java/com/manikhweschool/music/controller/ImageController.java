@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 import com.manikhweschool.music.model.Image;
 import com.manikhweschool.music.service.ImageService;
 
-@Controller
+//@Controller
 public class ImageController {
 
-	@Autowired
+	//@Autowired
 	private ImageService service;
 	
 	public HttpStatus saveImage(Image image) {

@@ -61,8 +61,8 @@ public class Student implements Comparable<Student>,Serializable{
     @OneToMany
     private Set<MySession> sessions;
     
-    @OneToMany(mappedBy="student")
-    private List<Rhythm> rhythms;
+    //@OneToMany(mappedBy="student")
+    //private List<Rhythm> rhythms;
     
 	public Student() {
 	
@@ -203,7 +203,7 @@ public class Student implements Comparable<Student>,Serializable{
 
 		return returnedValue;
 	}
-	
+	/*
 	public List<Rhythm> getRhythms() {
 		return rhythms;
 	}
@@ -214,5 +214,5 @@ public class Student implements Comparable<Student>,Serializable{
 	
 	public void addRhythm(Rhythm rhythm) {
 		rhythms.add(rhythm);
-	}
+	}*/
 }

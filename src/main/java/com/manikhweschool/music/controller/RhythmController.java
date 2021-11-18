@@ -17,19 +17,19 @@ import com.manikhweschool.music.model.Rhythm;
 import com.manikhweschool.music.service.TrackService;
 import com.manikhweschool.music.service.RhythmService;
 
-@Controller
+//@Controller
 public class RhythmController {
 
-	@Autowired
+	//@Autowired
 	private RhythmService rhythmService;
 	
-	@Autowired
+	//@Autowired
 	private TrackService musicService;
 	
 	
-	@RequestMapping(value = "/manikhweschool/"
+	/*@RequestMapping(value = "/manikhweschool/"
 	+ "tracks/{trackId}/rhythms}", 
-	method = RequestMethod.POST)
+	method = RequestMethod.POST)*/
 	public HttpStatus saveRhythm(
 	@RequestParam String trackId,
 	Rhythm newRhythm){

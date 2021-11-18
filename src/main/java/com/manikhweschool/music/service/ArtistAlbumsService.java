@@ -10,25 +10,27 @@ import org.springframework.stereotype.Service;
 import com.manikhweschool.music.model.ArtistsAlbums;
 import com.manikhweschool.music.repository.ArtistAlbumsRepository;
 
-@Service
+//@Service
 public class ArtistAlbumsService {
 
-	@Autowired
+	//@Autowired
 	private ArtistAlbumsRepository repository;
 	
 	public HttpStatus saveArtistAlbums(ArtistsAlbums artistAlbums) {
-		if(repository.findById(artistAlbums.getArtistAlbumsId()).isPresent())
+		/*if(repository.findById(artistAlbums.getArtistAlbumsId()).isPresent())
 			return HttpStatus.FOUND;
-		repository.save(artistAlbums);
+		repository.save(artistAlbums);*/
 		return HttpStatus.CREATED;
 	}
 	
 	public Optional<ArtistsAlbums> findArtistAlbums(long artistAlbumsId){
-		return repository.findById(artistAlbumsId);
+		//return repository.findById(artistAlbumsId);
+		return null;
 	}
 	
 	public List<ArtistsAlbums> findAllArtistAlbums(){
-		return repository.findAll();
+		//return repository.findAll();
+		return null;
 	}
 
 	public ArtistAlbumsRepository getRepository() {

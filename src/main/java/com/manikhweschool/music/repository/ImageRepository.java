@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.manikhweschool.music.model.Image;
 
 @Repository
-public interface ImageRepository extends JpaRepository<Image,String>{
+public interface ImageRepository /*extends JpaRepository<Image,String>*/{
 
 }

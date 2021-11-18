@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.manikhweschool.music.model.Track;
 
-@Repository
-public interface TrackRepository extends JpaRepository<Track,String>{
+//@Repository
+public interface TrackRepository /*extends JpaRepository<Track,String>*/{
 
 }
