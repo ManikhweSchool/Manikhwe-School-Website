@@ -69,7 +69,7 @@ public class Student implements Comparable<Student>,Serializable{
 	String email, boolean signedForUpdates) {
 		
 		this.firstName = firstName;
-		this.lastName = lastName;
+		//this.lastName = lastName;
 		this.password = password;
 		this.email = email;
 		this.signedForUpdates = signedForUpdates;
@@ -150,14 +150,14 @@ public class Student implements Comparable<Student>,Serializable{
 	public void setJoinedDate(Date joinedDate) {
 		this.joinedDate = joinedDate;
 	}
-	
+	/*
 	public Collection<String> getCourses() {
 		return courses;
 	}
 
 	public void setCourses(Collection<String> courses) {
 		this.courses = courses;
-	}
+	}*/
 	
 	public String processStudentRegistration(){
         /*
