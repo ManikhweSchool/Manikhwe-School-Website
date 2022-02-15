@@ -69,13 +69,20 @@ public class StudentController {
 			model.addAttribute("invalidStudent", true);
 			page = "SignIn";
 			status = "Email Already Exist";
-			model.addAttribute("invalidStudent", true);
+			
 		}
 		else {
-			service.addStudent(student);
-			model.addAttribute("invalidStudent", false);
-			status = "Student Succefully Registered";
-			page = "RegistrationConfirmation";
+			if(student.getPassword().equals(student.getConfirmPassword())) {
+				service.addStudent(student);
+				model.addAttribute("invalidStudent", false);
+				status = "Student Succefully Registered";
+				page = "RegistrationConfirmation";
+			}
+			else {
+				model.addAttribute("invalidStudent", true);
+				page = "SignIn";
+				status = "Password Don't Match";
+			}
 		}
 		
 		model.addAttribute("status", status );

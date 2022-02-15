@@ -3,10 +3,7 @@ package com.manikhweschool.model;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -17,12 +14,9 @@ import javax.persistence.TemporalType;
 
 import org.springframework.stereotype.Component;
 
-import com.manikhweschool.music.model.Rhythm;
-
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "STUDENT")
@@ -40,6 +34,9 @@ public class Student implements Comparable<Student>,Serializable{
 	
     @Column(name = "Student_Password", nullable = false)
     private String password;
+    
+    @Column(name = "Student_CPassword", nullable = false)
+    private String confirmPassword;
 	
     @Id
 	@Column(name = "Student_Email", nullable = false)
@@ -57,9 +54,6 @@ public class Student implements Comparable<Student>,Serializable{
 
     @ElementCollection
     private Collection<String> courses = new HashSet<>();;
-	
-    @OneToMany
-    private Set<MySession> sessions;
     
     //@OneToMany(mappedBy="student")
     //private List<Rhythm> rhythms;
@@ -67,7 +61,6 @@ public class Student implements Comparable<Student>,Serializable{
 	public Student() {
 	
 		joinedDate = new Date();
-		sessions = new LinkedHashSet<>();
 		/*rhythms = new ArrayList<>();*/
 	}
 	
@@ -83,6 +76,14 @@ public class Student implements Comparable<Student>,Serializable{
 		
 	}
 	
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
 	// Retrieve first name for this user.
 	public String getFirstName() {
 		return firstName;
@@ -156,18 +157,6 @@ public class Student implements Comparable<Student>,Serializable{
 
 	public void setCourses(Collection<String> courses) {
 		this.courses = courses;
-	}
-	
-	public void addSession(MySession session) {
-		sessions.add(session);
-	}
-
-	public Set<MySession> getSessions() {
-		return sessions;
-	}
-
-	public void setSessions(Set<MySession> sessions) {
-		this.sessions = sessions;
 	}
 	
 	public String processStudentRegistration(){
