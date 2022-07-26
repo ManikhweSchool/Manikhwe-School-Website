@@ -16,18 +16,21 @@
                             <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
 				            <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link">Background</a></li>
 				            <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link">Contacts</a></li>
-				            <li class = "Header_Item"><a href="Games.html" th:href = "@{/games}" class = "Header_Link">Games</a></li>
-				            <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin}" id="Login_Page_Link" class = "Header_Link" 
+				            <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" id="Login_Page_Link" class = "Header_Link" 
 				            style = "float : right;background-color : blue;">Login</a></li>
                         </ul>
                     </div>    
                 </div>
             </div>
             <div class ="row">
+            	<div class ="col-md-4 offset-md-5">
+            		
+            		<img class= "mt-3"th:src="@{images/Logo.jpg}" width="70%" height="150">
+            	</div>
+            </div>
+            <div class ="row">
                 <div class ="col-md-4 offset-md-5">
-                    <br/>
-                    <br/>
-                    <br/>
+                    
                     <form id = "myform" th:action="@{/signin}" th:object="${student}" method="post">
                     	<div th:if="${invalidStudent}" class="error" id="Incorrect_Student_Div">
                         		<h3 th:text="|Try Again : ${status}|" style="color:red">Try Again : Couldn't Register Student. </h3>
@@ -66,6 +69,7 @@
                     			<label for = "Courses"> Courses : </label>
                     			<input th:field="*{courses}" type="checkbox" id = "Java-Course" value = "Java" name = "courses"> Java
                     			<input th:field="*{courses}" type="checkbox" id = "Python-Course" value = "Python" name = "courses"> Python
+								<input th:field="*{courses}" type="checkbox" id = "Python-Course" value = "Dart" name = "courses"> Dart
 								<input th:field="*{courses}" type="checkbox" id = "C#-Course" value = "C#" name = "courses" disabled = "disabled"> C#
 								<input th:field="*{courses}" type="checkbox" id = "Math-Course" value = "Math" name = "courses" disabled = "disabled"> Math
                     		</li>

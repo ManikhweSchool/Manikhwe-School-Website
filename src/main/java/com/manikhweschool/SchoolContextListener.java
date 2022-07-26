@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.manikhweschool.controller.TodayVisitationController;
+import com.manikhweschool.model.DartVisitationInfo;
 import com.manikhweschool.model.JavaVisitationInfo;
 import com.manikhweschool.model.PythonVisitationInfo;
 import com.manikhweschool.model.TodayVisitation;
@@ -41,7 +42,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 		todayVisitation = new TodayVisitation(
 		new GregorianCalendar(),
 		new JavaVisitationInfo(),
-		new PythonVisitationInfo());
+		new PythonVisitationInfo(),
+		new DartVisitationInfo());
 	}
 	
 	// Make my credentials available to all of my pages.
@@ -86,7 +88,8 @@ public class SchoolContextListener implements ServletContextListener, Runnable {
 					new TodayVisitation(
 						new GregorianCalendar(),
 						new JavaVisitationInfo(),
-						new PythonVisitationInfo()
+						new PythonVisitationInfo(),
+						new DartVisitationInfo()
 					)
 				);
 			}

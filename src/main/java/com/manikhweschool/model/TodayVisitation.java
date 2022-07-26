@@ -37,6 +37,9 @@ public class TodayVisitation implements Serializable{
 	@Embedded
 	private PythonVisitationInfo pythonVisitationInfo;
 	
+	@Embedded
+	private DartVisitationInfo dartVisitationInfo;
+	
 	public TodayVisitation() {
 		calendar = new GregorianCalendar();
 		dayVisitorNumber = 0;
@@ -44,11 +47,13 @@ public class TodayVisitation implements Serializable{
 	
 	public TodayVisitation(GregorianCalendar calendar,
 	JavaVisitationInfo javaVisitationInfo,
-	PythonVisitationInfo pythonVisitationInfo) {
+	PythonVisitationInfo pythonVisitationInfo,
+	DartVisitationInfo dartVisitationInfo) {
 		this.calendar = calendar;
 		dayVisitorNumber = 0;
 		this.javaVisitationInfo = javaVisitationInfo;
 		this.pythonVisitationInfo = pythonVisitationInfo;
+		this.dartVisitationInfo = dartVisitationInfo;
 	}
 	
 	public Calendar getCalendar() {
@@ -73,6 +78,14 @@ public class TodayVisitation implements Serializable{
 
 	public PythonVisitationInfo getPythonVisitationInfo() {
 		return pythonVisitationInfo;
+	}
+
+	public DartVisitationInfo getDartVisitationInfo() {
+		return dartVisitationInfo;
+	}
+
+	public void setDartVisitationInfo(DartVisitationInfo dartVisitationInfo) {
+		this.dartVisitationInfo = dartVisitationInfo;
 	}
 
 	public int getDayVisitorNumber() {

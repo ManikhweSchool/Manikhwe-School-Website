@@ -33,7 +33,7 @@ public class StudentController {
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signIn(Model model, HttpSession session) {
-		
+		/*
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);
 			session.setAttribute("canAccessPython", false);
@@ -42,16 +42,16 @@ public class StudentController {
 		}
 		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
 			session.setAttribute("firstTimeVisit", false);
-		}
+		}*/
 		
 		model.addAttribute("student", student);
-		
+		/*
 		if(session.isNew()) {
 			
 			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
 			todayVisitation.increaseDayVisitorNumber();
 			System.out.println("Session Created...");
-		}
+		}*/
 		
 		return "SignIn";
 	}

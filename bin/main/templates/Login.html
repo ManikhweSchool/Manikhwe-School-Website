@@ -10,26 +10,31 @@
         <div class = "container-fluid">
             <!--The on hover css property i can't use, reason being i don't know how.-->
             <div class = "row">
-		<div class = "col-md-12">
-		    <div>
-		        <ul id = "Header_Items">		
-		            <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
-				    <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" target = "_blank">Background</a></li>
-				    <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" target = "_blank">Contacts</a></li>
-				    <li class = "Header_Item"><a href="Games.html" th:href = "@{/games}" class = "Header_Link">Games</a></li>
-				    <li class = "Header_Item"><a href = "SignIn.html" th:href = "@{/login}" class = "Header_Link" 
-				    style = "float : right;background-color : blue;" id="SignIn_Page_Link">SignIn</a></li>
-		        </ul>
+				<div class = "col-md-12">
+				    <div>
+				        <ul id = "Header_Items">		
+				            <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
+						    <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link">Background</a></li>
+						    <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link">Contacts</a></li>
+						    <li class = "Header_Item"><a href = "SignIn.html" th:href = "@{/signin}" class = "Header_Link" 
+						    style = "float : right;background-color : blue;" id="SignIn_Page_Link">SignIn</a></li>
+				        </ul>
+				    </div>
+				</div>
 		    </div>
-		</div>
-            </div>
+		    
             <div class = "row">
 				<div class = "col-md-12">
                     <div id = "Form_Cover">
+	                    <div class ="col-md-4 offset-md-5">
+	            		
+		            		<img class= "mt-3"th:src="@{images/Logo.jpg}" width="70%" height="150">
+		            	</div>
                         <form id = "Form" th:action="@{/Login}" th:object="${student}" method="post">
                         	<div th:if="${invalidCredetials}" class="error" id="Incorrect_Credentials_Div">
                         		<h3 th:text="|Try Again : ${status}|" style="color:red">Try Again : Incorrect Credentials </h3>
                         	</div>
+                        	
                         	<table style = "color:white">
                         		<tr>
                         			<td><label>Email : </label></td>

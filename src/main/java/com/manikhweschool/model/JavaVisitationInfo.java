@@ -43,12 +43,6 @@ Serializable{
 	private int chapterTwelveDayVisitors;
 	@Column(name="Java_C13_Visitors", nullable = false)
 	private int chapterThirteenDayVisitors;
-	@Column(name="Java_C14_Visitors", nullable = false)
-	private int chapterForteenDayVisitors;
-	@Column(name="Java_C15_Visitors", nullable = false)
-	private int chapterFifteenDayVisitors;
-	@Column(name="Java_C16_Visitors", nullable = false)
-	private int chapterSixteenDayVisitors;
 	@Column(name="Java_C17_Visitors", nullable = false)
 	private int chapterSeventeenDayVisitors;
 	@Column(name="Java_C18_Visitors", nullable = false) 
@@ -91,8 +85,6 @@ Serializable{
 	private int chapterThirtyOneDayVisitors;
 	@Column(name="Java_C32_Visitors", nullable = false)
 	private int chapterThirtyTwoDayVisitors;
-	@Column(name="Java_C33_Visitors", nullable = false)
-	private int chapterThirtyThreeDayVisitors;
 	
 	public JavaVisitationInfo() {
 		
@@ -131,9 +123,7 @@ Serializable{
 		chapterElevenDayVisitors = 0;
 		chapterTwelveDayVisitors = 0;
 		chapterThirteenDayVisitors = 0;
-		chapterForteenDayVisitors = 0;
-		chapterFifteenDayVisitors = 0;
-		chapterSixteenDayVisitors = 0;
+
 		chapterSeventeenDayVisitors = 0;
 		chapterEighteenDayVisitors = 0;
 		chapterNinteenDayVisitors = 0;
@@ -150,7 +140,7 @@ Serializable{
 		chapterThirtyDayVisitors = 0;
 		chapterThirtyOneDayVisitors = 0;
 		chapterThirtyTwoDayVisitors = 0;
-		chapterThirtyThreeDayVisitors = 0;
+
 	}
 	
 	public void increaseChapterOneDayVisitors() {
@@ -192,15 +182,7 @@ Serializable{
 	public void increaseChapterThirteenDayVisitors() {
 		chapterThirteenDayVisitors++;
 	}
-	public void increaseChapterForteenDayVisitors() {
-		chapterForteenDayVisitors++;
-	}
-	public void increaseChapterFifteenDayVisitors() {
-		chapterFifteenDayVisitors++;
-	}
-	public void increaseChapterSixteenDayVisitors() {
-		chapterSixteenDayVisitors++;
-	}
+	
 	public void increaseChapterSeventeenDayVisitors() {
 		chapterSeventeenDayVisitors++;
 	}
@@ -310,17 +292,7 @@ Serializable{
 		return chapterThirteenDayVisitors;
 	}
 
-	public int getChapterForteenDayVisitors() {
-		return chapterForteenDayVisitors;
-	}
-
-	public int getChapterFifteenDayVisitors() {
-		return chapterFifteenDayVisitors;
-	}
-
-	public int getChapterSixteenDayVisitors() {
-		return chapterSixteenDayVisitors;
-	}
+	
 
 	public int getChapterSeventeenDayVisitors() {
 		return chapterSeventeenDayVisitors;
@@ -379,7 +351,41 @@ Serializable{
 	public void increaseChapterThirtyTwoDayVisitors() {
 		chapterThirtyTwoDayVisitors++;
 	}
-	public void increaseChapterThirtyThreeDayVisitors() {
-		chapterThirtyThreeDayVisitors++;
+
+	@Override
+	public void increaseChapterForteenDayVisitors() {
+		
+		
 	}
+
+	@Override
+	public void increaseChapterFifteenDayVisitors() {
+		
+		
+	}
+
+	@Override
+	public void increaseChapterSixteenDayVisitors() {
+		
+		
+	}
+
+	@Override
+	public int getChapterForteenDayVisitors() {
+		
+		return -1;
+	}
+
+	@Override
+	public int getChapterFifteenDayVisitors() {
+		
+		return -1;
+	}
+
+	@Override
+	public int getChapterSixteenDayVisitors() {
+		
+		return -1;
+	}
+	
 }

@@ -58,6 +58,8 @@ public class Student implements Comparable<Student>,Serializable{
     //@OneToMany(mappedBy="student")
     //private List<Rhythm> rhythms;
     
+    private boolean isMember = false;
+    
 	public Student() {
 	
 		joinedDate = new Date();
@@ -76,6 +78,14 @@ public class Student implements Comparable<Student>,Serializable{
 		
 	}
 	
+	public boolean isMember() {
+		return isMember;
+	}
+
+	public void setMember(boolean isMember) {
+		this.isMember = isMember;
+	}
+
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}
@@ -150,14 +160,14 @@ public class Student implements Comparable<Student>,Serializable{
 	public void setJoinedDate(Date joinedDate) {
 		this.joinedDate = joinedDate;
 	}
-	/*
+	
 	public Collection<String> getCourses() {
 		return courses;
 	}
 
 	public void setCourses(Collection<String> courses) {
 		this.courses = courses;
-	}*/
+	}
 	
 	public String processStudentRegistration(){
         /*

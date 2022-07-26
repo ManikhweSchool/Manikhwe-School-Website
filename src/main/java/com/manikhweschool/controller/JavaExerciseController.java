@@ -33,7 +33,6 @@ public class JavaExerciseController extends ExerciseController{
 		
 	}
 	
-	
 	@GetMapping(value = "/download/partone/chaptertwo/video")
 	public @ResponseBody ResponseEntity<byte[]> getChapterTwoVideo(
 	@RequestParam String exercise) throws IOException, URISyntaxException {
@@ -146,6 +145,7 @@ public class JavaExerciseController extends ExerciseController{
 		
 	}
 	/*********************End Of Part One********************/
+	
 	@GetMapping(value = "/download/parttwo/chapternine/video")
 	public @ResponseBody ResponseEntity<byte[]> getChapterNineVideo(
 	@RequestParam String exercise) throws IOException, URISyntaxException {
@@ -242,6 +242,7 @@ public class JavaExerciseController extends ExerciseController{
 		
 	}
 	/*********************End Of Part Two********************/
+	
 	@GetMapping(value = "/download/partthree/chapterfourteen/video")
 	public @ResponseBody ResponseEntity<byte[]> getChapterFourteenVideo(
 	@RequestParam String exercise) throws IOException, URISyntaxException {
