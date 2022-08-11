@@ -31,8 +31,13 @@ public class StudentController {
 	@Autowired
 	private Student student;
 	
+	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
-	public String signIn(Model model, HttpSession session) {
+	public String signIn(
+		Model model, 
+		HttpSession session,
+		@RequestParam("previousPage") String previousPage
+	) {
 		/*
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);
@@ -45,6 +50,7 @@ public class StudentController {
 		}*/
 		
 		model.addAttribute("student", student);
+		model.addAttribute("previousPage", previousPage);
 		/*
 		if(session.isNew()) {
 			
@@ -58,12 +64,15 @@ public class StudentController {
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
 	public String signIn(
-	@ModelAttribute(name="student")
-	Student student, Model model) {
+		@ModelAttribute(name="student")
+		Student student, 
+		@ModelAttribute(name="previousPage")
+		String previousPage,
+		Model model
+	) {
 		
 		String status;
 		String page;
-		
 		
 		if(service.findStudent(student.getEmail()).isPresent()) {
 			model.addAttribute("invalidStudent", true);
@@ -75,6 +84,7 @@ public class StudentController {
 			if(student.getPassword().equals(student.getConfirmPassword())) {
 				service.addStudent(student);
 				model.addAttribute("invalidStudent", false);
+				model.addAttribute("previousPage", previousPage);
 				status = "Student Succefully Registered";
 				page = "RegistrationConfirmation";
 			}
@@ -91,7 +101,12 @@ public class StudentController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(Model model, HttpSession session) {
+	public String login(
+		@RequestParam("previousPage") 
+		String previousPage, 
+		Model model, 
+		HttpSession session
+	) {
 		
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);
@@ -104,6 +119,7 @@ public class StudentController {
 		}
 		
 		model.addAttribute("student", student);
+		model.addAttribute("previousPage", previousPage);
 		
 		if(session.isNew()) {
 			
@@ -115,8 +131,13 @@ public class StudentController {
 		return "Login";
 	}
 	
-	@RequestMapping(value = "/Login", method = RequestMethod.POST)
-	public String login(@ModelAttribute(name="student")Student student, Model model) {
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(
+		HttpSession session,
+		@ModelAttribute(name="student")Student student, 
+		@ModelAttribute(name="previousPage")String previousPage,
+		Model model
+	) {
 		
 		String page;
 		String status;
@@ -129,12 +150,15 @@ public class StudentController {
 				
 				status = "Incorrect Credentials";
 				page = "Login";
+				
 			}
 			else {
+				
 				model.addAttribute("invalidCredetials",false);
-				model.addAttribute("student",student);
+				session.setAttribute("student",student);
 				status = "Correct Credentials";
-				page = "index";
+				page = previousPage;
+				
 			}
 			
 		}

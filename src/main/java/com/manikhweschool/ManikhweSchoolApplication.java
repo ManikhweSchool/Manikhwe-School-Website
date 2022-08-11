@@ -13,7 +13,6 @@ public class ManikhweSchoolApplication extends SpringBootServletInitializer{
 	
 	public static void main(String[] args) {
 		
-		 
 		 SpringApplication.run(ManikhweSchoolApplication.class, args);
 	}
 	

@@ -3,6 +3,7 @@ package com.manikhweschool.controller;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,8 +24,12 @@ public class MainController {
 
 	@RequestMapping(value = "/java", 
 	method = RequestMethod.GET)
-	public String learnJava(HttpSession session) {
-										
+	public String learnJava(
+		Model model, 
+		HttpSession session
+	) {
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", null);
 		return "IntroToJava";
 	}
 	
@@ -32,6 +37,8 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String learnPython(HttpSession session) {
 							
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", null);
 		return "IntroToPython";
 	}
 	
@@ -39,6 +46,8 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String learnDart(HttpSession session) {
 				
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", null);
 		return "IntroToDart";
 	}
 	

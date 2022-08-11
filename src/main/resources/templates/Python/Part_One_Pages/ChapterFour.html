@@ -19,12 +19,12 @@
             <div class = "row">
                 <div class = "col-md-12">
                 	<ul id = "Header_Items">		
-                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/home}" class = "Header_Link">Home</a></li>
+                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
                         <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
                         <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
                         <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
-                        <li class = "Header_Item"><a href = "SignIn.html" th:href = "@{/signin}" id = "SignIn_Page_Link" class = "Header_Link" >SignIn</a></li>
-                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/login}" class = "Header_Link" target = "_blank">Login</a></li>
+                        <li class = "Header_Item"><a href = "IntroToPython.html" th:href = "@{/python}" class = "Header_Link" target = "_blank">Python</a></li>
+                        <li class = "Header_Item"><a href = "https://www.paypal.com/donate/?hosted_button_id=5AY9Q5CLXFQB8" id = "SignIn_Page_Link" class = "Header_Link" >Donate</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,6 +32,19 @@
             <div class = "row">
                 <div class = "col-md-12 ">
                     <h2 class = "text-center">If Statements</h2>
+					<form class="mb-5" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position : fixed;left : 0;top : 40%;">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="SDRP5VRG3Q8L2">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+	                <form class="my-5 ml-4" action="https://www.paypal.com/donate" method="post" target="_top" style="position : fixed;left : 0;top : 42%;">
+						<input type="hidden" name="hosted_button_id" value="5AY9Q5CLXFQB8" />
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+						<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+					<img class="mt-5 ml-4 pl-2" th:src="@{/images/Logo.jpg}" width = "6%" height = "100px" style="position : fixed;left : 0;top : 47%;"/>
+					
 				</div>
             </div>
             <div class = "row">
@@ -48,23 +61,28 @@
             
             <div class = "row">
                 <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.1</h6>
+                    <h6 class = "exercise-name mt-5">Exercise 4.1</h6>
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/a5167588-f93d-4c55-80bd-44bad47b7c8b?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                    
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/91aac25f-daab-4ac5-b985-4e8f9ef3e236?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/8040cf24-1401-492f-8b9e-702836943f34?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+    
                 </div>
-            </div>      
+            </div>  
+            <div id = "message-1-div" class = "message-div" style = "margin-left : 41%;"> 
+            	<p id = "message-paragraph-1" class = "message-paragraph"> 
+            		Just because they are shooting at you, it doesn't mean they shot you.
+            	</p>
+            </div>    
             <div id = "share-download-1" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.1}" 
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.1}" 
                         class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
@@ -94,7 +112,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.1}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.1}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -102,23 +120,23 @@
             </div>
 			<div class = "row">
                 <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 4.5.2</h6>
+                    <h6 class = "exercise-name ">Exercise 4.2</h6>
                 </div>
                 <div class = "col-md-3">
-                   <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/01912cd1-58d6-4b81-91ae-3a1ea8a6b483?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/0dff7d52-17eb-460b-b2f6-7a9630c7e293?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/89e865d9-06d7-4f3f-b6c2-c476d676c824?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
             </div>      
             <div id = "share-download-2" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.2}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.2}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -147,7 +165,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.2}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.2}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -156,23 +174,28 @@
 			
 			<div class = "row">
                 <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.3</h6>
+                    <h6 class = "exercise-name mt-5">Exercise 4.3</h6>
                 </div>
                 <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/f5da70df-77a4-465c-9c68-b62b474be6b7?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/465beb89-a5e1-4841-abc4-3a0ad6a298ff?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/5525a6a8-40ac-46f9-8c3d-eab8336ddabc?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
-            </div>      
+            </div>    
+            <div id = "message-3-div" class = "message-div" style = "margin-left : 41%;"> 
+            	<p id = "message-paragraph-3" class = "message-paragraph"> 
+            		  Code never lies, comments sometimes do. 
+            	</p>
+            </div>  
             <div id = "share-download-3" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.3}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.3}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -201,7 +224,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.3}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.3}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -209,28 +232,24 @@
             </div>
 			<div class = "row">
                 <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 4.5.4</h6>
+                    <h6 class = "exercise-name ">Exercise 4.4</h6>
                 </div>
                 <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/64a4cace-2bee-4942-a6f4-8a5e3c43834c?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/e91e68ed-f3b2-4c9e-a7d2-d1f056403067?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/343a734f-ee0e-4b62-a0ae-1870090f3925?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
             </div>      
-            <div id = "message-4-div" class = "message-div" style = "margin-left : 41%;"> 
-            	<p id = "message-paragraph-4" class = "message-paragraph"> 
-            		You deserve the best that life has to offer.
-            	</p>
-            </div>
+            
             <div id = "share-download-4" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.4}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.4}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -259,7 +278,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.4}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.4}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -268,23 +287,28 @@
 			
 			<div class = "row">
                 <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.5</h6>
+                    <h6 class = "exercise-name mt-5">Exercise 4.5</h6>
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/d4f554a5-06fb-46d3-ae76-c563f14e459e?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/b3f12081-4a3a-4a35-b4e5-acc012146850?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/b38dba2d-451f-4f2b-bcad-ae85c1c581f8?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
             </div>      
+            <div id = "message-5-div" class = "message-div" style = "margin-left : 41%;"> 
+            	<p id = "message-paragraph-5" class = "message-paragraph"> 
+            		 Proof of passion is reputation.
+            	</p>
+            </div> 
             <div id = "share-download-5" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -313,7 +337,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -322,23 +346,23 @@
 			
 			<div class = "row">
                 <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 4.5.6</h6>
+                    <h6 class = "exercise-name ">Exercise 4.6</h6>
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/a7dfcc9e-164c-4260-86f1-a127d6f3d98f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/bec31e72-f6c8-41ea-a8b8-b848d91516af?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>  
+
                 </div>
                 <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/3c089719-2236-4a9b-b4c9-e24cd66cfc7a?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+
                 </div>
             </div>      
             <div id = "share-download-6" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -367,384 +391,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.7</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/9304a5af-3bfc-4ffb-a973-f6e52b272740?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/8c449eee-2f05-42e6-8ec8-9920f03576aa?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/5a19c8c2-6e0c-4ef3-ab2f-a5206dd49db2?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-7" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.7}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.7}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 4.5.8</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/faa9f51d-b117-4c05-84e5-e1673628040b?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/529a0d79-3f00-4b22-b9cb-a1405f27094b?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/4f772272-8650-4e7a-8677-88157ad940b9?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "message-8-div" class = "message-div" style = "margin-left : 37%;"> 
-            	<p id = "message-paragraph-8" class = "message-paragraph"> 
-            		Ambition is a minute by minute, day by day mentality.
-            	</p>
-            </div>
-            <div id = "share-download-8" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.8}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.8}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.9</h6>
-                </div>
-                <div class = "col-md-3">
-                     <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/1b152508-cbba-4114-aa82-0d71155fd214?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/ef2ae1e8-c91d-4c48-a3d6-ba39f511f269?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/999cbe04-0d81-4b18-b585-9633788ebb70?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-9" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.9}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.9}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.10</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/b9d95bea-8b23-4c0f-834a-deeb5cb65185?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/3b13f458-7fdb-48ef-8b37-dbf8f0b0ada9?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/8c93cb9c-915b-4a83-9037-356535c58882?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-9" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.10}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.10}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.11</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/89a54d43-9237-4d67-ba26-09eb961585be?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/11905d0d-b1bf-47f5-8fed-75dbb9bb03aa?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/06c7db0d-aa60-4793-a4ed-c3725113b0a6?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-9" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.11}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.11}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.12</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/008a9fca-6b00-4ee3-90f3-8946625efb3a?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/387ceab3-abef-4867-b130-3798dc62c8ab?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/1d0a3967-8c1e-4d03-9228-08a00eedb712?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-9" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.12}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.12}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Video</span>
-                        </a>
-                    </div>                   
-                </div>  
-            </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 4.5.13</h6>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/ecd7e38c-b110-470f-a60b-f950cc27e3a8?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/196d6b4e-259f-42a1-8de0-d46efd8cf4fa?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6919/60e6574d-d062-4a2d-bf97-ec5a543b3e8f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "share-download-9" class="row" style = "margin-left: 3%;width: 100%">   
-                <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
-                    
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/code?exercise=4.5.13}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
-                            <span>Download Code</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="twitter-share-container m-0 p-0">
-                        <a class="share twitter-share m-0 p-0" href=" https://twitter.com/LGanyile" rel="nofollow" target="_blank" title="Share on Twitter">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg> <span>Twitter</span>
-                        </a>
-                    </div>                
-                    <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
-                        </a>
-                    </div>
-                                 
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="linkedin-share-container m-0 p-0">
-                        <a class="share linkedin-share m-0 p-0" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;mini=true&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial&amp;source=CalliCoder" rel="nofollow" target="_blank" title="Share on Linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path></svg> <span>Linkedin</span>
-                        </a>
-                    </div>
-                    <!--xmlns:xlink="http://www.w3.org/1999/xlink"-->
-                    <div class="reddit-share-container m-0 p-0">
-                        <a class="share reddit-share m-0 p-0" href="https://reddit.com/submit?url=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f&amp;title=Spring%20Boot%2c%20MySQL%2c%20JPA%2c%20Hibernate%20Restful%20CRUD%20API%20Tutorial" rel="nofollow" target="_blank" title="Share on Reddit">
-                            <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M22,11.5C22,10.1 20.9,9 19.5,9C18.9,9 18.3,9.2 17.9,9.6C16.4,8.7 14.6,8.1 12.5,8L13.6,4L17,5A2,2 0 0,0 19,7A2,2 0 0,0 21,5A2,2 0 0,0 19,3C18.3,3 17.6,3.4 17.3,4L13.3,3C13,2.9 12.8,3.1 12.7,3.4L11.5,8C9.5,8.1 7.6,8.7 6.1,9.6C5.7,9.2 5.1,9 4.5,9C3.1,9 2,10.1 2,11.5C2,12.4 2.4,13.1 3.1,13.6L3,14.5C3,18.1 7,21 12,21C17,21 21,18.1 21,14.5L20.9,13.6C21.6,13.1 22,12.4 22,11.5M9,11.8C9.7,11.8 10.2,12.4 10.2,13C10.2,13.6 9.7,14.2 9,14.2C8.3,14.2 7.8,13.7 7.8,13C7.8,12.3 8.3,11.8 9,11.8M15.8,17.2C14,18.3 10,18.3 8.2,17.2C8,17 7.9,16.7 8.1,16.5C8.3,16.3 8.6,16.2 8.8,16.4C10,17.3 14,17.3 15.2,16.4C15.4,16.2 15.7,16.3 15.9,16.5C16.1,16.7 16,17 15.8,17.2M15,14.2C14.3,14.2 13.8,13.6 13.8,13C13.8,12.3 14.4,11.8 15,11.8C15.7,11.8 16.2,12.4 16.2,13C16.2,13.7 15.7,14.2 15,14.2Z"></path></svg> <span>Reddit</span>
-                        </a>
-                    </div> 
-                    <div class="m-0 p-0">
-                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.5.13}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/python/download/partone/chapterfour/video?exercise=4.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -757,20 +404,20 @@
 	<script>
 		$("document").ready(function(){
 			
-			for(var index = 4; index <=12;index += 4)
+			for(var index = 1; index <6;index += 2)
 				$("#message-" + index + "-div").hide();
 			
 			
-			$(".exercise-4-4-video").hover(function(){
-					$("#message-4-div").slideToggle("slow");
-				});
-			
-			$(".exercise-4-8-video").hover(function(){
-				$("#message-8-div").slideToggle("slow");
+			$(".exercise-4-1-video").hover(function(){
+				$("#message-1-div").slideToggle("slow");
 			});
 			
-			$(".exercise-4-12-video").hover(function(){
-				$("#message-12-div").slideToggle("slow");
+			$(".exercise-4-3-video").hover(function(){
+				$("#message-3-div").slideToggle("slow");
+			});
+			
+			$(".exercise-4-5-video").hover(function(){
+				$("#message-5-div").slideToggle("slow");
 			});
 			
 		});

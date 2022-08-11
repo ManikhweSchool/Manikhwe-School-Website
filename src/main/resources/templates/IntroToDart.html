@@ -20,7 +20,7 @@
                         <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
                         <li class = "Header_Item"><a href="IntroToPython.html" th:href = "@{/python}" class = "Header_Link">Python</a></li>
                         <li class = "Header_Item"><a href = "IntroToJava.html" th:href = "@{/java}" class = "Header_Link" >Java</a></li>
-                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
+                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin(previousPage=IntroToDart)}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,57 +29,57 @@
                     <h2 class = "Heading">Part I: Fundamentals Of Dart Programming I</h2>	
                     <ul class = "Chapter" id = "Part_One">
 						<li id = "Chapter_One">
-							<a > <!-- th:href="@{/dart/part/one/{1}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterOne')}:@{/dart/part/one/{1}}" >
 								Chapter 1 : Data Types & Variables  
 							</a>
 						</li>
 						<li id = "Chapter_Two">
-							<a  > <!-- th:href="@{/dart/part/one/{2}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterTwo')}:@{/dart/part/one/{2}}" >
 								Chapter 2 : Operators
 							</a>
 						</li>
 						<li id = "Chapter_Three">
-							<a > <!-- th:href="@{/dart/part/one/{3}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterThree')}:@{/dart/part/one/{3}}" >
 								Chapter 3 : Decision Making
 							</a>
 						</li>
 						<li id = "Chapter_Four">
-							<a > <!-- th:href="@{/dart/part/one/{4}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterFour')}:@{/dart/part/one/{4}}" >
 								Chapter 4 : Loops
 							</a>
 						</li>
 						<li id = "Chapter_Five">
-							<a > <!-- th:href="@{/dart/part/one/{5}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterFive')}:@{/dart/part/one/{5}}" >
 								Chapter 5 : Numbers
 							</a>
 						</li>
 						<li id = "Chapter_Six">
-							<a > <!-- th:href="@{/dart/part/one/{6}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterSix')}:@{/dart/part/one/{6}}" >
 								Chapter 6 : Boolean
 							</a>
 						</li>
 						<li id = "Chapter_Seven">
-							<a > <!-- th:href="@{/dart/part/one/{7}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterSeven')}:@{/dart/part/one/{7}}" >
 								Chapter 7 : Strings 
 							</a>
 						</li>
 						<li id = "Chapter_Eight">
-							<a  > <!-- th:href="@{/dart/part/one/{8}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterEight')}:@{/dart/part/one/{8}}" >
 								Chapter 8 : List
 							</a>
 						</li>
 						<li id = "Chapter_Nine">
-			          		<a > <!-- th:href="@{/dart/part/one/{9}}" -->
+			          		<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterNine')}:@{/dart/part/one/{9}}" >
 			          			Chapter 9 : Maps
 			          		</a>
 			          	</li>
 						<li id = "Chapter_Ten">
-							<a > <!-- th:href="@{/dart/part/one/{10}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterTen')}:@{/dart/part/one/{10}}" >
 								Chapter 10 : Runes
 							</a>
 						</li>
 						<li id = "Chapter_Eleven">
-							<a > <!-- th:href="@{/dart/part/one/{11}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Dart/Part_One_Pages/ChapterEleven')}:@{/dart/part/one/{11}}" >
 								Chapter 11 : Symbol
 							</a>
 						</li>

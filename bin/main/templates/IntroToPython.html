@@ -16,7 +16,7 @@
                         <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
                         <li class = "Header_Item"><a href="IntroToJava.html" th:href = "@{/java}" class = "Header_Link">Java</a></li>
                         <li class = "Header_Item"><a href = "IntroToDart.html" th:href = "@{/dart}" class = "Header_Link">Dart</a></li>
-                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
+                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin(previousPage=IntroToPython)}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,72 +29,72 @@
                     <h2 class = "Heading">Part I: Basics</h2>	
                     <ul class = "Chapter" id = "Part_One">
 						<li id = "Chapter_One">
-							<a > <!-- th:href="@{/python/part/one/{1}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterOne')}:@{/python/part/one/{1}}" >
 								Chapter 1 : Getting Started 
 							</a>
 						</li>
 						<li id = "Chapter_Two">
-							<a > <!-- th:href="@{/python/part/one/{2}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterTwo')}:@{/python/part/one/{2}}" >
 								Chapter 2 : For Loops
 							</a>
 						</li>
 						<li id = "Chapter_Three">
-							<a > <!-- th:href="@{/python/part/one/{3}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterThree')}:@{/python/part/one/{3}}" >
 								Chapter 3 : Numbers
 							</a>
 						</li>
 						<li id = "Chapter_Four">
-							<a > <!-- th:href="@{/python/part/one/{4}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterFour')}:@{/python/part/one/{4}}" >
 								Chapter 4 : If Statements
 							</a>
 						</li>
 						<li id = "Chapter_Five">
-							<a > <!-- th:href="@{/python/part/one/{5}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterFive')}:@{/python/part/one/{5}}" >
 								Chapter 5 : Miscellaneous Topics I
 							</a>
 						</li>
 						<li id = "Chapter_Six">
-							<a > <!-- th:href="@{/python/part/one/{6}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterSix')}:@{/python/part/one/{6}}" >
 								Chapter 6 : Strings
 							</a>
 						</li>
 						<li id = "Chapter_Seven">
-							<a > <!-- th:href="@{/python/part/one/{7}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterSeven')}:@{/python/part/one/{7}}" >
 								Chapter 7 : Lists 
 							</a>
 						</li>
 						<li id = "Chapter_Eight">
-							<a > <!-- th:href="@{/python/part/one/{8}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterEight')}:@{/python/part/one/{8}}" >
 								Chapter 8 : More With Lists
 							</a>
 						</li>
 						<li id = "Chapter_Nine">
-							<a > <!-- th:href="@{/python/part/one/{9}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterNine')}:@{/python/part/one/{9}}" >
 								Chapter 9 : While Loops
 							</a>
 						</li>
 						<li id = "Chapter_Ten">
-							<a > <!-- th:href="@{/python/part/one/{10}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterTen')}:@{/python/part/one/{10}}" >
 								Chapter 10 : Miscellaneous Topics II
 							</a>
 						</li>
 						<li id = "Chapter_Eleven">
-							<a > <!-- th:href="@{/python/part/one/{11}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterEleven')}:@{/python/part/one/{11}}" >
 								Chapter 11 : Dictionaries
 							</a>
 						</li>
 						<li id = "Chapter_Twelve">
-							<a > <!-- th:href="@{/python/part/one/{12}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterTwelve')}:@{/python/part/one/{12}}" >
 								Chapter 12 : Text Files
 							</a>
 						</li>
 						<li id = "Chapter_Thirteen">
-							<a > <!-- th:href="@{/python/part/one/{13}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterThirteen')}:@{/python/part/one/{13}}" >
 								Chapter 13 : Functions
 							</a>
 						</li>
 						<li id = "Chapter_Fourteen">
-							<a > <!-- th:href="@{/python/part/one/{14}}" -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Python/Part_One_Pages/ChapterFourteen')}:@{/python/part/one/{14}}" >
 								Chapter 14 : Object-Oriented Programming
 							</a>
 						</li>

@@ -16,7 +16,7 @@
 				            <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
 						    <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link">Background</a></li>
 						    <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link">Contacts</a></li>
-						    <li class = "Header_Item"><a href = "SignIn.html" th:href = "@{/signin}" class = "Header_Link" 
+						    <li class = "Header_Item"><a href = "SignIn.html" th:href = "@{/signin(previousPage=${previousPage})}" class = "Header_Link" 
 						    style = "float : right;background-color : blue;" id="SignIn_Page_Link">SignIn</a></li>
 				        </ul>
 				    </div>
@@ -30,7 +30,7 @@
 	            		
 		            		<img class= "mt-3"th:src="@{images/Logo.jpg}" width="70%" height="150">
 		            	</div>
-                        <form id = "Form" th:action="@{/Login}" th:object="${student}" method="post">
+                        <form id = "Form" th:action="@{/login(previousPage=${previousPage})}" th:object="${student}" method="post">
                         	<div th:if="${invalidCredetials}" class="error" id="Incorrect_Credentials_Div">
                         		<h3 th:text="|Try Again : ${status}|" style="color:red">Try Again : Incorrect Credentials </h3>
                         	</div>
@@ -51,7 +51,7 @@
                         		</tr>
                         		<tr>
                         			<td><label>Not A Member? </label></td>
-                        			<td><a href="SignIn.html" th:href="@{/signin}"
+                        			<td><a href="SignIn.html" th:href="@{/signin(previousPage=${previousPage})}"
                         					style="color:lightsalmon">SignIn
                         				</a>
                         		</tr>
