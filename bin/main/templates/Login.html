@@ -28,7 +28,7 @@
                     <div id = "Form_Cover">
 	                    <div class ="col-md-4 offset-md-5">
 	            		
-		            		<img class= "mt-3"th:src="@{images/Logo.jpg}" width="70%" height="150">
+		            		<img class= "mt-3" src="https://i.ibb.co/xsvVXQ4/Logo.jpg" width="70%" height="150" alt="Logo" border="0">
 		            	</div>
                         <form id = "Form" th:action="@{/login(previousPage=${previousPage})}" th:object="${student}" method="post">
                         	<div th:if="${invalidCredetials}" class="error" id="Incorrect_Credentials_Div">

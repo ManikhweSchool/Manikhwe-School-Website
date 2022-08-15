@@ -1,6 +1,7 @@
 @charset "ISO-8859-1";
 body{
-	background-image: url(../images/Bizana_Home.jpg);
+	background-image: url(https://i.ibb.co/jh8PYg1/Bizana-Home.jpg);
+	/*background-image: url(../images/Bizana_Home.jpg);*/
     background-size : cover;
         
 }
