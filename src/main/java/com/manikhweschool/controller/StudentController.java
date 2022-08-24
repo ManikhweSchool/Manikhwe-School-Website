@@ -1,6 +1,7 @@
 package com.manikhweschool.controller;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Optional;
 
@@ -173,10 +174,51 @@ public class StudentController {
 		return page;
 	}
 	
+	@RequestMapping(value = "/welcome", 
+	method = RequestMethod.POST)
+	public String subscribe(HttpSession session) {
+				
+		String email = ((Student)session.getAttribute("student")).getEmail();
+		Student retrievedStudent = service.findStudent(email).get();
+		retrievedStudent.setHasSubscribed(true);
+		retrievedStudent.setSubscriptionDate(new Date());
+		
+		return "SubscriptionConfirmation";
+	}
+	
+	@RequestMapping(value = "/cancel", 
+	method = RequestMethod.POST)
+	public String unsubscribe(HttpSession session) {
+						
+		String email = ((Student)session.getAttribute("student")).getEmail();
+		Student retrievedStudent = service.findStudent(email).get();
+		retrievedStudent.setHasSubscribed(false);
+		retrievedStudent.setUnsubscriptionDate(new Date());
+		
+		return "SubscriptionCancellation";
+	}
+	
 	@RequestMapping(value = "/find/student/{email}", method = RequestMethod.GET)
 	public Optional<Student> findStudent(@RequestParam("email") String email) {
 		
 		return service.findStudent(email);
+	}
+	
+	@RequestMapping(value = "/reset", method = RequestMethod.GET)
+	public String reset() {
+		
+		List<Student> students = findAllStudents();
+		
+		GregorianCalendar calendar = new GregorianCalendar();
+		calendar.setTimeInMillis(1000);
+		Date date = calendar.getTime();
+		
+		for(Student student:students) {
+			student.setSubscriptionDate(date);
+			student.setUnsubscriptionDate(date);
+		}
+		
+		return "IntroToDart";
 	}
 	
 	@RequestMapping(value = "/delete/student/{email}", method = RequestMethod.DELETE)

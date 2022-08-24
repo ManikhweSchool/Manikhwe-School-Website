@@ -3,6 +3,7 @@ package com.manikhweschool.model;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 
 import javax.persistence.Column;
@@ -45,7 +46,7 @@ public class Student implements Comparable<Student>,Serializable{
     @Column(name = "Sign_For_Updates", nullable = false)
     private boolean signedForUpdates;
 	
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(name = "Student_Joined_Date", nullable = false)
     private Date joinedDate;
     
@@ -60,9 +61,24 @@ public class Student implements Comparable<Student>,Serializable{
     
     private boolean isMember = false;
     
+    private boolean hasSubscribed = false;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "Student_SubscriptionDate_Date", nullable = false)
+    private Date subscriptionDate;
+    
+    @Temporal(TemporalType.DATE)
+    @Column(name = "Student_Unsubscription_Date", nullable = false)
+    private Date unsubscriptionDate;
+    
+
 	public Student() {
 	
 		joinedDate = new Date();
+		GregorianCalendar calendar = new GregorianCalendar();
+		calendar.setTimeInMillis(1000);
+		subscriptionDate = calendar.getTime();
+		unsubscriptionDate = calendar.getTime();
 		/*rhythms = new ArrayList<>();*/
 	}
 	
@@ -202,6 +218,31 @@ public class Student implements Comparable<Student>,Serializable{
 
 		return returnedValue;
 	}
+	
+	public boolean isHasSubscribed() {
+		return hasSubscribed;
+	}
+
+	public void setHasSubscribed(boolean hasSubsribed) {
+		this.hasSubscribed = hasSubsribed;
+	}
+
+	public Date getSubscriptionDate() {
+		return subscriptionDate;
+	}
+
+	public void setSubscriptionDate(Date subscriptionDate) {
+		this.subscriptionDate = subscriptionDate;
+	}
+
+	public Date getUnsubscriptionDate() {
+		return unsubscriptionDate;
+	}
+
+	public void setUnsubscriptionDate(Date unsubscriptionDate) {
+		this.unsubscriptionDate = unsubscriptionDate;
+	}
+	
 	/*
 	public List<Rhythm> getRhythms() {
 		return rhythms;
