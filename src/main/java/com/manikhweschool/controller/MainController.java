@@ -27,6 +27,13 @@ public class MainController {
 		return "IntroToJava";
 	}
 	
+	@RequestMapping(value = "/java/exercises", 
+	method = RequestMethod.GET)
+	public String javaExercises() {
+				
+		return "Exercises";
+	}
+	
 	@RequestMapping(value = "/python", 
 	method = RequestMethod.GET)
 	public String learnPython() {
@@ -34,11 +41,25 @@ public class MainController {
 		return "IntroToPython";
 	}
 	
+	@RequestMapping(value = "/python/exercises", 
+	method = RequestMethod.GET)
+	public String pythonExercises() {
+						
+		return "Python/Exercises";
+	}
+	
 	@RequestMapping(value = "/dart", 
 	method = RequestMethod.GET)
 	public String learnDart() {
 				
 		return "IntroToDart";
+	}
+	
+	@RequestMapping(value = "/dart/exercises", 
+	method = RequestMethod.GET)
+	public String dartExercises() {
+								
+		return "Dart/Exercises";
 	}
 	
 	// The visitBackgroundPage method can work as a servlet's doGet or doPost method.

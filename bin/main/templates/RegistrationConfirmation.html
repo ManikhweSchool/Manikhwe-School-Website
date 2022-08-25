@@ -33,6 +33,7 @@
                         <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
                         <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
                         <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
+                        <li class = "Header_Item"><a href="ConsultationSession.html" th:href =  "@{/booking}" class = "Header_Link">Consultation</a></li>
                         <li class = "Header_Item"><a href = "#"  id = "SignIn_Page_Link" class = "Header_Link" >SignIn</a></li>
                         <li class = "Header_Item"><a href = "#" class = "Header_Link">Login</a></li>
                     </ul>
@@ -48,21 +49,28 @@
 				
 				<ul style="list-style-type : none;margin : 5px;">
 					<li>
+						<a href="ConsultationSession.html" th:href="@{/booking}" 
+						class="btn btn-success btn-sm px-5 mb-1 ml-2">
+							Book Consultation
+						</a>
+					</li>
+					
+					<li>
 						<a href="IntroToJava.html" th:href="@{/java}" 
-						class="btn btn-success btn-sm px-4 mb-1 ml-5">
+						class="btn btn-success btn-sm px-5 mb-1 ml-5">
 							Java
 						</a>
 					</li>
 					<li>
-						<a href="IntroToPython.html" th:href="@{/python}" 
-						class="btn btn-success btn-sm px-5 mb-1 ml-3">
-							Python
+						<a href="IntroToDart.html" th:href="@{/dart}" 
+						class="btn btn-success btn-sm px-5 mb-1 ml-5">
+							Dart
 						</a>
 					</li>
 					<li>
-						<a href="IntroToDart.html" th:href="@{/dart}" 
+						<a href="IntroToPython.html" th:href="@{/python}" 
 						class="btn btn-success btn-sm px-4 mb-1 ml-5">
-							Dart
+							Python
 						</a>
 					</li>
 				</ul>

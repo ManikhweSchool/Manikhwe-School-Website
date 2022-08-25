@@ -1,6 +1,7 @@
 package com.manikhweschool.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "STUDENT")
@@ -71,6 +73,9 @@ public class Student implements Comparable<Student>,Serializable{
     @Column(name = "Student_Unsubscription_Date", nullable = false)
     private Date unsubscriptionDate;
     
+    @OneToMany
+    private Collection<ConsultationSession> consultationSessions;
+    
 
 	public Student() {
 	
@@ -80,6 +85,7 @@ public class Student implements Comparable<Student>,Serializable{
 		subscriptionDate = calendar.getTime();
 		unsubscriptionDate = calendar.getTime();
 		/*rhythms = new ArrayList<>();*/
+		consultationSessions = new ArrayList<>();
 	}
 	
 	public Student(String firstName, 
@@ -241,6 +247,18 @@ public class Student implements Comparable<Student>,Serializable{
 
 	public void setUnsubscriptionDate(Date unsubscriptionDate) {
 		this.unsubscriptionDate = unsubscriptionDate;
+	}
+
+	public Collection<ConsultationSession> getConsultationSessions() {
+		return consultationSessions;
+	}
+
+	public void setConsultationSessions(Collection<ConsultationSession> consultationSessions) {
+		this.consultationSessions = consultationSessions;
+	}
+	
+	public void addConsultationSession(ConsultationSession consultationSession) {
+		consultationSessions.add(consultationSession);
 	}
 	
 	/*

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+		
+        <!--<link rel = "stylesheet" th:href="@{/css/bootstrap-4.3.1-dist/css/bootstrap.min.css}"></link>-->
+	    <link rel="stylesheet" 
+	    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+	    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+	    crossorigin="anonymous">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+	    
+	    <link rel = "stylesheet" th:href="@{/css/index.css}"></link>
+        
+        <title>Home</title>
+          
+	    <style type="text/css">
+	    	label{
+	    		color : navy;
+	    	}
+	    	.controllable{
+	    		display:inline;
+	    	}
+	    </style>
+    </head>
+    <body>
+    	
+        <div class = "container-fluid">
+            <!--The on hover css property i can't use, reason being i don't know how.-->
+            <div class = "row">
+				<div class = "col-md-12">
+		           <ul id = "Header_Items">		
+		              <li class = "Header_Item"><a href = "#" th:href = "@{/index}" class = "Header_Link"  style = "color : white;">Home</a></li>
+		              <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" target = "_blank">Background</a></li>
+		              <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" target = "_blank">Contacts</a></li>
+		              <li class = "Header_Item"><a href="IntroToJava.html" th:href =  "@{/java}" class = "Header_Link">Java</a></li>
+		              <li class = "Header_Item"><a href="IntroToPython.html" th:href =  "@{/python}" class = "Header_Link">Python</a></li>
+		              <li class = "Header_Item"><a href="IntroToDart.html" th:href = "@{/dart}" class = "Header_Link">Dart</a></li>
+		              <li class = "Header_Item"><a href="ConsultationSession.html" th:href =  "@{/booking}" class = "Header_Link">Consultation</a></li>
+		              <li class = "Header_Item"><a href = "Sign.html" th:href = "@{/signin(previousPage=index)}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
+		              
+		          </ul>         
+				</div>
+				
+            </div>
+            <div class = "row">
+				<div class = "col-md-3 offset-md-5 col-sm-11 offset-sm-1">
+					<h3 style="color:blue">Practice Exercises: Getting Started</h3>
+				</div>
+			</div>
+            <div class = "row">
+				<div class = "col-md-7 offset-md-2">
+					
+					<h5 style="color:blue">1.1 Print a triangle like the one below.</h5>
+					<h5 style="color:green">
+						*********<br>
+						  *******<br>
+						    *****<br>
+						      ***<br>
+						        *<br>
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.2 Ask the user to enter a number. Print out the square of the number, but use the sep optional
+                    argument to print it out in a full sentence that ends in a period. Sample output is shown
+                    below.</h5>
+					<h5 style="color:green">
+						Enter a number: 5<br> 
+						The square of 5 is 25.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.3 Write a program that asks the user for a weight in kilograms and converts it to pounds. There
+                     are 2.2 pounds in a kilogram.</h5>
+
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.4 (Print a table) Write a program that displays the following table:</h5>
+						<table style="color:green">
+							<tr><td class="pr-5"><h5>a</h5></td><td class="pr-4"><h5>a^2</h5></td><td class="pr-5"><h5>a^3</h5></td></tr>
+							<tr><td><h5>1</h5></td><td><h5>1</h5></td><td><h5>1</h5></td></tr>
+							<tr><td><h5>2</h5></td><td><h5>4</h5></td><td><h5>8</h5></td></tr>
+							<tr><td><h5>3</h5></td><td><h5>9</h5></td><td><h5>27</h5></td></tr>
+							<tr><td><h5>4</h5></td><td><h5>16</h5></td><td><h5>64</h5></td></tr>
+						</table>	 	 
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.5 Write a program that asks the user to enter three numbers (use three separate input statements).
+                    Create variables called total and average that hold the sum and average of the
+                    three numbers and print out the values of total and average.</h5>
+
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.6 (Area and perimeter of a circle) Write a program that displays the area and perimeter of a circle that has a radius of 5.5 using the following formula:</h5>
+					<h5 style="color:green">
+						perimeter = 2 * radius * pi<br>
+						area = radius * radius * pi
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.7 (Average speed in miles) Assume a runner runs 14 kilometers in 45 minutes and 30
+                    seconds. Write a program that displays the average speed in miles per hour. (Note
+                    that 1 mile is 1.6 kilometers.)</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.8 (Area and perimeter of a rectangle) Write a program that displays the area and
+                    perimeter of a rectangle with the width of 4.5 and height of 7.9 using the following
+                    formula:</h5>
+					<h5 style="color:green">
+						area = width * height
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">1.9 (Algebra: solve 2 * 2 linear equations) You can use Cramer’s rule to solve the following
+                    2 * 2 system of linear equation:</h5>
+					<h5 style="color:green">
+						ax + by = e<br> 
+						cx + dy = f<br>
+						x = (ed - bf)/(ad-bc) y = (af - ec)/(ad-bc)<br><br>
+						Write a program that solves the following equation and displays the value for x and y:<br><br>
+						3.4x + 50.2y = 44.5<br>
+						2.1x + .55y = 5.9
+						
+					</h5>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-3 offset-md-5 col-sm-11 offset-sm-1">
+					<h3 style="color:blue">Practice Exercises: Loops</h3>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.1 Write a program that prints your name 100 times.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.2 Write a program that prints out a list of the integers from 1 to 20 and their squares. The output
+                    should look like this:</h5>
+					<h5 style="color:green">
+						1 --- 1<br>
+						2 --- 4<br>
+						3 --- 9<br>
+						...<br>
+						20 --- 400<br>
+						
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.3 Write a program that uses a for loop to print the numbers 8, 11, 14, 17, 20, . . . , 83, 86, 89.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.4 Use a for loop to print a box like the one below. Allow the user to specify how wide and how
+                    high the box should be. [Hint: print('*'*10) prints ten asterisks.]</h5>
+					<h5 style="color:green">
+						*******************<br>
+						*******************<br>
+						*******************<br>
+						*******************<br>
+
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.5 Write a program that uses a for loop to print the numbers 100, 98, 96, . . . , 4, 2.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.6 Use a for loop to print a box like the one below. Allow the user to specify how wide and how
+                    high the box should be.</h5>
+					<h5 style="color:green">
+						*******************<br>
+						************************<br>
+						*******************<br>
+						************************<br>
+						*******************<br>
+						************************<br>
+
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.7 Display the following pattern using a single loop.</h5>
+					<h5 style="color:green">
+						9999999999999<br>
+						7777777777777<br>
+						5555555555555<br>
+						3333333333333<br>
+						1111111111111
+
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.8 Display the following pattern using a single loop.</h5>
+					<h5 style="color:green">
+						9<br>
+						777<br>
+						55555555<br>
+						3333333333333333<br>
+						111111111111111111111111111
+
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.9 (Math: combinations) Write a program that displays all possible combinations
+                    for picking two numbers from integers 1 to 7. Also display the total number of
+                    all combinations.</h5>
+					<h5 style="color:green">
+						1 & 2<br>
+						1 & 3<br>
+						...<br>
+						...<br>
+						The total number of all combinations is 21
+						
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">2.10 (Financial application: compound value) Suppose you save $100 each month
+					into a savings account with the annual interest rate 5%. So, the monthly interest
+					rate is 0.05 / 12 = 0.00417. After the first month, the value in the account
+					becomes</h5>
+					<h5 style="color:green">
+						100 * (1 + 0.00417) = 100.417<br>
+						After the second month, the value in the account becomes<br>
+						(100 + 100.417) * (1 + 0.00417) = 201.252<br>
+						After the third month, the value in the account becomes<br>
+						(100 + 201.252) * (1 + 0.00417) = 302.507<br>
+						and so on.
+					</h5>
+					<h5 style="color:blue">
+						Write a program that prompts the user to enter an amount (e.g., 100), the annual
+						interest rate (e.g., 5), and the number of months (e.g., 6) and displays the amount
+						in the savings account after the given month.
+					</h5>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-3 offset-md-5 col-sm-11 offset-sm-1">
+					<h3 style="color:blue">Practice Exercises: Numbers</h3>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.1 (Geometry: area of a pentagon) Write a program that prompts the user to enter
+					the length from the center of a pentagon to a vertex and computes the area of the
+					pentagon.</h5>
+					<h5 style="color:green">
+						area = ()5*s^2)/(4*tan(pi/5)), where s is a length of a side.<br>
+						s = 2*r*sin(pi/5), where r is the length from the center of a pentagon to a vertex.<br><br> 
+						Round up two digits
+						after the decimal point. Here is a sample run:<br><br>
+						Enter the length from the center to a vertex: 5.5<br>
+						The area of the pentagon is 71.92
+					</h5>
+					
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.2 (Geometry: great circle distance) The great circle distance is the distance between
+					two points on the surface of a sphere. Let (x1, y1) and (x2, y2) be the geographical
+					latitude and longitude of two points. The great circle distance between the two
+					points can be computed using the following formula:</h5>
+					<h5 style="color:green">
+						d = radius * arccos(sin(x1) * sin(x2) + cos(x1) * cos(x2) * cos(y1 - y2))
+					</h5>
+					<h5 style="color:blue">
+						Write a program that prompts the user to enter the latitude and longitude of two
+						points on the earth in degrees and displays its great circle distance. The average
+						earth radius is 6,371.01 km. Note that you need to convert the degrees into radians
+						using the math.toRadians method since the Python trigonometric methods use
+						radians. The latitude and longitude degrees in the formula are for north and west.
+						Use negative to indicate south and east degrees. Here is a sample run:
+					</h5>
+					<h5 style="color:green">
+						Enter point 1 (latitude and longitude) in degrees: 39.55, -116.25
+						Enter point 2 (latitude and longitude) in degrees: 41.5, 87.37
+						The distance between the two points is 10691.79183231593 km
+						
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.3 (Random points on a circle) Write a program that generates three random points
+					on a circle centered at (0, 0) with radius 40 and display three angles in a triangle
+					formed by these three points.</h5>
+					<h5 style="color:green">
+						(Hint: Generate a random
+						angle a in radians between 0 and 2pi, and the (x,y) point/coordinate determined
+						by this angle is (r*cos(a), r*sin(a)).)
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.4 Write a program that generates and prints 50 random integers, each between 3 and 6.</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.5 Write a program that asks the user for a number of seconds and prints out how many minutes
+					and seconds that is. For instance, 200 seconds is 3 minutes and 20 seconds. [Hint: Use the //
+					operator to get minutes and the % operator to get seconds.]
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.6 Write a program that generates a random number, x, between 1 and 50, a random number y between 2 and 5, and computes x^y(x is a base y is an exponent).</h5>
+					
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.7 Write a program that asks the user to enter an angle between -180 degrees and 180 degrees. Using an
+					expression with the modulo operator, convert the angle to its equivalent between 0 degrees and
+					360 degrees.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.8 Write a program that asks the user to enter a weight in kilograms. The program should
+					convert it to pounds, printing the answer rounded to the nearest tenth of a pound.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.9 Write a program that asks the user for a number and then prints out the sine, cosine, and
+					tangent of that number.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">3.10 Write a program that given an amount of change less than $1.00 will print out exactly how
+					many quarters, dimes, nickels, and pennies will be needed to efficiently make that change.
+					[Hint: the // operator may be useful.]
+					</h5>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "col-md-3 offset-md-5 col-sm-11 offset-sm-1">
+					<h3 style="color:blue">Practice Exercises: If Statements</h3>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.1 Ask the user to enter a temperature in Celsius. The program should print a message based on the temperature:</h5>
+					<h5 style="color:green">
+						• If the temperature is less than -273.15, print that the temperature is invalid because it is
+						below absolute zero.<br>
+						• If it is exactly -273.15, print that the temperature is absolute 0.<br>
+						• If the temperature is between -273.15 and 0, print that the temperature is below freezing.<br>
+						• If it is 0, print that the temperature is at the freezing point.<br>
+						• If it is between 0 and 100, print that the temperature is in the normal range.<br>
+						• If it is 100, print that the temperature is at the boiling point.<br>
+						• If it is above 100, print that the temperature is above the boiling point.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.2 Generate a random number between 1 and 10. Ask the user to guess the number and print a
+					message based on whether they get it right or not.</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.3 (Financials: currency exchange) Write a program that prompts the user to enter
+					the exchange rate from currency in U.S. dollars to Chinese RMB. Prompt the user
+					to enter 0 to convert from U.S. dollars to Chinese RMB and 1 to convert from
+					Chinese RMB and U.S. dollars. Prompt the user to enter the amount in U.S. dollars
+					or Chinese RMB to convert it to Chinese RMB or U.S. dollars, respectively.
+					Here are the sample runs:</h5>
+					<h5 style="color:green">
+						Enter the exchange rate from dollars to RMB: 6.81
+						Enter 0 to convert dollars to RMB and 1 vice versa: 0
+						Enter the dollar amount: 100
+						$100.0 is 681.0 yuan
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.4 Write a program that asks the user for two numbers and prints Close if the numbers are
+	                within .001 of each other and Not close otherwise.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.5 Write a program that asks the user to enter a number and prints out all the divisors of that number.
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.6 Write a program that prompts the user to enter the center
+					coordinates and radii of two circles and determines whether the second circle is
+					inside the first or overlaps with the first. (Hint: circle2 is
+					inside circle1 if the distance between the two centers 6 = |r1 - r2| and circle2
+					overlaps circle1 if the distance between the two centers <= r1 + r2. Test your
+					program to cover all cases.)
+					Here are the sample runs:</h5>
+					<h5 style="color:green">
+						Enter circle1's center x-, y-coordinates, and radius: 0.5 5.1 13<br>
+						Enter circle2's center x-, y-coordinates, and radius: 1 1.7 4.5<br>
+						circle2 is inside circle1<br><br>
+						
+						Enter circle1's center x-, y-coordinates, and radius: 3.4 5.7 5.5<br>
+						Enter circle2's center x-, y-coordinates, and radius: 6.7 3.5 3<br>
+						circle2 overlaps circle1<br><br>
+						
+						Enter circle1's center x-, y-coordinates, and radius: 3.4 5.5 1<br>
+						Enter circle2's center x-, y-coordinates, and radius: 5.5 7.2 1<br>
+						circle2 does not overlap circle1<br><br>
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.7 (Game: pick a card) Write a program that simulates picking a card from a deck
+					of 52 cards. Your program should display the rank (Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+					Jack, Queen, King) and suit (Clubs, Diamonds, Hearts, Spades) of the card.
+					Here is a sample run of the program:</h5>
+					<h5 style="color:green">
+						The card you picked is Jack of Hearts
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.8 Write a program that prompts the user to enter
+					a point (x, y) and checks whether the point is within the rectangle centered at
+					(0, 0) with width 10 and height 5. For example, (2, 2) is inside the rectangle and
+					(6, 4) is outside the rectangle, as shown in Figure 3.7b. (Hint: A point is in the
+					rectangle if its horizontal distance to (0, 0) is less than or equal to 10 / 2 and its
+					vertical distance to (0, 0) is less than or equal to 5.0 / 2. Test your program to
+					cover all cases.) Here are two sample runs.</h5>
+					<h5 style="color:green">
+						Enter a point with two coordinates: 2 2<br>
+						Point (2.0, 2.0) is in the rectangle<br><br>
+						
+						Enter a point with two coordinates: 6 4<br>
+						Point (6.0, 4.0) is not in the rectangle
+					</h5>
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.9 (Compute the perimeter of a triangle) Write a program that reads three edges for
+					a triangle and computes the perimeter if the input is valid. Otherwise, display that
+					the input is invalid. The input is valid if the sum of every pair of two edges is
+					greater than the remaining edge.</h5>
+					
+				</div>
+			</div>
+			<div class = "row mt-5">
+				<div class = "col-md-7 offset-md-2">	
+					<h5 style="color:blue">4.10 (Find the number of days in a month) Write a program that prompts the user
+					to enter the month and year and displays the number of days in the month. For
+					example, if the user entered month 2 and year 2012, the program should display
+					that February 2012 had 29 days. If the user entered month 3 and year 2015, the
+					program should display that March 2015 had 31 days.
+					</h5>
+				</div>
+			</div>
+			
+      </div>
+	</body>
+</html>

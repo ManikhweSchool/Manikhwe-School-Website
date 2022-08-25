@@ -68,7 +68,8 @@ public class StudentController {
 		Student student, 
 		@ModelAttribute(name="previousPage")
 		String previousPage,
-		Model model
+		Model model,
+		HttpSession session
 	) {
 		
 		String status;
@@ -87,6 +88,8 @@ public class StudentController {
 				model.addAttribute("previousPage", previousPage);
 				status = "Student Succefully Registered";
 				page = "RegistrationConfirmation";
+				if(session.getAttribute("student")==null)
+					session.setAttribute("student", student);
 			}
 			else {
 				model.addAttribute("invalidStudent", true);
