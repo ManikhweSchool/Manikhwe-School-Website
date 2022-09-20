@@ -13,7 +13,7 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 	    
-	    <link rel = "stylesheet" th:href="@{/css/introtojava.css}"></link>
+	    <link rel = "stylesheet" th:href="@{/css/introtopython.css}"></link>
         <title>Introduction To Java Programming</title>
     </head>
     <body >
@@ -23,18 +23,36 @@
 	+ ' Clicking The Spotify Image If You Have Not Yet.');"  -->
 	<div class = "container-fluid">
             <div class = "row">
-                <div class = "col-md-12 mb-3">
-                    <ul id = "Header_Items">					
-						<li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
-                        <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
-                        <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
-                        <li class = "Header_Item"><a href = "https://www.eclipse.org/downloads/" class = "Header_Link">Requirements</a></li>
-                        <li class = "Header_Item"><a href="ConsultationSession.html" th:href =  "@{/booking}" class = "Header_Link">Consultation</a></li>
-                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin(previousPage=IntroToJava)}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
+            	
+                <div class = "col-md-4 col-sm-12" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0%;">					
+						<li class = "Header_Item" style = "padding-right : 20%;padding-left : 0%;"><a href = "#" th:href = "@{/index}" class = "Header_Link">Home</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;">Background</a></li>  
                     </ul>
                 </div>
+                <div class = "col-md-4 col-sm-12" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0px;padding-left : 8%;">					
+                        <li class = "Header_Item" style = "padding-right : 15%;"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;">Contacts</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "https://www.eclipse.org/downloads/"  class = "Header_Link">Requirements</a></li>
+                    </ul>
+                </div>
+                <div class = "col-md-4 col-sm-12" style="padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-left : 8%;">					
+                        <li class = "Header_Item" style = "padding-right : 8%;"><a href="https://chat.whatsapp.com/Lg0BRCtaZpvAsZ3RvKuqZz" class = "Header_Link">WhatsApp</a></li>
+                        <li class = "Header_Item"><a href = "Login.html" th:href = "@{/signin(previousPage=IntroToJava)}" id="SignIn_Page_Link" class = "Header_Link">Login/SignIn</a></li>
+                        
+                    </ul>
+                </div>
+                <div class = "col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-2">
+                	<a href = "https://chat.whatsapp.com/Lg0BRCtaZpvAsZ3RvKuqZz" 
+                	class = "btn btn-lg btn-success"
+                	style="padding-right:30%;padding-left:30%">
+                		Join WhatsApp Group
+                	</a>
+                </div>
             </div>
-            <div class = "row" th:object="${student}" >
+            
+            <div class = "row mt-3" th:object="${student}" >
 				<div class = "col-md-12 Part">
                     <h2 class = "Heading">Part I: Fundamentals of Programming</h2>	
                     <ul class = "Chapter" id = "Part_One">

@@ -14,10 +14,12 @@ body{
 	font-size : 30px;
 	margin-left : 10px;
 }
-#Header_Items{
+.Header_Items{
 	list-style-type : none;
 	margin : 0px;
-	padding : 20px 0px;
+	padding-right : 0px;
+	padding-top : 20px;
+	padding-bottom : 20px;
 	background : hsl(250, 30%, 30% );
 	
 }
