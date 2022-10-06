@@ -92,7 +92,7 @@
 							</a>
 						</li>
 						<li id = "Chapter_Eight">
-							<a > <!-- th:href="${session.student==null}?@{/login(previousPage='Part_One_Pages/ChapterEight')}:@{/part/one/{8}}" > -->
+							<a th:href="${session.student==null}?@{/login(previousPage='Part_One_Pages/ChapterEight')}:@{/part/one/{8}}" >
 								Chapter 8 : Multidimensional Arrays
 							</a>
 						</li>
@@ -104,32 +104,32 @@
 		            <h2 class = "Heading">Part II: Object-Oriented Programming</h2>
 			       	<ul class = "Chapter" id = "Part_Two">
 			          	<li id = "Chapter_Nine">
-			          		<a > <!-- th:href="@{/part/two/{9}}"> --> 
+			          		<a  th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterNine')}:@{/part/two/{9}}"> 
 			          			Chapter 9 : Objects and Classes
 			          		</a>
 			          	</li>
 						<li id = "Chapter_Ten">
-							<a > <!-- th:href="@{/part/two/{10}}"-->
+							<a  th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterTen')}:@{/part/two/{10}}">
 								Chapter 10 : Thinking in Objects
 							</a>
 						</li>
 						<li id = "Chapter_Eleven">
-							<a > <!-- th:href="@{/part/two/{11}}" >-->
+							<a > <!-- th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterEleven')}:@{/part/two/{11}}" >-->
 								Chapter 11 : Inheritance and Polymorphism
 							</a>
 						</li>
 						<li id = "Chapter_Twelve">
-							<a > <!-- th:href="@{/part/two/{12}}">-->
+							<a > <!-- th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterTwelve')}:@{/part/two/{12}}">-->
 								Chapter 12 : Exception Handling and Text I/O
 							</a>
 						</li>
 						<li id = "Chapter_Thirteen">
-							<a > <!-- th:href="@{/part/two/{13}}"> -->
+							<a > <!-- th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterThirteen')}:@{/part/two/{13}}"> -->
 								Chapter 13 : Abstract Classes and Interfaces
 							</a>
 						</li>
 						<li id = "Chapter_Seventeen">
-							<a > <!-- th:href="@{/part/two/{17}}"> -->
+							<a > <!-- th:href="${session.student==null}?@{/login(previousPage='Part_Two_Pages/ChapterSeventeen')}:@{/part/two/{17}}"> -->
 								Chapter 17 : Binary I/O
 							</a>
 						</li>
