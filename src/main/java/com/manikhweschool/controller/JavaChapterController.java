@@ -147,6 +147,47 @@ public class JavaChapterController {
 		return page;
 	}
 	
+	@RequestMapping(value="/part/three/{chapter}", method = RequestMethod.GET)
+	public String visitPartThree(
+	@PathVariable("chapter") String chapter,
+	HttpSession session){
+		
+		String page = "Part_Three_Pages/Chapter";
+		
+		switch(chapter) {
+		case "{14}" : 
+			page += "Forteen"; 
+			((TodayVisitation)session.getServletContext()
+			.getAttribute("todayVisitation"))
+			.getJavaVisitationInfo()
+			.increaseChapterNineDayVisitors();
+			break;
+		case "{15}" : 
+			page += "Fifteen"; 
+			((TodayVisitation)session.getServletContext()
+			.getAttribute("todayVisitation"))
+			.getJavaVisitationInfo()
+			.increaseChapterTenDayVisitors();
+			break;
+		
+		default : 
+			page += "Sixteen";
+			((TodayVisitation)session.getServletContext()
+			.getAttribute("todayVisitation"))
+			.getJavaVisitationInfo()
+			.increaseChapterSeventeenDayVisitors();
+		}
+		
+		if(session.isNew()) {
+			
+			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
+			todayVisitation.increaseDayVisitorNumber();
+			
+		}
+		
+		return page;
+	}
+	
 	
 	@RequestMapping(value="/part/four/{chapter}", method = RequestMethod.GET)
 	public String visitPartFour(

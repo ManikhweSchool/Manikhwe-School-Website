@@ -31,6 +31,14 @@ public class StudentController {
 	@Autowired
 	private Student student;
 	
+	@Autowired
+	private
+	PythonChapterController pythonChapterController;
+	
+	@Autowired
+	private
+	JavaChapterController javaChapterController;
+	
 	
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signIn(
@@ -110,7 +118,7 @@ public class StudentController {
 		Model model, 
 		HttpSession session
 	) {
-		
+		/*
 		if(session.getAttribute("firstTimeVisit")==null) {
 			session.setAttribute("canAccessJava", false);
 			session.setAttribute("canAccessPython", false);
@@ -119,7 +127,7 @@ public class StudentController {
 		}
 		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
 			session.setAttribute("firstTimeVisit", false);
-		}
+		}*/
 		
 		model.addAttribute("student", student);
 		model.addAttribute("previousPage", previousPage);
@@ -152,15 +160,54 @@ public class StudentController {
 				model.addAttribute("invalidCredetials",true);
 				
 				status = "Incorrect Credentials";
-				page = "Login";
+				return "Login";
 				
 			}
 			else {
 				
 				model.addAttribute("invalidCredetials",false);
-				session.setAttribute("student",student);
+				//model.addAttribute("student",student);
+				
+				session.setAttribute("student", student);
 				status = "Correct Credentials";
-				page = previousPage;
+				
+				
+				String language = previousPage.substring(0,
+				previousPage.indexOf('-'));
+				
+				byte chapterNumber = Byte.parseByte(
+				previousPage.substring(previousPage.
+				indexOf('-')+1));
+				
+				
+				switch(language) {
+				case "python":
+					if(chapterNumber<15)
+						return pythonChapterController.visitPartOne("{"+chapterNumber+"}", session);
+					else if(chapterNumber<19)
+						return pythonChapterController.visitPartTwo("{"+chapterNumber+"}", session);
+					else 
+						return pythonChapterController.visitPartThree("{"+chapterNumber+"}", session);
+					
+					
+				case "java":
+					if(chapterNumber<9)
+						return javaChapterController.visitPartOne("{"+chapterNumber+"}", session);
+					else if(chapterNumber<14 || chapterNumber==17)
+						return javaChapterController.visitPartTwo("{"+chapterNumber+"}", session);
+					else if(chapterNumber<17)
+						return javaChapterController.visitPartThree("{"+chapterNumber+"}", session);
+					else if(chapterNumber<30)
+						return javaChapterController.visitPartFour("{"+chapterNumber+"}", session);
+					else 
+						return javaChapterController.visitPartFive("{"+chapterNumber+"}", session);
+					
+				default:
+					System.out.println("Programming Language Is Neither Java Nor Python.");
+					return "index";
+				}
+				
+				
 				
 			}
 			
@@ -168,12 +215,13 @@ public class StudentController {
 		else {
 			model.addAttribute("invalidCredetials", true);
 			status = "Incorrect Credentials";
-			page = "Login";
+			model.addAttribute("status", status);
+			return "Login";
 			
 		}
 		
-		model.addAttribute("status", status);
-		return page;
+		
+		
 	}
 	
 	@RequestMapping(value = "/welcome", 
@@ -259,4 +307,14 @@ public class StudentController {
 		
         return findStudent(student.getEmail()) != null;
     }
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+	
+	
 }

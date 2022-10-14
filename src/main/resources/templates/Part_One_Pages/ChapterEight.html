@@ -16,82 +16,109 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
         
-        <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\chapter.css" 
-        th:href="@{/css/chapter.css}" rel = "stylesheet"></link>
         <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\socialnetworksbuttons.css"
         th:href="@{/css/socialnetworksbuttons.css}" rel = "stylesheet"></link>
         <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\socialnetworkforsharing.css" 
         th:href="@{/css/socialnetworkforsharing.css}" rel = "stylesheet"></link>
+    	
+    	<link rel = "stylesheet" th:href="@{/css/introtojava.css}"></link>
+    	
     	<title>Multidimensional Arrays</title>
     </head>
     <body>
-        <div class = "container-fluid">
+        <div class = "container-fluid" th:object="${#session.getAttribute('student')}">
+        
             <div class = "row">
-                <div class = "col-md-12">
-                	<ul id = "Header_Items">		
-                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
-                        <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
-                        <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
-                        <li class = "Header_Item"><a  class = "Header_Link">Notes</a></li>
-                        <li class = "Header_Item"><a href = "IntroToJava.html" th:href = "@{/java}" class = "Header_Link">Java</a></li>
-                        <li class = "Header_Item"><a href = "https://www.paypal.com/donate/?hosted_button_id=5AY9Q5CLXFQB8" id = "SignIn_Page_Link" class = "Header_Link" >Donate</a></li>
+            	
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0%;">					
+						<li class = "Header_Item" style = "padding-right : 20%;padding-left : 0%;"><a th:href = "@{/index}" class = "Header_Link">Home</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;">Background</a></li>  
+                    </ul>
+                </div>
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0px;padding-left : 0%;">					
+                        <li class = "Header_Item" style = "padding-right : 15%;"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;">Contacts</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "/images/Notes/Java/Part One/Chapter8_Notes.pdf"  class = "Header_Link">Notes</a></li>
+                    </ul>
+                </div>
+                
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-left : 0%;padding-right : 0%;">
+                    <ul class = "Header_Items" style="padding-left : 0%;padding-right : 0%;">					
+                        <li class = "Header_Item" style = "padding-right : 18%;"><a href = "IntroToJava.html" th:href = "@{/java}" class = "Header_Link">Java</a></li>
+                        <li class = "Header_Item"><a href = "https://www.youtube.com/channel/UC997xKfo-ZIDfivL6RcMyZA/playlists" class = "Header_Link" >YouTube</a></li>
+                    </ul>
+                </div>
+                
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-left : 0%;">					
+                        <li class = "Header_Item" style = "padding-left : 0%;
+                        padding-right : 20%;"><a href = "https://www.paypal.com/donate/?hosted_button_id=5AY9Q5CLXFQB8" 
+                        class = "Header_Link">Donate</a></li>
+                        <li class = "Header_Item"><a href = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SDRP5VRG3Q8L2" 
+                        id = "SignIn_Page_Link" class = "Header_Link">Subscribe</a></li>
+                        
                     </ul>
                 </div>
             </div>
             <div class = "row">
-                <div class = "col-md-12 ">
-                    <h2 class = "text-center">Multidimensional Arrays</h2>
-                	<form class="mb-5" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position : fixed;left : 0;top : 40%;">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="SDRP5VRG3Q8L2">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-	                <form class="my-5 ml-4" action="https://www.paypal.com/donate" method="post" target="_top" style="position : fixed;left : 0;top : 42%;">
-						<input type="hidden" name="hosted_button_id" value="5AY9Q5CLXFQB8" />
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-						<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
-					</form>
-					<img class="mt-5 ml-4 pl-2" src="https://i.ibb.co/xsvVXQ4/Logo.jpg" width = "6%" height = "100px" style="position : fixed;left : 0;top : 47%;"/>
+	            	<div class = "col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-2">
+	                	<a href = "https://chat.whatsapp.com/D1oTY6THHtR6PmeeEtMK2v" 
+	                	class = "btn btn-lg btn-success"
+	                	style="padding-right:30%;padding-left:30%">
+	                		Join WhatsApp Group
+	                	</a>
+	                </div>
+	            </div>
+            <div class = "row">
+                <div class = "col-12 ">
+                    <h3 class = "text-center">Multidimensional Arrays</h3>
 					
-                </div>
+				</div>
+            </div>
+      		<div class = "row">
+            	<div class = "col-11 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-4">
+            		<h5 style="color:green;">Double Click To Watch On Full Screen!!!</h5>
+            	</div>
             </div>
             <div class = "row">
-                <div class = "col-md-3 text-center offset-md-2">
-                    <h6 class = "student-solution">Student A's Solution</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.1 Solution A</h6>
                 </div>
-                <div class = "col-md-3 text-center">
-                   <h6 class = "student-solution ">Student B's Solution</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.1 Solution B</h6>
                 </div>
-                <div class = "col-md-3  text-center">
-                    <h6 class = "student-solution">Student C's Solution</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.1 Solution C</h6>
                 </div>
-            </div>
-            
-            <div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 8.1</h6>
+             </div>
+            <div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+                	<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/1a3cc9c9-c973-4477-b123-4fc391d6656f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
-                <div class = "col-md-3">
-					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/1a3cc9c9-c973-4477-b123-4fc391d6656f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/cd10c5ae-16a4-4eda-b7f8-d3dfab441615?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/34f4bd24-fbf7-4f2a-bc1c-aa0c96fe8971?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "message-1-div" class = "message-div" style = "margin-left : 46%;"> 
-            	<p id = "message-paragraph-1" class = "message-paragraph"> 
-            		  Even the struggles are an opportunity for me to show off the victory. 
-            	</p>
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/cd10c5ae-16a4-4eda-b7f8-d3dfab441615?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
+                <div class = "col-4">
+					 <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/34f4bd24-fbf7-4f2a-bc1c-aa0c96fe8971?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
             </div>  
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+            <div class = "row">
+	            <div id = "message-1-div" class = "message-div col-10 offset-2 col-sm-7 offset-sm-3"> 
+	            	<p id = "message-paragraph-1" class = "message-paragraph" style="color:green;font-weight:bold"> 
+	            		You deserve the best that life has to offer.
+	            	</p>
+	            </div>
+            </div>  
+            <br>  
+            
+            <div id = "share-download-1" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.1}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.1}" 
+                        class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -102,7 +129,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -126,27 +153,32 @@
                     </div>                   
                 </div>  
             </div>
-			
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 8.2</h6>
+            <div class = "row ">
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.2 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/6b92bbc3-bf11-4c9f-bcaa-10fd32148f0f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4" >
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.2 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/16df1215-2f27-4343-9d86-f8fbdabeb90a?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.2 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/3c7982fc-b4ef-4be6-b7db-2f3ad8436325?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-                </div>
-            </div>      
-            <div id = "message-2-div" class = "message-div" style = "margin-left : 46%;"> 
-            	<p id = "message-paragraph-2" class = "message-paragraph"> 
-            		  As you start to walk out on the way, the way appears.
-            	</p>
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/6b92bbc3-bf11-4c9f-bcaa-10fd32148f0f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/16df1215-2f27-4343-9d86-f8fbdabeb90a?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/9b8e9fac-28bc-45d0-a5e9-299d5b2a928a?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					
+				</div>
             </div>  
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+            <br>    
+            <div id = "share-download-2" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
@@ -161,7 +193,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -185,28 +217,38 @@
                     </div>                   
                 </div>  
             </div>
-			
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 8.3</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.3 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/999cbe04-0d81-4b18-b585-9633788ebb70?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-				</div>
-                <div class = "col-md-3">
-                    <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/ab316048-5738-44f3-a6e0-6fce44e5182f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-				</div>
-                <div class = "col-md-3">
-                   <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/a8cf812f-2825-4d92-9a73-b4842e8c2194?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div> 
-				   
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.3 Solution B</h6>
                 </div>
-            </div>      
-            <div id = "message-3-div" class = "message-div" style = "margin-left : 46%;"> 
-            	<p id = "message-paragraph-3" class = "message-paragraph"> 
-            		   Excuses, Fear, Comfort...are the main things that stop people from reaching their ultimate goal.
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.3 Solution C</h6>
+                </div>
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					 <div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/10622/999cbe04-0d81-4b18-b585-9633788ebb70?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                
+				</div>
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/ab316048-5738-44f3-a6e0-6fce44e5182f?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
+                <div class = "col-4">
+					<div style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/a8cf812f-2825-4d92-9a73-b4842e8c2194?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+				</div>
+            </div> 
+               
+            <div id = "message-3-div" class = "message-div col-7 offset-3"> 
+            	<p id = "message-paragraph-3" class = "message-paragraph" style="color:green;font-weight:bold"> 
+            		 It's not over until you win.
             	</p>
             </div>  
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+            <br>
+            <div id = "share-download-3" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
@@ -221,7 +263,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -245,30 +287,59 @@
                     </div>                   
                 </div>  
             </div>
-			
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 8.4</h6>
+            
+            <div class = "row">
+                <div class = "col-5 offset-4">
+                	
+                    <form class="my-1 ml-4" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="SDRP5VRG3Q8L2">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+					<img class="pl-2 mb-1" src="https://i.ibb.co/xsvVXQ4/Logo.jpg" width = "200px" height = "100px" />
+		            <form class="ml-5" action="https://www.paypal.com/donate" method="post" target="_top" style="left : 45%;">
+							<input type="hidden" name="hosted_button_id" value="5AY9Q5CLXFQB8" />
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+							<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+					
+				</div>
+            </div>
+            <div class = "row">
+            	<div class = "col-11 offset-1 col-sm-10 offset-sm-2">
+            		<p style="color:green;font-weight:bold">Subscribe To Gain Access To The Following Videos.</p>
+            	</div>
+            </div>
+            
+            <div class = "row">
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.4 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/90939a77-8299-4efe-9d95-978c191470e4?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.4 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/89d7f314-b40c-453c-a3f3-5fe2380f001d?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.4 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/834e4611-8fac-4217-9dda-a5bd6df47a46?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4" >
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/90939a77-8299-4efe-9d95-978c191470e4?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/89d7f314-b40c-453c-a3f3-5fe2380f001d?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/834e4611-8fac-4217-9dda-a5bd6df47a46?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
             </div>      
-            <div id = "message-4-div" class = "message-div" style = "margin-left : 46%;"> 
-            	<p id = "message-paragraph-4" class = "message-paragraph"> 
-            		  When you dream big, you will stand out in the world that thinks smalls. 
-            	</p>
-            </div>  
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+            <br>
+            <div id = "share-download-4" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
@@ -283,7 +354,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -307,35 +378,44 @@
                     </div>                   
                 </div>  
             </div>
-			
+            <br>
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 8.5</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.5 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/aca541a6-3aa4-40ee-8ca3-420bde4012ce?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.5 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/6de7cbee-7bb2-4017-a733-569f4bb844c6?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.5 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/d276b2a3-0b67-4cdb-bad9-a72fb9ac15bb?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/aca541a6-3aa4-40ee-8ca3-420bde4012ce?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
-            </div> 
-            <div id = "message-5-div" class = "message-div" style = "margin-left : 46%;"> 
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/6de7cbee-7bb2-4017-a733-569f4bb844c6?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/d276b2a3-0b67-4cdb-bad9-a72fb9ac15bb?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+            </div>  
+            <br>
+            <div id = "message-5-div" class = "message-div" style = "margin-left : 41%;"> 
             	<p id = "message-paragraph-5" class = "message-paragraph"> 
-            		  To be the same as everyone else, is to be average like everyone else.
+            		 Failure means find another way.
             	</p>
-            </div>      
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+            </div> 
+            <div id = "share-download-5" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.5}"
-                        href = "/Chapter Eight/Code/Download?codeName=download_8_5_code" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -346,7 +426,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -364,42 +444,45 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/download/partone/chaptereight/video?exercise=8.5}"
-                        href = "/Chapter Eight/Video/Download?videoName=download_8_5_video" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/download/partone/chaptereight/video?exercise=8.5}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
                 </div>  
             </div>
-			
+            <br>
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 8.6</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.6 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/b9a8f5e8-f325-4039-bac1-ef02d683c839?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-				</div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/c15b84a3-39aa-485d-988b-daa087ee3201?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-				</div>
-                <div class = "col-md-3">
-                    <div th:if="${student.hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/e4729630-05b2-4ca4-adee-9b08f54e953b?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
-					<div th:if="${student.hasSubscribed==false}" style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.6 Solution B</h6>
                 </div>
-            </div>  		
-            <div id = "message-6-div" class = "message-div" style = "margin-left : 46%;"> 
-            	<p id = "message-paragraph-6" class = "message-paragraph"> 
-            		  We have got to be lions, when a lion is injured, bleeding, it licks it wounds and keep walking.
-            	</p>
-            </div>  
-            <div class="row" style = "margin-left: 3%;width: 100%">   
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 8.6 Solution C</h6>
+                </div>
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/b9a8f5e8-f325-4039-bac1-ef02d683c839?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/c15b84a3-39aa-485d-988b-daa087ee3201?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					<div th:if="*{hasSubscribed}" style="position: relative; padding-top: 56.22254758418741%;"><iframe src="https://iframe.mediadelivery.net/embed/6846/e4729630-05b2-4ca4-adee-9b08f54e953b?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+            </div>      
+            <br>
+            <div id = "share-download-6" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
                     <div class="m-0 p-0">
-                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.6}"
-                        href = "/Chapter Eight/Code/Download?codeName=download_8_6_code" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/download/partone/chaptereight/code?exercise=8.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color : hsl(50, 40%, 60% ); color:#fff"  target="_blank" title="Download Code">
                             <span>Download Code</span>
                         </a>
                     </div>
@@ -410,7 +493,7 @@
                         </a>
                     </div>                
                     <div class="facebook-share-container m-0 p-0">
-                        <a class="share facebook-share m-0 p-0" href="http://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.callicoder.com%2fspring-boot-rest-api-tutorial-with-mysql-jpa-hibernate%2f" rel="nofollow" target="_blank" title="Share on Facebook">
+                        <a class="share facebook-share m-0 p-0" href=" https://www.facebook.com/Introduction-To-Computers-Java-And-Programs-100442325043636" rel="nofollow" target="_blank" title="Share on Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z"></path></svg> <span>Facebook</span>
                         </a>
                     </div>
@@ -428,8 +511,7 @@
                         </a>
                     </div> 
                     <div class="m-0 p-0">
-                        <a th:href = "@{/download/partone/chaptereight/video?exercise=8.6}"
-                        href = "/Chapter Eight/Video/Download?videoName=download_8_6_video" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
+                        <a th:href = "@{/download/partone/chaptereight/video?exercise=8.6}" class="share m-0 px-0" style = "padding-top : 2.5%;padding-bottom : 2%;background-color:#3b9; color:#fff"  target="_blank" title="Download Code">
                             <span>Download Video</span>
                         </a>
                     </div>                   
@@ -447,21 +529,22 @@
 	<script>
 		$("document").ready(function(){
 			
-			for(var index = 2; index <=6;index += 2)
+			for(var index = 1; index <6;index += 2)
 				$("#message-" + index + "-div").hide();
 			
 			
-			$(".exercise-8-2-video").hover(function(){
-				$("#message-2-div").slideToggle("slow");
+			$(".exercise-8-1-video").hover(function(){
+				$("#message-1-div").slideToggle("slow");
 			});
 			
-			$(".exercise-8-4-video").hover(function(){
-				$("#message-4-div").slideToggle("slow");
+			$(".exercise-8-3-video").hover(function(){
+				$("#message-3-div").slideToggle("slow");
 			});
 			
-			$(".exercise-8-6-video").hover(function(){
-				$("#message-6-div").slideToggle("slow");
+			$(".exercise-8-5-video").hover(function(){
+				$("#message-5-div").slideToggle("slow");
 			});
+			
 		});
 		
 	</script>

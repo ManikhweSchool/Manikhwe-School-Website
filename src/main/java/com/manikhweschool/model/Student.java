@@ -229,8 +229,8 @@ public class Student implements Comparable<Student>,Serializable{
 		return hasSubscribed;
 	}
 
-	public void setHasSubscribed(boolean hasSubsribed) {
-		this.hasSubscribed = hasSubsribed;
+	public void setHasSubscribed(boolean hasSubscribed) {
+		this.hasSubscribed = hasSubscribed;
 	}
 
 	public Date getSubscriptionDate() {

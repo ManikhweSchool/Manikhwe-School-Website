@@ -16,78 +16,103 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
         
-        <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\chapter.css" 
-        th:href="@{/css/chapter.css}" rel = "stylesheet"></link>
         <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\socialnetworksbuttons.css"
         th:href="@{/css/socialnetworksbuttons.css}" rel = "stylesheet"></link>
         <link href = "C:\Users\Test\OneDrive\Documents\My-God's-Path-On-Earth\Manikhwe Programming School\Manikhwe-Programming-School\src\main\resources\static\css\socialnetworkforsharing.css" 
         th:href="@{/css/socialnetworkforsharing.css}" rel = "stylesheet"></link>
+    	
+    	<link rel = "stylesheet" th:href="@{/css/introtopython.css}"></link>
+    	
     	<title>Object-Oriented Programming</title>
     </head>
     <body>
-        <div class = "container-fluid">
+        <div class = "container-fluid" th:object="${#session.getAttribute('student')}">
+        
             <div class = "row">
-                <div class = "col-md-12">
-                	<ul id = "Header_Items">		
-                        <li class = "Header_Item"><a href = "index.html" th:href = "@{/index}" class = "Header_Link">Home</a></li>
-                        <li class = "Header_Item"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;"  target = "_blank">Background</a></li>
-                        <li class = "Header_Item"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Contacts</a></li>
-                        <li class = "Header_Item"><a href = "Games.html" th:href = "@{/games}" class = "Header_Link" style = "text-decoration : none;" target = "_blank">Games</a></li>
-                        <li class = "Header_Item"><a href = "IntroToPython.html" th:href = "@{/python}" class = "Header_Link">Python</a></li>
-                        <li class = "Header_Item"><a href = "https://www.paypal.com/donate/?hosted_button_id=5AY9Q5CLXFQB8" id = "SignIn_Page_Link" class = "Header_Link" >Donate</a></li>
+            	
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0%;">					
+						<li class = "Header_Item" style = "padding-right : 20%;padding-left : 0%;"><a th:href = "@{/index}" class = "Header_Link">Home</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "Background.html" th:href = "@{/background}" class = "Header_Link" style = "text-decoration : none;">Background</a></li>  
+                    </ul>
+                </div>
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-right : 0px;padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-right : 0px;padding-left : 0%;">					
+                        <li class = "Header_Item" style = "padding-right : 15%;"><a href = "ContactInfo.html" th:href = "@{/contact}" class = "Header_Link" style = "text-decoration : none;">Contacts</a></li>
+                        <li class = "Header_Item" style = "padding-right : 0%;"><a href = "/images/Notes/Python/Part One/Chapter14_Notes.pdf"  class = "Header_Link">Notes</a></li>
+                    </ul>
+                </div>
+                
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-left : 0%;padding-right : 0%;">
+                    <ul class = "Header_Items" style="padding-left : 0%;padding-right : 0%;">					
+                        <li class = "Header_Item" style = "padding-right : 18%;"><a href = "IntroToPython.html" th:href = "@{/python}" class = "Header_Link">Python</a></li>
+                        <li class = "Header_Item"><a href = "https://www.youtube.com/channel/UC997xKfo-ZIDfivL6RcMyZA/playlists" class = "Header_Link" >YouTube</a></li>
+                    </ul>
+                </div>
+                
+                <div class = "col-12 col-sm-6 col-md-3" style="padding-left : 0%;">
+                    <ul class = "Header_Items" style="padding-left : 0%;">					
+                        <li class = "Header_Item" style = "padding-left : 0%;
+                        padding-right : 20%;"><a href = "https://www.paypal.com/donate/?hosted_button_id=5AY9Q5CLXFQB8" 
+                        class = "Header_Link">Donate</a></li>
+                        <li class = "Header_Item"><a href = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SDRP5VRG3Q8L2" 
+                        id = "SignIn_Page_Link" class = "Header_Link">Subscribe</a></li>
+                        
                     </ul>
                 </div>
             </div>
-            
             <div class = "row">
-                <div class = "col-md-12 ">
-                    <h2 class = "text-center">Object-Oriented Programming</h2>
-					<form class="mb-5" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="position : fixed;left : 0;top : 40%;">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="SDRP5VRG3Q8L2">
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-	                <form class="my-5 ml-4" action="https://www.paypal.com/donate" method="post" target="_top" style="position : fixed;left : 0;top : 42%;">
-						<input type="hidden" name="hosted_button_id" value="5AY9Q5CLXFQB8" />
-						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-						<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
-					</form>
-					<img class="mt-5 ml-4 pl-2" src="https://i.ibb.co/xsvVXQ4/Logo.jpg" width = "6%" height = "100px" style="position : fixed;left : 0;top : 47%;"/>
+	            	<div class = "col-md-4 offset-md-4 col-sm-8 offset-sm-2 mt-2">
+	                	<a href = "https://chat.whatsapp.com/D1oTY6THHtR6PmeeEtMK2v" 
+	                	class = "btn btn-lg btn-success"
+	                	style="padding-right:30%;padding-left:30%">
+	                		Join WhatsApp Group
+	                	</a>
+	                </div>
+	            </div>
+            <div class = "row">
+                <div class = "col-12 ">
+                    <h3 class = "text-center">Object-Oriented Programming</h3>
 					
 				</div>
             </div>
-            <div class = "row">
-                <div class = "col-md-3 text-center offset-md-2">
-                    <h6 class = "student-solution">Student A's Solution</h6>
-                </div>
-                <div class = "col-md-3 text-center">
-                   <h6 class = "student-solution ">Student B's Solution</h6>
-                </div>
-                <div class = "col-md-3  text-center">
-                    <h6 class = "student-solution">Student C's Solution</h6>
-                </div>
+      		<div class = "row">
+            	<div class = "col-11 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-4">
+            		<h5 style="color:green;">Double Click To Watch On Full Screen!!!</h5>
+            	</div>
             </div>
-            
             <div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 14.1</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.1 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-                    
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.1 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.1 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-    
+             </div>
+            <div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+                
                 </div>
+                <div class = "col-4">
+				
+				</div>
+                <div class = "col-4">
+				
+				</div>
             </div>  
-            <div id = "message-1-div" class = "message-div" style = "margin-left : 41%;"> 
-            	<p id = "message-paragraph-1" class = "message-paragraph"> 
-            		The loudest one in the room is the weakest one in the room.
-            	</p>
-            </div>    
+            <div class = "row">
+	            <div id = "message-1-div" class = "message-div col-10 offset-2 col-sm-7 offset-sm-3"> 
+	            	<p id = "message-paragraph-1" class = "message-paragraph" style="color:green;font-weight:bold"> 
+	            		You deserve the best that life has to offer.
+	            	</p>
+	            </div>
+            </div>  
+            <br>  
+            
             <div id = "share-download-1" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
@@ -128,20 +153,30 @@
                     </div>                   
                 </div>  
             </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 14.2</h6>
+            <div class = "row ">
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.2 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4" >
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.2 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.2 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-
-                </div>
-            </div>      
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+				
+				</div>
+                <div class = "col-4">
+				
+				</div>
+                <div class = "col-4">
+				
+				</div>
+            </div>  
+            <br>    
             <div id = "share-download-2" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
@@ -181,26 +216,36 @@
                     </div>                   
                 </div>  
             </div>
-			
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 14.3</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.3 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.3 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.3 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-
-                </div>
-            </div>    
-            <div id = "message-3-div" class = "message-div" style = "margin-left : 41%;"> 
-            	<p id = "message-paragraph-3" class = "message-paragraph"> 
-            		  Sometimes you need to let go of what you want now to get what you want later
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+				
+				</div>
+                <div class = "col-4">
+				
+				</div>
+                <div class = "col-4">
+				
+				</div>
+            </div> 
+               
+            <div id = "message-3-div" class = "message-div col-7 offset-3"> 
+            	<p id = "message-paragraph-3" class = "message-paragraph" style="color:green;font-weight:bold"> 
+            		 It's not over until you win.
             	</p>
             </div>  
+            <br>
             <div id = "share-download-3" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
@@ -240,21 +285,58 @@
                     </div>                   
                 </div>  
             </div>
-			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 14.4</h6>
+            
+            <div class = "row">
+                <div class = "col-5 offset-4">
+                	
+                    <form class="my-1 ml-4" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="SDRP5VRG3Q8L2">
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+					<img class="pl-2 mb-1" src="https://i.ibb.co/xsvVXQ4/Logo.jpg" width = "200px" height = "100px" />
+		            <form class="ml-5" action="https://www.paypal.com/donate" method="post" target="_top" style="left : 45%;">
+							<input type="hidden" name="hosted_button_id" value="5AY9Q5CLXFQB8" />
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+							<img alt="" border="0" src="https://www.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+					
+				</div>
+            </div>
+            <div class = "row">
+            	<div class = "col-11 offset-1 col-sm-10 offset-sm-2">
+            		<p style="color:green;font-weight:bold">Subscribe To Gain Access To The Following Videos.</p>
+            	</div>
+            </div>
+            
+            <div class = "row">
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.4 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.4 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.4 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4" >
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
             </div>      
-            
+            <br>
             <div id = "share-download-4" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     
@@ -294,24 +376,37 @@
                     </div>                   
                 </div>  
             </div>
-			
+            <br>
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1">
-                    <h6 class = "exercise-name mt-5">Exercise 14.5</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.5 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.5 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.5 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
-            </div>      
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+            </div>  
+            <br>
             <div id = "message-5-div" class = "message-div" style = "margin-left : 41%;"> 
             	<p id = "message-paragraph-5" class = "message-paragraph"> 
-            		 Becoming better is a continuous consistent process not a game with an end. 
+            		 Failure means find another way.
             	</p>
             </div> 
             <div id = "share-download-5" class="row" style = "margin-left: 3%;width: 100%">   
@@ -353,21 +448,34 @@
                     </div>                   
                 </div>  
             </div>
-			
+            <br>
 			<div class = "row">
-                <div class = "offset-md-1 col-md-1 mt-5">
-                    <h6 class = "exercise-name ">Exercise 14.6</h6>
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.6 Solution A</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.6 Solution B</h6>
                 </div>
-                <div class = "col-md-3">
-
+                <div class = "col-4">
+                    <h6 class = "exercise-name" style="color:navy;font-weight:bold">Ex 14.6 Solution C</h6>
                 </div>
-                <div class = "col-md-3">
-
+             </div>
+			<div class = "row d-grid gap-3">
+                
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+                </div>
+                <div class = "col-4">
+					
+					<div th:if="*{hasSubscribed==false}" style="position: relative; padding-top: 56.25%;height:100px"><iframe src="https://iframe.mediadelivery.net/embed/6846/8cd3129c-2add-47ad-8d9f-00edda6706ed?autoplay=false&preload=false" loading="lazy" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
                 </div>
             </div>      
+            <br>
             <div id = "share-download-6" class="row" style = "margin-left: 3%;width: 100%">   
                 <div class ="col-md-12 share-container mt-0 mb-0 p-0" style = "width: 100%">
                     

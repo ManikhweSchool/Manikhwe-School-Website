@@ -12,10 +12,10 @@ import com.manikhweschool.model.TodayVisitation;
 @Controller
 public class PythonChapterController {
 
-
 	@RequestMapping(value="/python/part/one/{chapter}", method = RequestMethod.GET)
-	public String visitPartOne(
-	@PathVariable("chapter") String chapter, HttpSession session){
+	public String visitPartOne( 
+	@PathVariable("chapter") String chapter, 
+	HttpSession session){
 		
 		String page = "Python/Part_One_Pages/Chapter";
 		switch(chapter) {
@@ -111,7 +111,7 @@ public class PythonChapterController {
 			.increaseChapterThirteenDayVisitors();
 			break;
 		default : 
-			page += "Forteen"; 
+			page += "Fourteen"; 
 			((TodayVisitation)session.getServletContext()
 			.getAttribute("todayVisitation")).
 			getPythonVisitationInfo().
