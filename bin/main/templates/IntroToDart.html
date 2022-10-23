@@ -17,10 +17,7 @@
         <title>Introduction To Dart Programming</title>
     </head>
     <body >
-    <!-- th:href="@{'/' + ${session.canAccessDart==true? 'part/one/{1}' : 'dart'}}" 
-	th:onClick="alert('To Proceed Give Manikhwe School Access To' 
-	+ ' Your Spotify Account By Going To The Home Page And Then' 
-	+ ' Clicking The Spotify Image If You Have Not Yet.');"  -->
+    
 	<div class = "container-fluid">
             <div class = "row">
                 <div class = "col-md-12 mb-3">
@@ -34,7 +31,7 @@
                     </ul>
                 </div>
             </div>
-            <div class = "row">
+            <div class = "row mt-3" th:object="${#session.getAttribute('student')}">
 				<div class = "col-md-12 Part">
                     <h2 class = "Heading">Part I: Fundamentals Of Dart Programming I</h2>	
                     <ul class = "Chapter" id = "Part_One">

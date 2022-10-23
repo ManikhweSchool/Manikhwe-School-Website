@@ -12,22 +12,28 @@ import com.manikhweschool.model.Student;
 @Controller
 public class MainController {
 	
+	@Autowired
+	private Student student;
+	
 	public MainController() {
 		
 	}
 	
 	@RequestMapping(value = "/index", 
 	method = RequestMethod.GET)
-	public String visitHome() {
+	public String visitHome(HttpSession session) {
 		
-		
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "index";
 	}
 
 	@RequestMapping(value = "/java", 
 	method = RequestMethod.GET)
-	public String learnJava() {
+	public String learnJava(HttpSession session) {
 		
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "IntroToJava";
 	}
 	
@@ -42,7 +48,8 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String learnPython(HttpSession session) {
 						
-		
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "IntroToPython";
 	}
 	
@@ -55,8 +62,10 @@ public class MainController {
 	
 	@RequestMapping(value = "/dart", 
 	method = RequestMethod.GET)
-	public String learnDart() {
+	public String learnDart(HttpSession session) {
 				
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "IntroToDart";
 	}
 	
@@ -72,6 +81,8 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String visitBackgroundPage(HttpSession session) {
 			
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "Background";
 	}
 	
@@ -80,6 +91,8 @@ public class MainController {
 	method = RequestMethod.GET)
 	public String visitContactsPage(HttpSession session) {
 		
+		if(session.getAttribute("student")==null)
+			session.setAttribute("student", student);
 		return "ContactInfo";
 	}
 }

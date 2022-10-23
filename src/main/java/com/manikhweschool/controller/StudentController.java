@@ -40,45 +40,32 @@ public class StudentController {
 	JavaChapterController javaChapterController;
 	
 	
-	@RequestMapping(value = "/signin", method = RequestMethod.GET)
+	//@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signIn(
 		Model model, 
 		HttpSession session,
 		@RequestParam("previousPage") String previousPage
 	) {
-		/*
-		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
-			session.setAttribute("firstTimeVisit", true);
-			
-		}
-		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
-			session.setAttribute("firstTimeVisit", false);
-		}*/
 		
 		model.addAttribute("student", student);
 		model.addAttribute("previousPage", previousPage);
-		/*
-		if(session.isNew()) {
-			
-			TodayVisitation todayVisitation = (TodayVisitation)session.getServletContext().getAttribute("todayVisitation");
-			todayVisitation.increaseDayVisitorNumber();
-			System.out.println("Session Created...");
-		}*/
+		
 		
 		return "SignIn";
 	}
 	
+	// PayFast subscription return page
 	@RequestMapping(value = "/signin", method = RequestMethod.POST)
 	public String signIn(
-		@ModelAttribute(name="student")
-		Student student, 
+		// The student parameter is only passed if students can register without subscribing.
+		/*@ModelAttribute(name="student")
+		Student student, */
 		@ModelAttribute(name="previousPage")
 		String previousPage,
 		Model model,
 		HttpSession session
 	) {
+		
 		
 		String status;
 		String page;
@@ -93,11 +80,14 @@ public class StudentController {
 			if(student.getPassword().equals(student.getConfirmPassword())) {
 				service.addStudent(student);
 				model.addAttribute("invalidStudent", false);
-				model.addAttribute("previousPage", previousPage);
+				model.addAttribute("previousPage", "index");
 				status = "Student Succefully Registered";
 				page = "RegistrationConfirmation";
 				if(session.getAttribute("student")==null)
 					session.setAttribute("student", student);
+				// The else part is only useful if students only register after subscription.
+				else
+					student.setHasSubscribed(true);
 			}
 			else {
 				model.addAttribute("invalidStudent", true);
@@ -118,16 +108,7 @@ public class StudentController {
 		Model model, 
 		HttpSession session
 	) {
-		/*
-		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
-			session.setAttribute("firstTimeVisit", true);
-			
-		}
-		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
-			session.setAttribute("firstTimeVisit", false);
-		}*/
+		
 		
 		model.addAttribute("student", student);
 		model.addAttribute("previousPage", previousPage);
@@ -150,7 +131,7 @@ public class StudentController {
 		Model model
 	) {
 		
-		String page;
+		
 		String status;
 		
 		Optional<Student> retrievedStudent = findStudent(student.getEmail());
@@ -224,6 +205,7 @@ public class StudentController {
 		
 	}
 	
+	// Paypal subscription return page
 	@RequestMapping(value = "/welcome", 
 	method = RequestMethod.POST)
 	public String subscribe(HttpSession session) {
@@ -236,6 +218,7 @@ public class StudentController {
 		return "SubscriptionConfirmation";
 	}
 	
+	// Paypal cancel return page
 	@RequestMapping(value = "/cancel", 
 	method = RequestMethod.POST)
 	public String unsubscribe(HttpSession session) {
@@ -264,15 +247,6 @@ public class StudentController {
 	method = RequestMethod.GET)
 	public String visitGames(HttpSession session) {
 					
-		if(session.getAttribute("firstTimeVisit")==null) {
-			session.setAttribute("canAccessJava", false);
-			session.setAttribute("canAccessPython", false);
-			session.setAttribute("firstTimeVisit", true);
-			
-		}
-		else if((Boolean)(session.getAttribute("firstTimeVisit"))==true){
-			session.setAttribute("firstTimeVisit", false);
-		}
 		
 		if(session.isNew()) {
 			
